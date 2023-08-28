@@ -1,0 +1,52 @@
+{
+	"message": "Vul onderstaand forum in om gemakkelijk contact met ons op te nemen!",
+   "validation": {
+      "optional": "Optioneel",
+      "required": "Dit veld is verplicht",
+      "is_required": "{field} is verplicht",
+      "is_too_short": "{field} is te kort (min. {min} tekens)",
+      "is_too_long": "{field} is te lang (max. {max} tekens)",
+		"only_alphanumeric": "{field} kan alleen letters en/of cijfers bevatten",
+		"only_numeric": "{field} kan alleen cijfers bevatten",
+		"only_alpha": "{field} kan alleen letters, spaties en/of streepjes bevatten",
+		"email": "Voer een geldig e-mailadres in",
+      "phone": "Voer een geldig telefoonnummer in",
+		"terms": "Nog even akkoord gaan met de algemene voorwaarden en het privacybeleid..."
+   },
+   "fields": {
+      "name": {
+         "first": "Voornaam",
+         "last": "Achternaam"
+      },
+      "email": "E-mailadres",
+      "phone": "Telefoonnummer",
+      "company": "Organisatie",
+      "job": "Functie",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "file": "Bestand",
+      "terms": "Ik ga akkoord met de algemene voorwaarden en het privacybeleid",
+      "turnstile": "Even bewijzen dat je geen robot bent..."
+   },
+	"actions": {
+		"submit": {
+			"do": "Versturen",
+			"doing": "Versturen...",
+			"done": "Verstuurd!"
+		},
+		"send": {
+			"do": "Verzenden",
+			"doing": "Verzenden...",
+			"done": "Verzonden!"
+		},
+		"send_message": {
+			"do": "Bericht verzenden",
+			"doing": "Bericht verzenden...",
+			"done": "Bericht verzonden!"
+		},
+		"clear": {
+			"field": "Veld wissen",
+			"form": "Formulier wissen"
+		}
+	}
+}

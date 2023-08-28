@@ -1,0 +1,52 @@
+{
+	"message": "Fill out the form below to contact us easily!",
+   "validation": {
+      "optional": "Optional",
+      "required": "This field is required",
+      "is_required": "{field} is required",
+		"is_too_short": "{field} is too short (min. {min} characters)",
+		"is_too_long": "{field} is too long (max. {max} characters)",
+		"only_alphanumeric": "{field} can only contain letters and/or numbers",
+		"only_numeric": "{field} can only contain numbers",
+		"only_alpha": "{field} can only contain letters, spaces and/or hyphens",
+		"email": "Please enter a valid e-mail address",
+      "phone": "Please enter a valid phone number",
+		"terms": "Please agree to the terms and conditions and privacy policy"
+   },
+   "fields": {
+      "name": {
+         "first": "First name",
+         "last": "Last name"
+      },
+      "email": "E-mail address",
+      "phone": "Phone number",
+      "company": "Company",
+      "job": "Job title",
+      "subject": "Subject",
+      "message": "Message",
+      "file": "File",
+      "terms": "I agree to the terms and conditions and privacy policy",
+      "turnstile": "Just to prove you're not a robot..."
+   },
+	"actions": {
+		"submit": {
+			"do": "Submit",
+			"doing": "Submitting...",
+			"done": "Submitted!"
+		},
+		"send": {
+			"do": "Send",
+			"doing": "Sending...",
+			"done": "Sent!"
+		},
+		"send_message": {
+			"do": "Send message",
+			"doing": "Sending message...",
+			"done": "Message sent!"
+		},
+		"clear": {
+			"field": "Clear field",
+			"form": "Clear form"
+		}
+	}
+}
