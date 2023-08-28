@@ -1,0 +1,52 @@
+{
+  "name": "mistmedia-be",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.17.3",
+    "@astrojs/partytown": "^1.2.3",
+    "@astrojs/prefetch": "^0.3.0",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/svelte": "^3.1.1",
+    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vercel": "^3.8.2",
+    "@floating-ui/dom": "^1.5.1",
+    "@tailwindcss/forms": "^0.5.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "astro": "^2.10.14",
+    "astro-i18next": "^1.0.0-beta.21",
+    "svelte": "^4.2.0",
+    "svelte-forms-lib": "^2.0.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@iconify/svelte": "^3.1.4",
+    "@skeletonlabs/skeleton": "^1.12.0",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@types/form-data": "^2.5.0",
+    "@types/mailgun-js": "^0.22.13",
+    "form-data": "^4.0.0",
+    "mailgun.js": "^9.2.1",
+    "postcss": "^8.4.28",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.1",
+    "svelte-turnstile": "^0.5.0",
+    "svelte-typewriter": "^3.1.6",
+    "yup": "^1.2.0"
+  },
+  "description": "``` npm create astro@latest -- --template minimal ```",
+  "main": "svelte.config.js",
+  "repository": {
+    "type": "git",
+    "url": "mistmedia-be"
+  },
+  "author": "Mist Media",
+  "license": "ISC"
+}
