@@ -71,7 +71,7 @@ export const services: { [key: string]: ServiceItem } = {
          }
       }
    },
-   '3d': {
+   three_d: {
       enabled: true,
       icon: servicesIcons['3d'],
       slug: `3d-visualisatie`,

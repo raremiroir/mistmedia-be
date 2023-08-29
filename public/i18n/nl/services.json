@@ -172,7 +172,7 @@
          }
       }
    },
-   "'3d'": {
+   "three_d": {
       "title": "3D Visualisatie & Printing",
       "title_short": "3D",
       "slug": "3d-visualisatie",

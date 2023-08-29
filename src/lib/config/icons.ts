@@ -3,7 +3,7 @@ export const servicesIcons: IconMap = {
    web: 'ph:globe-duotone',
    graphic: 'ph:paint-bucket-duotone',
    marketing: 'ph:megaphone-duotone',
-   '3d': 'ph:cube-duotone',
+   three_d: 'ph:cube-duotone',
    av: 'ph:film-slate-duotone',
    ai: 'ph:robot-duotone',
 }
