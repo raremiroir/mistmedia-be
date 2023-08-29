@@ -3,7 +3,19 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: 'class',
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		require('path').join(require.resolve(
+			'@skeletonlabs/skeleton'),
+			'../**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
+		)
+	],
+	// Style main container
+	container: {
+      center: true,
+      padding: "2rem",
+    },
 	theme: {
 		// Define breakpoints (min-width)
 		screens: {
@@ -207,5 +219,9 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/forms"),
+		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
+	],
 }
