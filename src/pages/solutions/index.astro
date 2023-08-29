@@ -1,0 +1,30 @@
+---
+import { t, l } from "astro-i18n";
+import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/lib/components/Common/Hero/Hero.svelte";
+import { pagesIcons } from "@/lib/config/icons";
+import Breadcrumbs from "@/lib/components/Core/Breadcrumbs.astro";
+import Section from "@/lib/components/Core/Section.astro";
+import CallToAction from "@/lib/components/Content/CallToAction.astro";
+
+---
+
+<PageLayout title={t('nav.solutions.title')}>
+
+   <Hero slot="hero">
+      {t('pages.solutions.title')}
+   </Hero>
+   <Breadcrumbs slot="breadcrumbs" crumbs={[
+      {label: t('pages.solutions.title'), slug: l('solutions'), icon: pagesIcons.solutions},
+   ]}/>
+
+   <Section id={t('pages.solutions.title')}>
+      Solutions
+   </Section>
+
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+
+</PageLayout>

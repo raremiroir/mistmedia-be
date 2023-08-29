@@ -1,0 +1,57 @@
+---
+import { t, l } from "astro-i18n";
+import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/lib/components/Common/Hero/Hero.svelte";
+import Breadcrumbs from "@/lib/components/Core/Breadcrumbs.astro";
+import { pagesIcons } from "@/lib/config/icons";
+import Section from "@/lib/components/Core/Section.astro";
+import CallToAction from "@/lib/components/Content/CallToAction.astro";
+
+---
+
+<PageLayout title={t('nav.cases.title')}>
+
+   <Hero slot="hero" subtitle={t('pages.cases.intro')}>
+      {t('pages.cases.title')}
+   </Hero>
+
+   <Breadcrumbs slot="breadcrumbs" crumbs={[
+      {label: t('pages.cases.intro'), slug: l('cases'), icon: pagesIcons.cases},
+   ]}/>
+
+   <Section id={t('pages.cases.title')}>
+      <div class="grid-1-2 flex-center">
+         <!-- {#each data.portfolio as portfolioItem}
+            {#await getPortfolioItem(portfolioItem)}
+               <Loading />
+            {:then { client, solution, tags, title, description, cover_img, gallery, href, featured }}
+               {#if featured}
+                  <CardPortfolio 
+                     img={cover_img} alt={title} itemImg={gallery[0]}
+                     {href} title={title} description={description[$lang]}
+                     ariaLabel={title} {client} {solution} {tags}>
+                     {@html description[$lang]}
+                  </CardPortfolio>
+               {/if}
+            {/await}
+         {/each} -->
+      </div>
+   </Section>
+
+
+   <Section id="" alt>
+      <div class="flex-col gap-4 flex flex-center">
+         <p>
+            If you'd rather see a wider selection of cases in all categories, you can view them by clicking the button below.
+         </p>
+         <a href={l('portfolio')} class="mist-btn mist-btn-xl w-fit mist-variant-filled-primary">
+            View portfolio
+         </a>
+      </div>
+   </Section>
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+
+</PageLayout>
