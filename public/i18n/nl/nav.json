@@ -1,0 +1,56 @@
+{
+   "home": {
+      "title": "Home",
+      "slug": ""
+   },
+   "about": {
+      "title": "Over ons",
+      "slug": "over-ons"
+   },
+   "cases": {
+      "title": "Cases",
+      "slug": "cases"
+   },
+   "solutions": {
+      "title": "Solutions",
+      "slug": "solutions",
+      "items": {
+         "web": {
+            "title": "Web",
+            "slug": "web"
+         },
+         "graphic": {
+            "title": "Grafisch Ontwerp",
+            "slug": "grafisch-ontwerp"
+         },
+         "marketing": {
+            "title": "Online Marketing",
+            "slug": "online-marketing"
+         },
+         "3d": {
+            "title": "3D",
+            "slug": "3d-visualisatie"
+         },
+         "av": {
+            "title": "Audiovisueel",
+            "slug": "audiovisueel"
+         },
+         "ai": {
+            "title": "AI",
+            "slug": "artificiele-intelligentie"
+         }
+      }
+   },
+   "blog": {
+      "title": "Blog",
+      "slug": "blog"
+   },
+   "contact": {
+      "title": "Contact",
+      "slug": "contact"
+   },
+   "portfolio": {
+      "title": "Portfolio",
+      "slug": "portfolio"
+   }
+}

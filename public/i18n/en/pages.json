@@ -9,21 +9,21 @@
       "title": "Home",
       "slug": "",
       "hero": {
-         "typewriter": [
-            "Design Graphics",
-            "Design Websites",
-            "Develop Websites",
-            "Visualise 3D Models",
-            "Animate 3D Models",
-            "Create Multimedia",
-            "Create Websites",
-            "Deploy Websites",
-            "Deliver Graphics",
-            "Optimise Websites",
-            "Promote Websites",
-            "Design Logos",
-            "Love Working Together"
-         ],
+         "typewriter": {
+            "1": "Design Graphics",
+            "2": "Design Websites",
+            "3": "Develop Websites",
+            "4": "Visualise 3D Models",
+            "5": "Animate 3D Models",
+            "6": "Create Multimedia",
+            "7": "Create Websites",
+            "8": "Deploy Websites",
+            "9": "Deliver Graphics",
+            "10": "Optimise Websites",
+            "11": "Promote Websites",
+            "12": "Design Logos",
+            "13": "Love Working Together"
+         },
          "buttons": {
             "what_do_we_do": "What do we do?",
             "discover_our_services": "Discover our services"
@@ -38,24 +38,24 @@
             "id": "faq",
             "title": "Frequently asked questions",
             "text": "Below you can find a list of frequently asked questions. Definitely don't hesitate to contact us if you can't find an answer to your question!",
-            "items": [
-               {
+            "items": {
+               "1": {
                   "question": "How long does it take to build a website?",
                   "answer": "The duration of building a website depends on the size of the project. It can take a few days to a few weeks. It also depends on the complexity of the website and the requirements of the client."
                },
-               {
+               "2": {
                   "question": "How much does it cost to build a website?",
                   "answer": "The cost of building a website depends on the size of the project. It can cost a few hundred euros to a few thousand euros. It also depends on the complexity of the website and the requirements of the client."
                },
-               {
+               "3": {
                   "question": "What is the best way to build a website?",
                   "answer": "The best way to build a website is by hiring a professional web developer, such as Mist Media. It is the best way to build a website that meets your needs and that works well. It is also the best way to build a website that performs well and that is well appreciated by search engines. Only in this way can you build a website that helps you achieve your goals in an optimal way."
                },
-               {
+               "4": {
                   "question": "What can my website do for me?",
                   "answer": "A website can do a lot for you. It can help you promote your business, sell your products and services, promote your brand, achieve your goals, help your customers, grow your business and much more. It is one of the best ways to promote your business and to achieve your goals."
                }
-            ]
+            }
          }
       }
    },

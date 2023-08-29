@@ -9,21 +9,21 @@
       "title": "Home",
       "slug": "",
       "hero": {
-         "typewriter": [
-            "Ontwerpen Graphics",
-            "Ontwerpen Websites",
-            "Ontwikkelen Websites",
-            "Visualiseren 3D Modellen",
-            "Animeren 3D Modellen",
-            "Creëren Multimedia",
-            "Creëren Websites",
-            "Lanceren Websites",
-            "Leveren Graphics",
-            "Optimaliseren Websites",
-            "Promoten Websites",
-            "Ontwerpen Logos",
-            "Werken Graag Samen"
-         ],
+         "typewriter": {
+            "1": "Ontwerpen Graphics",
+            "2": "Ontwerpen Websites",
+            "3": "Ontwikkelen Websites",
+            "4": "Visualiseren 3D Modellen",
+            "5": "Animeren 3D Modellen",
+            "6": "Creëren Multimedia",
+            "7": "Creëren Websites",
+            "8": "Lanceren Websites",
+            "9": "Leveren Graphics",
+            "10": "Optimaliseren Websites",
+            "11": "Promoten Websites",
+            "12": "Ontwerpen Logos",
+            "13": "Werken Graag Samen"
+         },
          "buttons": {
             "what_do_we_do": "Wat doen we?",
             "discover_our_services": "Ontdek onze diensten"
@@ -38,24 +38,24 @@
             "id": "faq",
             "title": "Veelgestelde vragen",
             "text": "Hieronder vind je een lijst met veelgestelde vragen. Neem zeker contact met ons op als je geen antwoord op je vraag kan vinden!",
-            "items": [
-               {
+            "items": {
+               "1": {
                   "question": "Hoe lang duurt het om een website te maken?",
                   "answer": "De duur van het maken van een website hangt af van de grootte van het project. Het kan enkele dagen tot enkele weken duren. Het is ook afhankelijk van de complexiteit van de website en de vereisten van de klant."
                },
-               {
+               "2": {
                   "question": "Hoeveel kost het om een website te maken?",
                   "answer": "De kosten van het maken van een website hangen af van de grootte van het project. Het kan enkele honderden euro's tot enkele duizenden euro's kosten. Het is ook afhankelijk van de complexiteit van de website en de vereisten van de klant."
                },
-               {
+               "3": {
                   "question": "Wat is de beste manier om een website te maken?",
                   "answer": "De beste manier om een website te maken is door een professionele webontwikkelaar, zoals Mist Media, in te huren. Het is de beste manier om een website te maken die aan uw behoeften voldoet en die goed werkt. Het is ook de beste manier om een website te maken die goed presteert en die goed wordt gewaardeerd door zoekmachines. Enkel op deze manier kunt u een website maken die u helpt om uw doelen op een optimale manier te bereiken."
                },
-               {
+               "4": {
                   "question": "Wat kan mijn website voor mij doen?",
                   "answer": "Een website kan veel voor u doen. Het kan u helpen om uw bedrijf te promoten, uw producten en diensten te verkopen, uw merk te promoten, uw doelen te bereiken, uw klanten te helpen, uw bedrijf te laten groeien en nog veel meer. Het is een van de beste manieren om uw bedrijf te promoten en om uw doelen te bereiken."
                }
-            ]
+            }
          }
       }
    },
