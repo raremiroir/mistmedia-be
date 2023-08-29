@@ -1,0 +1,50 @@
+---
+   import { astroI18n, t, l } from "astro-i18n";
+   import Icon from "astro-icon";
+   import { pagesIcons } from "@/lib/config/icons";
+
+   export interface Props {
+      crumbs: {
+         label: string;
+         slug: string;
+         icon?: string;
+      }[];
+   }
+   const { crumbs = [] } = Astro.props;
+
+   const styleAnchor = "anchor no-underline flex items-center justify-start gap-1 capitalize trans-def"
+
+---
+
+<div class="hidden sm:flex mb-2 md:mb-4 xl:mb-6 w-def text-sm opacity-70 hover:opacity-100 trans-def">
+   <ol class="breadcrumb !flex !items-center !justify-start !gap-0">
+      <li class="crumb">
+         <a href={`/${l('home')}`}
+            title={t('common.btn.back_to_home')}
+            aria-label={t('common.btn.back_to_home')}
+            class={styleAnchor}>
+            <Icon name={pagesIcons.home} class="w-4 h-auto" />
+            <span class="mt-1">Home</span>
+         </a>
+      </li>
+
+      { crumbs.map((crumb, i) => (
+         <li class="crumb-separator" aria-hidden>
+            <Icon name="mdi:chevron-right" class="text-primary-800 w-4 h-auto" />
+         </li>
+         <li class="crumb group">
+            <a class={`
+                  ${styleAnchor} text-primary-600 hover:text-secondary-600 trans-def
+                  group-last-of-type:text-primary-800 group-last-of-type:hover:text-secondary-500
+                  group-last-of-type:font-semibold`} 
+               href={crumb.slug}>
+               
+               {crumb.icon && (
+                  <Icon name={crumb.icon} class="w-4 h-auto" />
+               )}
+               <span class="mt-1">{crumb.label}</span>
+            </a>
+         </li>
+      ))}
+   </ol>
+</div>

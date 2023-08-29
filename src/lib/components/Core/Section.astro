@@ -1,0 +1,43 @@
+---
+
+export interface Props {
+   alt?: boolean	
+   id: string
+   title?: string
+   subtitle?: string
+}
+const { 
+   id, 
+   alt = false, 
+   title = '', 
+   subtitle = '',
+   ...attributes
+} = Astro.props
+
+---
+
+<section
+   id={id}
+   class={`
+      w-full mx-auto py-6 sm:py-8 md:py-16 px-0
+      flex flex-col justify-center items-center
+      ${ alt ? 'bg-surface-200 dark:bg-slate-900' : 'bg-transparent'}`}
+>
+   
+   {title !== '' && (
+      <div class="
+            w-def border-4 border-transparent text-center sm:text-start
+            border-t-primary-800/10 sm:border-l-primary sm:border-t-transparent 
+            py-4 sm:py-0 mb-2 sm:mb-8 md:mb-10 lg:mb-12 flex flex-col gap-2 sm:pl-8">
+         <h2>{title}</h2>
+         {subtitle !== '' && (
+            <h3 class="subtitle text-center sm:text-start normal-case">{subtitle}</h3>
+         )}
+      </div>
+   )}
+
+   <div class={`w-def h-full`} {...attributes}>
+      <slot/>
+   </div>
+
+</section>

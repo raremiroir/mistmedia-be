@@ -1,0 +1,188 @@
+---
+   import i18n, { astroI18n, t, l } from "astro-i18n"
+   import { baseLang } from '@/lib/config'
+   
+   import type { NavItemType } from './navbar';
+   // Astro components
+   import Menu             from '@/lib/components/Common/Menu/Menu.svelte';
+	import LanguageSelector from './LanguageSelector.astro'
+   // Svelte components
+   import Button           from '@/components/Common/Button/Button.svelte';
+   import Svg              from '@/components/Media/Svg/Svg.svelte';
+   // Specific components
+   import HeaderLink       from './HeaderLink.svelte';
+   import LightSwitch      from './LightSwitch.svelte';
+   import LangSwitch      from './LangSwitch.svelte';
+   import NavItem      from './NavItem.svelte';
+   import Hamburger from './Hamburger.svelte';
+   import MobileMenu from './MobileMenu.svelte';
+
+   import Logo from '@/lib/components/Media/Logo/Logo.svelte';
+
+   const { pathname } = Astro.url;
+   let currentLocaleSlug = astroI18n.langCode === baseLang ? '' : astroI18n.langCode + '/';
+   // const { width } = Astro.props;
+
+   let navItems: NavItemType[] = [
+      { title: t('nav.home.title'),      href: `${l('')}` },
+      { title: t('nav.about.title'),     href: `${l('over-ons')}` },
+      { title: t('nav.cases.title'),     href: `${l('cases')}` },
+      { title: t('nav.solutions.title'), href: `${l('solutions')}`,
+        items: [
+         { title: t('nav.solutions.items.web.title'),       href: `${l('web')}` },
+         { title: t('nav.solutions.items.graphic.title'),   href: `${l('graphic')}` },
+         { title: t('nav.solutions.items.marketing.title'), href: `${l('marketing')}` },
+         { title: t('nav.solutions.items.3d.title'),        href: `${l('3d')}` },
+         { title: t('nav.solutions.items.av.title'),        href: `${l('av')}` },
+         { title: t('nav.solutions.items.ai.title'),        href: `${l('ai')}` },
+        ]
+      },
+      { title: t('nav.blog.title'),      href: `${l('blog')}` },
+      { title: t('nav.contact.title'),   href: `${l('contact')}` },
+   ];
+
+   console.log(navItems)
+
+   // Classes
+   const headerClass = `
+      flex flex-row w-full z-30
+      justify-between items-center
+      mb-8 fixed top-0 left-0 right-0
+      backdrop-blur-md bg-white dark:bg-slate-900/30 
+		py-4 lg:py-6`;
+
+
+   const currentPath = Astro.url.pathname;
+---
+<script>
+   import { openMobile } from '@/stores'
+
+   window.addEventListener('scroll', () => {
+      let header = document.getElementById('header');
+      if (!!header) {
+         if (window.scrollY > 10) {
+            header.classList.remove('lg:py-6');
+            header.classList.remove('shadow-none');
+            header.classList.add('shadow-xl');
+            header.classList.add('shadow-primary-500/5');
+            header.classList.add('dark:shadow-primary-400/3');
+         } else {
+            header.classList.add('lg:py-6');
+            header.classList.remove('shadow-xl');
+            header.classList.remove('shadow-primary-500/5');
+            header.classList.remove('dark:shadow-primary-400/3');
+            header.classList.add('shadow-none');
+         }
+      }
+   });
+
+   openMobile.subscribe(value => {
+      if (!!value) {
+         document.body.classList.add('overflow-hidden');
+      } else {
+         document.body.classList.remove('overflow-hidden');
+      }
+   })
+</script>
+
+
+<div class={`
+   bg-surface-100 dark:bg-surface-900
+   fixed top-0 left-0 right-0 
+   trans-def w-full h-fit
+   shadow-none py-4 lg:py-0 
+   print:hidden`}>
+
+   <div class="w-def grid grid-cols-2 lg:grid-cols-6 gap-4">
+      <!-- LOGO -->
+      <div class="logo col-span-1 flex items-center">
+         <a href="/{astroI18n.langCode}#" 
+            class="btn btn-sm p-0 h-10 flex items-center hover:bg-surface-500/20"
+            aria-label={t('btn.back_to_home')} title={t('btn.back_to_home')}>
+            <Logo type="both" size={120} class="gap-4 mb-1" client:load />
+         </a>
+      </div>
+      <!-- END LOGO -->
+      <!-- NAV -->
+      <nav class="col-span-4 hidden lg:block">
+         <ul class="flex flex-row items-center justify-between py-4">
+            {navItems.map(({title, href, items}) => (
+               <NavItem title={t(`${title}`)} href={`${href}`} items={items || []} />
+            ))}
+         </ul>
+      </nav>
+      <!-- END NAV -->
+      <!-- ACTIONS -->
+      <div class="col-span-1 items-center justify-end gap-4 flex">
+         <div class="hidden lg:flex items-center justify-end gap-4">
+            <!-- <LangSwitch client:load /> -->
+            <LanguageSelector />
+            <LightSwitch client:load />
+         </div>
+         <Hamburger client:load />
+      </div>
+      <!-- END ACTIONS -->
+   </div>
+
+
+</div>
+
+
+
+<!-- <header id="header" class={headerClass}>
+   <div class={`
+      w-[95%] lg:w-11/12 xl:w-5/6 2xl:w-3/4 
+      grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7
+      gap-2 xl:gap-4 
+      mx-auto`}>
+      <div class="col-span-1 flex items-center justify-start">
+         { currentPath !== '/' && (
+            <Button client:load variant="minimal" color="surface_alt" shadow="none" href="/">
+               <Svg logo size='full' />
+            </Button>
+         )}
+      </div>
+
+      <nav class="hidden lg:flex col-span-4 xl:col-span-5 pt-1 items-center justify-center">
+         <ul class="grid grid-cols-6 w-full gap-1 lg:gap-2">
+            {navItems.map(item => (
+
+               item.items ? (
+                  <><Menu client:load id="nav_menu" event="click">
+                     <span slot="trigger">{item.label}</span>
+                     <div class="flex flex-col gap-2">
+                        {item.items.map(dropdownSection => (
+                           <div class="flex flex-col gap-1">
+                              <span class="text-md uppercase font-black text-primary-800 dark:text-primary-500">{dropdownSection.header}</span>
+                              <Grid>
+                                 {dropdownSection.items.map(dropdownItem => (
+                                    <HeaderLink size="sm" currentPath={pathname} href={dropdownItem.href} textStart>
+                                       {dropdownItem.label}
+                                    </HeaderLink>
+                                 ))}
+                              </Grid>
+                           </div>
+                        ))}   
+                     </div>
+                  </Menu></>
+               ) : (
+                  <><HeaderLink client:load currentPath={pathname} href={item.href}>
+                     {item.label}
+                  </HeaderLink></>
+               )
+
+            ))}
+         </ul>
+      </nav>
+
+      <div class="col-span-1 hidden lg:flex flex-row gap-2 justify-end items-center">
+         <LanguageSelector />
+         <LightSwitch client:load />
+      </div>
+   </div>
+</header>
+
+<Hamburger client:load />
+<MobileMenu navItems={navItems} pathname={pathname} client:load>
+   <LanguageSelector slot="langselect" />
+</MobileMenu> -->
