@@ -1,5 +1,5 @@
 ---
-import { t } from "astro-i18n";
+import i18n, { astroI18n, t, l, extractRouteLangCode, appendQueryString, createStaticPaths } from "astro-i18n";
 
 import { flagsIcons } from "@/lib/config/icons";
 
@@ -14,11 +14,10 @@ export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
   languageMapping?: languageMapping;
 }
 
-// const supportedLanguages = i18next.languages;
-const supportedLanguages = ['nl', 'en'];
-// const currentLanguage = i18next.language;
+const supportedLanguages = astroI18n.langCodes;
 
-const { pathname } = Astro.url;
+let { pathname } = Astro.url;
+pathname = pathname.substring(1);
 
 const { languageMapping, ...attributes } = Astro.props;
 ---
@@ -32,7 +31,7 @@ const { languageMapping, ...attributes } = Astro.props;
   {
     supportedLanguages.map((supportedLanguage: string) => {
       // let value = localizePath(pathname, supportedLanguage);
-      let value = '';
+      let value = l(pathname, undefined, supportedLanguage);
 
       return (
         <a href={value} 
