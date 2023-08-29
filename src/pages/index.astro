@@ -1,15 +1,41 @@
 ---
+import { astroI18n, t } from "astro-i18n";
+import { changeLanguage } from "i18next";
+import PageLayout from "@/layouts/PageLayout.astro";
+import Section from "@/lib/components/Core/Section.astro";
+import HeroHome from "@/lib/components/Common/Hero/HeroHome.svelte";
+import CallToAction from "@/lib/components/Content/CallToAction.astro";
+import Faq from "@/lib/components/Content/Faq.astro";
+
+changeLanguage("nl");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<PageLayout title="Home">
+
+	<HeroHome slot="hero" client:load />
+
+	<!-- SERVICES -->
+   <Section 
+      id={t('pages.home.sections.what_we_do.id')}
+      title={t('pages.home.sections.what_we_do.title')}
+   >
+		<ul class="grid-1-2-3">
+			<!-- {servicesCards.map(({icon, title, key, text}) => (
+				<li><CardDefault
+					{icon} {title}
+					href="/{$lang}/{navigation.solutions.slug[$lang]}/{navigation.solutions.items[key].slug[$lang]}">
+					{text}
+				</CardDefault></li>
+			))} -->
+		</ul>
+   </Section>
+   <!-- END SERVICES -->
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+   
+   <!-- FAQ -->
+   <Faq />
+   <!-- END FAQ -->
+</PageLayout>

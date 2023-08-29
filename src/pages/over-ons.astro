@@ -1,0 +1,124 @@
+---
+   import { t, l } from 'astro-i18n';
+   import { modalStore, type ModalSettings } from '@skeletonlabs/skeleton';
+   import { langs } from '@/lib/config';
+   import { pagesIcons, valuesIcons } from '@/lib/config/icons';
+   import { currentModalRegistry } from '@/stores';
+   
+   import PageLayout from '@/layouts/PageLayout.astro';
+   import Hero from '@/lib/components/Common/Hero/Hero.svelte';
+   import Breadcrumbs from '@/lib/components/Core/Breadcrumbs.astro';
+   import Section from '@/lib/components/Core/Section.astro';
+   import CallToAction from '@/lib/components/Content/CallToAction.astro';
+   import AnimIcon from '@/lib/components/Media/AnimIcon/AnimIcon.svelte';
+   import ModalAboutMe from "@/lib/components/Content/Modals/ModalAboutMe.svelte"
+import Card from '@/lib/components/Common/Card/Card.astro';
+   
+   currentModalRegistry.set({ modalAboutMe: { ref: ModalAboutMe } });
+
+   const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
+   const valuesCards = values.map((value: string) => ({
+      title: t(`pages.about.sections.difference.items[${value}].title`),
+      text: t(`pages.about.sections.difference.items[${value}].text`), 
+      icon: valuesIcons[value]
+   }));
+
+   // Modal: About Me
+   const modalAboutMe: ModalSettings = {
+      type: 'component',
+      title: t('pages.about.sections.about_me.title'),
+      component: 'modalAboutMe',
+   };
+
+   const style = {
+      social_button: `mist-btn !p-0 mist-btn-lg h-14 w-14 group`
+   }
+---
+
+<script lang="ts">
+
+   const aboutMeTriggerBtn = document.getElementById('triggerAboutModal');
+   aboutMeTriggerBtn.addEventListener('click', () => modalStore.trigger(modalAboutMe));
+</script>
+
+<PageLayout title={t('nav.about.title')}>
+
+   <Hero hasLogo subtitle={t('pages.about.intro')}>
+      {t('pages.about.title')}
+   </Hero>
+   <Breadcrumbs slot="breadcrumbs" crumbs={[
+      {label: t('nav.about.title'), slug: l('about'), icon: pagesIcons.about},
+   ]}/>
+
+   <Section 
+      id={t('pages.about.sections.about_me.id')}
+      title={t('pages.about.sections.about_me.title')}
+   >
+      <div class="grid grid-cols-4 gap-8">
+         <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden">
+            <!-- <Image  
+               src='main/miro/MiroStorm922-Color-square.png'
+               alt="Miro Storm - Mist Media"
+               width={400} height={400}
+            /> -->
+         </div>
+         <div class="col-span-3 flex flex-col gap-4">
+            <div class="card card-variant-alt-primary !h-fit">
+               <h3>{t('pages.about.sections.about_me.lead.title')}</h3>
+               <p>{t('pages.about.sections.about_me.lead.text')}</p>
+            </div>
+            <div class="flex justify-start gap-4">
+               <button 
+                  id="triggerAboutModal"
+                  class="mist-btn mist-btn-lg mist-variant-alt-primary">
+                  {t('pages.about.more_about_myself')}
+               </button>
+               <div class="flex justify-start gap-4">
+                  <a href="{socials.linkedin}" target="_blank" rel="noopener noreferrer"
+                     class="{style.social_button} mist-variant-linkedin">
+                     <AnimIcon icon="LinkedInIcon" size={36} animProps={{
+                           dark: 'fill-surface-50 dark:fill-surface-300', norm: 'fill-surface-100 dark:fill-surface-50' }}/>
+                  </a>
+                  
+                  <a href="{socials.facebook}" target="_blank" rel="noopener noreferrer"
+                     class="{style.social_button} mist-variant-facebook">
+                     <AnimIcon icon="FacebookIcon" size={36} animProps={{
+                           norm: 'fill-surface-100', dark: 'fill-surface-50' }}/>
+                  </a>
+                  
+                  <a href="{socials.instagram}" target="_blank" rel="noopener noreferrer"
+                     class="{style.social_button} mist-variant-instagram">
+                     <AnimIcon icon="InstagramIcon" size={36} animProps={{
+                           norm: 'fill-surface-900/10', dark: 'fill-surface-50' }}/>
+                  </a>
+   
+                  <a href="{socials.github}" target="_blank" rel="noopener noreferrer"
+                     class="{style.social_button} mist-variant-github">
+                     <AnimIcon icon="GithubIcon" size={36} animProps={{
+                           norm: '!fill-surface-600', strokeDark: '!stroke-surface-400' }}/>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </Section>
+
+   <Section 
+      alt id={t('pages.about.sections.difference.id')}
+      title={t('pages.about.sections.difference.title')}
+      subtitle={t('pages.about.sections.difference.subtitle')}
+   >
+      <ul class="grid grid-cols-2 gap-8">
+         { valuesCards.map(({title, text, icon}) => (
+            <Card element="li" title={title} icon={icon} type="static">
+               {text}
+            </Card>
+         ))}
+      </ul>
+   </Section>
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+
+</PageLayout>

@@ -1,0 +1,40 @@
+---
+   import PageLayout from '@/layouts/PageLayout.astro';
+   import Hero from '@/lib/components/Common/Hero/Hero.svelte';
+   import Section from '@/lib/components/Core/Section.astro';
+   import CallToAction from '@/lib/components/Content/CallToAction.astro';
+   import FormContact from "@/lib/components/Form/FormContact.svelte"
+
+   import { t } from 'astro-i18n';
+---
+
+<PageLayout title={t('pages.contact.title')}>
+
+   <Hero slot="hero" client:load>
+      {t('pages.contact.title')}
+   </Hero>
+
+   <Section id={t('pages.contact.id')}>
+      <div class="grid-1-3">
+         <!-- CONTACT CARD -->
+         <div class="col-span-1 card !h-fit card-variant-alt-primary">
+            <h2 class="smaller">{t('common.contact.us')}!</h2>
+            <p>
+               {t('common.contact.leads.cta')}<br/><br/>
+               {t('common.contact.leads.answer_within')}
+            </p>
+         </div>
+         <!-- END CONTACT CARD -->
+         <!-- CONTACT FORM -->
+         <div class="col-span-1 md:col-span-2 card card-variant-alt-primary">
+            <FormContact client:load />
+         </div>
+         <!-- END CONTACT FORM -->
+      </div>
+   </Section>
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+
+</PageLayout>
