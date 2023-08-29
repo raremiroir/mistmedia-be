@@ -1,11 +1,54 @@
 ---
+   import { astroI18n } from "astro-i18n"
+   astroI18n.init(Astro)
 
-   const { pathname } = Astro.url;
+   import { website } from '@/lib/config';
+
+   import Layout from '@/lib/components/Core/Layout.svelte';
+   import Head from '@/lib/components/Core/Head.astro';
+   import Navbar from "@/lib/components/Core/Header/Navbar.astro";
+   import Footer from '@/lib/components/Core/Footer.astro';
    
+   export interface Props {
+      title: string;
+      description?: string;
+   }
 
+   const { title, description = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html>
+<html class="
+   !w-screen !max-w-full !overflow-x-hidden 
+   scroll-mx-0 bg-white dark:bg-slate-900 dark:text-white">
+
+   <head>
+      <Head 
+        title={`${website.title} | ${title}`} 
+        description={description?? website.description} />
+      <!-- <BaseHeadSvelte client:load /> -->
+  
+      <slot name="head"/>
+    </head>
+  
+    <body class="min-h-screen !w-screen !max-w-full !overflow-x-hidden">
+      <!-- <Header width={widths} /> -->
+      <div class='mx-auto flex flex-col w-full h-full'>
+
+         <Layout client:load>
+            <Navbar slot="header" />
+            <slot slot="breadcrumbs" name="breadcrumbs"></slot>
+            <slot slot="hero" name="hero"></slot>
+            
+            <slot />
+            <slot slot="pageFooter" name="pageFooter" />
+            <!-- <Footer slot="footer" /> -->
+         </Layout>
+      </div>
+  
+      <!-- <BaseScripts/> -->
+      <!-- <script type="module" src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+      <script type="module" src="node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.min.js"></script> -->
+    </body>
 
 </html>
