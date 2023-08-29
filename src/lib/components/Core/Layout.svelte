@@ -24,8 +24,5 @@
    <main class="w-full mx-auto p-0 m-0">
       <slot></slot>
    </main>
-   <svelte:fragment slot="pageFooter">
-      <div class="w-def"><slot name="pageFooter"/></div>
-   </svelte:fragment>
-   <slot name="footer" slot="footer" />
+   <slot name="footer" slot="pageFooter" />
 </AppShell>
