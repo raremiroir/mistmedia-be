@@ -1,9 +1,10 @@
 ---
 import CardMinimal from './CardMinimal.astro'
 import CardStatic from './CardStatic.svelte'
+import CardDefault from './CardDefault.svelte'
 
 export interface Props {
-   type: 'minimal' | 'static'
+   type?: 'minimal' | 'static' | 'default';
    icon?: string
    title?: string
    href?: string
@@ -11,7 +12,7 @@ export interface Props {
 }
 
 const {
-   type = 'minimal', 
+   type = 'default', 
    icon = '', 
    title = '', 
    href = '',
@@ -20,5 +21,6 @@ const {
 
 ---
 
-{type === 'minimal' && <CardMinimal {...{icon, title, href}} />}
-{type === 'static' && <CardStatic {...{icon, title, element}} />}
+{type === 'default' && <CardDefault {...{icon, title, href}}><slot/></CardDefault>}
+{type === 'minimal' && <CardMinimal {...{icon, title, href}}><slot/></CardMinimal>}
+{type === 'static' && <CardStatic {...{icon, title, element}}><slot/></CardStatic>}
