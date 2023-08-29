@@ -31,14 +31,13 @@
          {klass}'>
       <h1><slot>Title</slot></h1>
       {#if subtitle !== ''}
-      
-      <Typewriter 
-         mode="concurrent" cursor delay={300} keepCursorOnFinish
-         interval={10} element="span">
-         <p class="text-2xl font-titlemono italic text-surface-700-200-token">
-               {subtitle}
-         </p>
-      </Typewriter>
+         <Typewriter 
+            mode="concurrent" cursor delay={300} keepCursorOnFinish
+            interval={10} element="span">
+            <p class="text-2xl font-titlemono italic text-surface-700-200-token">
+                  {subtitle}
+            </p>
+         </Typewriter>
       {/if}
    </div>
 </div>
