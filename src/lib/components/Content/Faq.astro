@@ -1,0 +1,54 @@
+---
+import { t } from 'astro-i18n';
+import Section from "@/lib/components/Core/Section.astro"
+import Accordion from "../Common/Accordion/Accordion.svelte";
+import AccordionItem from "../Common/Accordion/AccordionItem.svelte";
+
+const faqItems = [
+   {
+      question: t('pages.home.sections.faq.items.1.question'),
+      answer: t('pages.home.sections.faq.items.1.answer'),
+   },
+   {
+      question: t('pages.home.sections.faq.items.2.question'),
+      answer: t('pages.home.sections.faq.items.2.answer'),
+   },
+   {
+      question: t('pages.home.sections.faq.items.3.question'),
+      answer: t('pages.home.sections.faq.items.3.answer'),
+   },
+   {
+      question: t('pages.home.sections.faq.items.4.question'),
+      answer: t('pages.home.sections.faq.items.4.answer'),
+   },
+]
+
+---
+
+<Section 
+   alt id={t('pages.home.sections.faq.id')}
+   title={`${t('pages.home.sections.faq.title')}`}
+   subtitle={`${t('pages.home.sections.faq.text')}`}
+>
+   <Accordion element="ul" client:load>
+
+      { faqItems.map(item => 
+         <AccordionItem 
+            client:load
+            icon="ph:question-duotone" element="li"
+            title={item.question}
+         >
+            <p>{item.answer}</p>
+         </AccordionItem>
+      )}
+
+      <!-- {#each Object.keys($LL.pages.home.sections.faq.items) as item}
+         <AccordionItem
+            icon="ph:question-duotone" element="li"
+            title={$LL.pages.home.sections.faq.items[item].question()}
+         >
+            <p>{$LL.pages.home.sections.faq.items[item].answer()}</p>
+         </AccordionItem>
+      {/each} -->
+   </Accordion>
+</Section>

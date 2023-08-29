@@ -1,0 +1,28 @@
+---
+   import { astroI18n, t, l } from "astro-i18n";
+   import Section from "@/lib/components/Core/Section.astro";
+   import Card from "@/lib/components/Common/Card/Card.astro"
+import { commonIcons } from "@/lib/config/icons";
+---
+
+<Section 
+   id={t('pages.common.cta.id')}
+   title={t('pages.common.cta.title')}
+> 
+   <div class="w-full h-full flex flex-col md:flex-row gap-4 lg:gap-8">
+      <Card
+         type="minimal"
+         icon={commonIcons.contact}
+         title={t('common.contact.us')}
+         href={l('contact')}>
+         {t('contact.leads.cta')}
+      </Card>
+      <Card
+         type="minimal"
+         icon={commonIcons.all_services}
+         title={t('services.common.our_services')}
+         href={l('solutions')}>
+         {t('services.common.leads.cta')}
+      </Card>
+   </div>
+</Section>
