@@ -1,10 +1,23 @@
 ---
-import { astroI18n, t } from "astro-i18n";
+import { t, l } from "astro-i18n";
+import services from "@/lib/config/services";
+
 import PageLayout from "@/layouts/PageLayout.astro";
 import Section from "@/lib/components/Core/Section.astro";
 import HeroHome from "@/lib/components/Common/Hero/HeroHome.svelte";
 import CallToAction from "@/lib/components/Content/CallToAction.astro";
 import Faq from "@/lib/components/Content/Faq.astro";
+import Card from "@/lib/components/Common/Card/Card.astro";
+
+const servicesCards: {icon: string, title: string, key: string, text: string}[] = Object.entries(services).map((
+      [key, { enabled, icon }]
+   ) => {
+      return {
+         enabled, key, icon: icon,
+         title: t(`services.${key}.intro_card.title`),
+         text: t(`services.${key}.intro_card.text`),
+      }
+   }).filter((item) => item.enabled);
 ---
 
 <PageLayout title="Home">
@@ -17,13 +30,13 @@ import Faq from "@/lib/components/Content/Faq.astro";
       title={t('pages.home.sections.what_we_do.title')}
    >
 		<ul class="grid-1-2-3">
-			<!-- {servicesCards.map(({icon, title, key, text}) => (
-				<li><CardDefault
+			{servicesCards.map(({icon, title, key, text}) => (
+				<li><Card
 					{icon} {title}
-					href="/{$lang}/{navigation.solutions.slug[$lang]}/{navigation.solutions.items[key].slug[$lang]}">
+					href={l(key)}>
 					{text}
-				</CardDefault></li>
-			))} -->
+				</Card></li>
+			))}
 		</ul>
    </Section>
    <!-- END SERVICES -->
