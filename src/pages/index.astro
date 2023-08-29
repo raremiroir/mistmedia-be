@@ -9,11 +9,11 @@ import CallToAction from "@/lib/components/Content/CallToAction.astro";
 import Faq from "@/lib/components/Content/Faq.astro";
 import Card from "@/lib/components/Common/Card/Card.astro";
 
-const servicesCards: {icon: string, title: string, key: string, text: string}[] = Object.entries(services).map((
-      [key, { enabled, icon }]
+const servicesCards: {icon: string, title: string, slug: string, key: string, text: string}[] = Object.entries(services).map((
+      [key, { enabled, icon, slug }]
    ) => {
       return {
-         enabled, key, icon: icon,
+         enabled, key, icon: icon, slug,
          title: t(`services.${key}.intro_card.title`),
          text: t(`services.${key}.intro_card.text`),
       }
@@ -30,10 +30,10 @@ const servicesCards: {icon: string, title: string, key: string, text: string}[] 
       title={t('pages.home.sections.what_we_do.title')}
    >
 		<ul class="grid-1-2-3">
-			{servicesCards.map(({icon, title, key, text}) => (
+			{servicesCards.map(({icon, title, key, text, slug}) => (
 				<li><Card
 					{icon} {title}
-					href={l(key)}>
+					href={l(`${l('solutions')}/${slug}`)}>
 					{text}
 				</Card></li>
 			))}

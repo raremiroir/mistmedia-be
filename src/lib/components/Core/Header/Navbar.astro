@@ -11,6 +11,7 @@
    import Hamburger from './Hamburger.svelte';
 
    import Logo from '@/lib/components/Media/Logo/Logo.svelte';
+   import services from "@/lib/config/services";
 
    const { pathname } = Astro.url;
    let currentLocaleSlug = astroI18n.langCode === baseLang ? '' : astroI18n.langCode + '/';
@@ -22,12 +23,12 @@
       { title: t('nav.cases.title'),     href: `${l('cases')}` },
       { title: t('nav.solutions.title'), href: `${l('solutions')}`,
         items: [
-         { title: t('nav.solutions.items.web.title'),       href: `${l('web')}` },
-         { title: t('nav.solutions.items.graphic.title'),   href: `${l('graphic')}` },
-         { title: t('nav.solutions.items.marketing.title'), href: `${l('marketing')}` },
-         { title: t('nav.solutions.items.3d.title'),        href: `${l('3d')}` },
-         { title: t('nav.solutions.items.av.title'),        href: `${l('av')}` },
-         { title: t('nav.solutions.items.ai.title'),        href: `${l('ai')}` },
+         { title: t('nav.solutions.items.web.title'),       href: `${l(`solutions/${services.web.slug}`)}` },
+         { title: t('nav.solutions.items.graphic.title'),   href: `${l(`solutions/${services.graphic.slug}`)}` },
+         { title: t('nav.solutions.items.marketing.title'), href: `${l(`solutions/${services.marketing.slug}`)}` },
+         { title: t('nav.solutions.items.3d.title'),        href: `${l(`solutions/${services.three_d.slug}`)}` },
+         { title: t('nav.solutions.items.av.title'),        href: `${l(`solutions/${services.av.slug}`)}` },
+         { title: t('nav.solutions.items.ai.title'),        href: `${l(`solutions/${services.ai.slug}`)}` },
         ]
       },
       { title: t('nav.blog.title'),      href: `${l('blog')}` },
