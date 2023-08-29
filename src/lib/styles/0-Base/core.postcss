@@ -1,0 +1,39 @@
+:root {
+   --cursor-width: 4px;
+   --cursor-color: #0f8a7d;
+}
+
+* {
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+html, body {
+   height: 100%;
+   width: 100%;
+   min-height: 100vh;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+   @apply !bg-surface-50 dark:!bg-slate-800;
+}
+
+.variant-alt-primary {
+    @apply bg-surface-300 hover:bg-primary-50 border-surface-400 hover:border-primary-500/30 shadow-surface-500;
+}
+.variant-alt2-primary {
+    @apply bg-white hover:bg-primary-100 border-surface-400 hover:border-primary-600/30 shadow-surface-500;
+}
+
+.w-def {
+   @apply mx-auto w-[98%] xs:w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%];
+}
+
+.flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.trans-fast { transition: all .2s ease-in-out; }
+.trans-def { transition: all .3s ease-in-out; }
+.trans-slow { transition: all .5s ease-in-out; }

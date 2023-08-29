@@ -1,0 +1,42 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 { 
+   @apply font-titlemono tracking-wider; 
+   width: 100%; 
+   text-transform: capitalize;
+   white-space: wrap;
+   text-align: start;
+   transition: all 0.3s ease-in-out;
+}
+
+h1, h2, .h1, .h2 {
+   @apply text-surface-800-100-token;
+   font-weight: 900 !important;
+}
+h3, h4, .h3, .h4 {
+   @apply text-surface-900-50-token;
+   font-weight: 700 !important;
+}
+h5, h6, .h5, .h6 {
+   @apply text-surface-950 dark:text-white;
+   font-weight: 600 !important;
+}
+
+h1, .h1 { 
+   @apply !text-8xl;
+   line-height: 1.1; 
+   margin: 0; 
+}
+
+h2, .h2 { 
+   @apply !text-5xl; 
+}
+h2.large, .h2.large { @apply !text-6xl; }
+h2.small, .h2.small { @apply !text-4xl; }
+h2.smaller, .h2.smaller { @apply !text-2xl; }
+h2.smallest, .h2.smallest { @apply !text-xl; }
+
+h3, .h3 { 
+   @apply !text-2xl; 
+   line-height: 1.1;
+}
+h3.large, .h3.large { @apply !text-3xl; }
