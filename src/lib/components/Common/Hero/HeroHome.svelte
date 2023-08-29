@@ -1,0 +1,86 @@
+<script lang="ts">
+   import Logo from "../../Media/Logo/Logo.svelte";
+   import Typewriter from "svelte-typewriter/Typewriter.svelte";
+   import { astroI18n, t, l } from "astro-i18n";
+
+   const subtitleClass = '!text-surface-800-100-token !text-5xl'
+
+   $: subtitleItems = 
+      astroI18n.langCode === 'en' ? 
+      [
+         "Design Graphics",
+         "Design Websites",
+         "Develop Websites",
+         "Visualise 3D Models",
+         "Animate 3D Models",
+         "Create Multimedia",
+         "Create Websites",
+         "Deploy Websites",
+         "Deliver Graphics",
+         "Optimise Websites",
+         "Promote Websites",
+         "Design Logos",
+         "Love Working Together"
+      ]
+      : astroI18n.langCode === 'nl' ?
+      [
+         "Ontwerpen Graphics",
+         "Ontwerpen Websites",
+         "Ontwikkelen Websites",
+         "Visualiseren 3D Modellen",
+         "Animeren 3D Modellen",
+         "Creëren Multimedia",
+         "Creëren Websites",
+         "Lanceren Websites",
+         "Leveren Graphics",
+         "Optimaliseren Websites",
+         "Promoten Websites",
+         "Ontwerpen Logos",
+         "Werken Graag Samen"
+      ] : [];
+   
+</script>
+
+<div id="hero" 
+   class="
+      w-def mt-8 md:mt-4 2xl:mt-0
+      flex flex-col gap-8 items-center justify-start">
+   <div class="grid grid-cols-5 gap-8">
+      <!-- LOGO ANIM -->
+      <div class="col-span-1">
+         <Logo type="animIcon" />
+      </div>
+      <!-- END LOGO ANIM -->
+   
+      <div class="col-span-4 flex flex-col gap-1 items-start justify-start">
+         <!-- LOGO -->
+         <Logo type="lettering" />
+         <!-- END LOGO -->
+         <!-- TYPEWRITER SLOGAN -->
+         <span class="flex flex-row items-end !leading-none font-titlemono font-bold">
+            <span class="{subtitleClass}">We&nbsp;</span>
+            <Typewriter 
+               mode="loopRandom" cursor keepCursorOnFinish delay={0}
+               interval={80} wordInterval={1500} unwriteInterval={50} 
+               element="span">
+                  {#each subtitleItems as item}
+                     <span class="whitespace-nowrap {subtitleClass}">{item}</span>
+                  {/each}
+            </Typewriter>
+         </span>
+         <!-- END TYPEWRITER SLOGAN -->
+      </div>
+   </div>
+   <!-- ACTIONS -->
+   <div class="w-full lg:w-3/5 mx-auto grid grid-cols-2 gap-8">
+      <a href="#{t('pages.home.sections.what_we_do.id')}" 
+         class="col-span-1 w-full mist-btn mist-btn-xl mist-variant-filled-primary">
+         {t('pages.home.hero.buttons.what_do_we_do')}
+      </a>
+      <a href="{l('solutions')}" 
+         class="col-span-1 w-full mist-btn mist-btn-xl mist-variant-alt-primary">
+         {t('pages.home.hero.buttons.discover_our_services')}
+      </a>
+   </div>
+   <!-- END ACTIONS -->
+</div>

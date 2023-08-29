@@ -1,0 +1,24 @@
+---
+import CardMinimal from './CardMinimal.astro'
+import CardStatic from './CardStatic.svelte'
+
+export interface Props {
+   type: 'minimal' | 'static'
+   icon?: string
+   title?: string
+   href?: string
+   element?: string
+}
+
+const {
+   type = 'minimal', 
+   icon = '', 
+   title = '', 
+   href = '',
+   element = 'div'
+} = Astro.props
+
+---
+
+{type === 'minimal' && <CardMinimal {...{icon, title, href}} />}
+{type === 'static' && <CardStatic {...{icon, title, element}} />}

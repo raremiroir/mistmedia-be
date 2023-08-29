@@ -1,0 +1,22 @@
+---
+   import Icon from 'astro-icon'
+
+   export interface Props {
+      icon: string,
+      href: string,
+      title: string
+   }
+   const { icon, href, title } = Astro.props;
+---
+
+<a href={href} 
+   class="card card-hover card-active card-variant-alt-primary !rounded-tile-lg"
+>
+   <div class="header">
+      <Icon name={icon} class="w-8"/>
+      <h3 class="large">{title}</h3>
+   </div>
+   <div class="content">
+      <p><slot/></p>
+   </div>
+</a>
