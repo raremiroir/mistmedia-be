@@ -126,7 +126,13 @@
       "title": "Blog",
       "slug": "blog",
       "intro": "Scroll down to read our latest blog posts!",
-      "no_posts": "At the moment, we haven't published any blog posts yet. Check back soon!"
+      "no_posts": "At the moment, we haven't published any blog posts yet. Check back soon!",
+      "info": {
+         "dates": {
+            "created": "Published on",
+            "updated": "Last updated on"
+         }
+      }
    },
    "contact": {
       "title": "Contact",

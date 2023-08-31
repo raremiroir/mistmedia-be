@@ -126,7 +126,13 @@
       "title": "Blog",
       "slug": "blog",
       "intro": "Scroll naar beneden om onze laatste blogposts te lezen!",
-      "no_posts": "Op dit moment hebben we nog geen blogposts gepubliceerd. Kom snel nog eens terug!"
+      "no_posts": "Op dit moment hebben we nog geen blogposts gepubliceerd. Kom snel nog eens terug!",
+      "info": {
+         "dates": {
+            "created": "Gepubliceerd op",
+            "updated": "Laatst bijgewerkt op"
+         }
+      }
    },
    "contact": {
       "title": "Contact",
