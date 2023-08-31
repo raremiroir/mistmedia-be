@@ -6,6 +6,8 @@ import vercel from "@astrojs/vercel/serverless";
 import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import { astroImageTools } from "astro-imagetools";
+
 
 import prefetch from "@astrojs/prefetch";
 
@@ -23,6 +25,7 @@ export default defineConfig({
         applyBaseStyles: false,
       }
     }), 
+    astroImageTools,
     image(),
     partytown(), 
     sitemap(), 
