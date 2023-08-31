@@ -1,0 +1,22 @@
+---
+import { t } from 'astro-i18n';
+export interface Props {
+	date: Date;
+	type: 'updated' | 'published';
+}
+
+const { date, type } = Astro.props;
+---
+
+<time 
+	datetime={date.toISOString()}
+	class={`font-body font-semibold`}>
+	{ type === 'updated' && t('common.blog.info.dates.updated') || t('common.blog.info.dates.created') }
+	{
+		date.toLocaleDateString('en-us', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})
+	}
+</time>
