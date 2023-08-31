@@ -1,10 +1,11 @@
 ---
    import { t, l } from 'astro-i18n';
    import { modalStore, type ModalSettings } from '@skeletonlabs/skeleton';
-   import { langs } from '@/lib/config';
+   import { langs, socials } from '@/lib/config';
    import { pagesIcons, valuesIcons } from '@/lib/config/icons';
    import { currentModalRegistry } from '@/stores';
    
+   // Components
    import PageLayout from '@/layouts/PageLayout.astro';
    import Hero from '@/lib/components/Common/Hero/Hero.svelte';
    import Breadcrumbs from '@/lib/components/Core/Breadcrumbs.astro';
@@ -12,16 +13,23 @@
    import CallToAction from '@/lib/components/Content/CallToAction.astro';
    import AnimIcon from '@/lib/components/Media/AnimIcon/AnimIcon.svelte';
    import ModalAboutMe from "@/lib/components/Content/Modals/ModalAboutMe.svelte"
-import Card from '@/lib/components/Common/Card/Card.astro';
+   import Card from '@/lib/components/Common/Card/Card.astro';
    
    currentModalRegistry.set({ modalAboutMe: { ref: ModalAboutMe } });
 
+   // Images
+   import { Image } from 'astro:assets'
+   import ImgMiroStorm from '@/lib/assets/img/miro_storm-color.png'
+
+
+   // Data
    const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
    const valuesCards = values.map((value: string) => ({
       title: t(`pages.about.sections.difference.items[${value}].title`),
       text: t(`pages.about.sections.difference.items[${value}].text`), 
       icon: valuesIcons[value]
    }));
+
 
    // Modal: About Me
    const modalAboutMe: ModalSettings = {
@@ -56,11 +64,12 @@ import Card from '@/lib/components/Common/Card/Card.astro';
    >
       <div class="grid grid-cols-4 gap-8">
          <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden">
-            <!-- <Image  
-               src='main/miro/MiroStorm922-Color-square.png'
+            <Image  
+               src={ImgMiroStorm}
                alt="Miro Storm - Mist Media"
                width={400} height={400}
-            /> -->
+            />
+            <!-- <img src={ImgMiroStorm.src} width={ImgMiroStorm.width} height={ImgMiroStorm.height} alt="Miro Storm - Mist Media Founder" /> -->
          </div>
          <div class="col-span-3 flex flex-col gap-4">
             <div class="card card-variant-alt-primary !h-fit">
@@ -74,26 +83,26 @@ import Card from '@/lib/components/Common/Card/Card.astro';
                   {t('pages.about.more_about_myself')}
                </button>
                <div class="flex justify-start gap-4">
-                  <a href="{socials.linkedin}" target="_blank" rel="noopener noreferrer"
-                     class="{style.social_button} mist-variant-linkedin">
+                  <a href={socials.linkedin} target="_blank" rel="noopener noreferrer"
+                     class={`${style.social_button} mist-variant-linkedin`}>
                      <AnimIcon icon="LinkedInIcon" size={36} animProps={{
                            dark: 'fill-surface-50 dark:fill-surface-300', norm: 'fill-surface-100 dark:fill-surface-50' }}/>
                   </a>
                   
-                  <a href="{socials.facebook}" target="_blank" rel="noopener noreferrer"
-                     class="{style.social_button} mist-variant-facebook">
+                  <a href={socials.facebook} target="_blank" rel="noopener noreferrer"
+                     class={`${style.social_button} mist-variant-facebook`}>
                      <AnimIcon icon="FacebookIcon" size={36} animProps={{
                            norm: 'fill-surface-100', dark: 'fill-surface-50' }}/>
                   </a>
                   
-                  <a href="{socials.instagram}" target="_blank" rel="noopener noreferrer"
-                     class="{style.social_button} mist-variant-instagram">
+                  <a href={socials.instagram} target="_blank" rel="noopener noreferrer"
+                     class={`${style.social_button} mist-variant-instagram`}>
                      <AnimIcon icon="InstagramIcon" size={36} animProps={{
                            norm: 'fill-surface-900/10', dark: 'fill-surface-50' }}/>
                   </a>
    
-                  <a href="{socials.github}" target="_blank" rel="noopener noreferrer"
-                     class="{style.social_button} mist-variant-github">
+                  <a href={socials.github} target="_blank" rel="noopener noreferrer"
+                     class={`${style.social_button} mist-variant-github`}>
                      <AnimIcon icon="GithubIcon" size={36} animProps={{
                            norm: '!fill-surface-600', strokeDark: '!stroke-surface-400' }}/>
                   </a>

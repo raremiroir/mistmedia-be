@@ -3,13 +3,9 @@ import { defineConfig } from 'astro/config';
 import svelte, { vitePreprocess } from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
-import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
-import { astroImageTools } from "astro-imagetools";
 import { purgeCss } from 'vite-plugin-tailwind-purgecss'
-
-
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
@@ -26,7 +22,6 @@ export default defineConfig({
         applyBaseStyles: false,
       }
     }), 
-    astroImageTools,
     partytown(), 
     sitemap(), 
     prefetch()
