@@ -27,38 +27,53 @@ const { solution } = Astro.params as { solution: string };
 
 export const prerender = true;
 
+// Get correct item key from navigation solutions
+const itemKey: string = Object.keys(navigation.solutions.items).find((key) => {
+   const solutionItem = navigation.solutions.items[key];
+   return solutionItem.slug.nl === solution || solutionItem.slug.en === solution;
+}) as string;
+
+
 // === Data ===
+
 // FEATURE CARDS
-const featureCards = Object.entries(services[solution].content.features).map(([key, icon]: [string, string]) => {
+const featureCards = Object.entries(services[itemKey].content.features).map(([key, icon]: [string, string]) => {
       return {
-         title: t(`services.${solution}.features.${key}.title`), title_alt: t(`services.${solution}.features.${key}.title_alt`),
-         text: t(`services.${solution}.features.${key}.text`), icon
+         title: t(`services.${itemKey}.features.${key}.title`), 
+         title_alt: t(`services.${itemKey}.features.${key}.title_alt`),
+         text: t(`services.${itemKey}.features.${key}.text`), 
+         icon
       }
    })
 const featureGrid = featureCards.length % 3 === 0 ? 'grid-1-2-3' : 'grid-1-2-4';
+
 // SERVICES CARDS
-const servicesCards = Object.entries(services[solution].content.services).map(([key, icon]: [string, string]) => {
-   return { title: t(`services.${solution}.services.${key}.title`), text: t(`services.${solution}.services.${key}.text`), icon }
+const servicesCards = Object.entries(services[itemKey].content.services).map(([key, icon]: [string, string]) => {
+   return { 
+      title: t(`services.${itemKey}.services.${key}.title`), 
+      text: t(`services.${itemKey}.services.${key}.text`), 
+      icon 
+   }
 })
-const servicesGrid = servicesCards.length % 3 === 0 ? 'grid-1-2-3' : 'grid-1-2-4';
+const servicesGrid = servicesCards.length % 3 === 0 || servicesCards.length === 5 ? 'grid-1-2-3' : 'grid-1-2-4';
+
 // CONTENT
 const content = {
-   title: t(`services.${solution}.title`),
-   intro: t(`services.${solution}.intro`),
-   services_intro: t(`services.${solution}.services_intro`),
+   title: t(`services.${itemKey}.title`),
+   intro: t(`services.${itemKey}.intro`),
+   services_intro: t(`services.${itemKey}.services_intro`),
 }
 ---
 
-
-<PageLayout title={navigation.solutions.items[solution].slug[currentLocale]}>
+<PageLayout title={navigation.solutions.items[itemKey].slug[currentLocale]}>
    
    <Hero slot="hero" subtitle={content.intro}>
       {content.title}
    </Hero>
 
    <Breadcrumbs slot="breadcrumbs" crumbs={[
-      {label: navigation.solutions.title[currentLocale], slug: `/${navigation.solutions.slug[solution]}`, icon: pagesIcons.solutions},
-      {label: navigation.solutions.items[solution].title[solution], slug: `/${navigation.solutions.slug[solution]}/${navigation.solutions.items[solution].slug[solution]}`, icon: servicesIcons[solution]},
+      {label: navigation.solutions.title[currentLocale], slug: `/${navigation.solutions.slug[itemKey]}`, icon: pagesIcons.solutions},
+      {label: navigation.solutions.items[itemKey].title[currentLocale], slug: `/${navigation.solutions.slug[currentLocale]}/${navigation.solutions.items[itemKey].slug[currentLocale]}`, icon: servicesIcons[itemKey]},
    ]}/>
    
    <!-- FEATURES SECTION -->
@@ -93,9 +108,9 @@ const content = {
             {:then { client, solution, tags, title, description, cover_img, gallery, href }}
                   <CardPortfolio 
                      img={cover_img} alt={title} itemImg={gallery[0]}
-                     {href} title={title} description={description[solution]}
+                     {href} title={title} description={description[itemKey]}
                      ariaLabel={title} {client} {solution} {tags}>
-                     {@html description[solution]}
+                     {@html description[itemKey]}
                   </CardPortfolio>
             {/await}
          {:else}
