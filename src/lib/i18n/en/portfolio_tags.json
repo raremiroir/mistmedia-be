@@ -1,0 +1,34 @@
+{
+   "solutions": {
+      "web": "Web",
+      "graphic": "Graphic design",
+      "seo": "SEO",
+      "marketing": "Marketing",
+      "three_d": "3D",
+      "av": "Audiovisual",
+      "photo": "Photography",
+      "ai": "AI"
+   },
+   "tags": {
+      "web_design": "Web design",
+      "web_development": "Web development",
+      "web_management": "Web management",
+      "seo": "SEO",
+      "marketing": "Marketing",
+      "hosting": "Hosting",
+      "graphic_design": "Graphic design",
+      "logo_design": "Logo design",
+      "branding": "Branding",
+      "print_design": "Print design",
+      "social_media": "Social media",
+      "photography": "Photography",
+      "video": "Video",
+      "copywriting": "Copywriting",
+      "illustration": "Illustration",
+      "animation": "Animation",
+      "webshop": "Webshop",
+      "wordpress": "Wordpress",
+      "content_creation": "Content creation",
+      "content_management": "Content management"
+   }
+}

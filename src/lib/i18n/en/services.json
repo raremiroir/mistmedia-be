@@ -1,0 +1,284 @@
+{
+   "common": {
+      "our_services": "Our services",
+      "leads": {
+         "cta": "See what we can do for you and your business. We offer a wide range of services to help you achieve your goals."
+      }
+   },
+   "web": {
+      "title": "Web Design & Development",
+      "intro": "Your online presence is extremely important in 2023. We design websites that not only look great, but also function great. From simple websites to complex web shops.",
+      "title_short": "Web",
+      "slug": "web",
+      "intro_card": {
+         "title": "Website / Webshop",
+         "text": "We design and develop websites from top to bottom. Handwritten code, optimized specifically for your use-case!"
+      },
+      "services_intro": "We offer the full package, from web design to web hosting, from web security to seo. We also offer these services separately, so you can choose what you need.",
+      "features": {
+         "fast": {
+            "title": "Lightning fast",
+            "title_alt": "Lightning-fast Loading Times",
+            "text": "<strong><em>A fast load time can greatly affect the success of your website. Mist Media takes this into strong consideration.</em><br/><br/></strong><strong>A website must be fast. There is no doubt about that.</strong><br/>According to studies, <strong>25% of mobile visitors</strong> leave the website if it takes longer than 4 seconds to load.<br/>A 2-second delay leads to a rating of 13%, which is better, but far from optimal. Not only is fast page load time important for <strong>user experience</strong>, but it is also very important for <strong>search engine ranking</strong>. Google has been using page speed as a ranking factor since 2010, and it is becoming increasingly important. It is recommended to aim for a <strong>load time of less than half a second</strong> (on an average network), and that is exactly what we do.<br/><br/>We use <strong>innovative, cutting-edge technologies</strong> to write your website so that it loads as fast as possible, and we make sure it stays that way."
+         },
+         "responsive": {
+            "title": "Responsive",
+            "title_alt": "Mobile-First Responsiveness",
+            "text": ""
+         },
+         "secure": {
+            "title": "Secure",
+            "title_alt": "Safety First",
+            "text": "<strong><em>We make sure your website is safe for your visitors so they can browse without worry.</em></strong><br/><br/>It is of fundamental importance that a website be secure.<br/><br/>In today's digital age, where cyber threats are widespread, it is essential to take a website's security 'aux sérieux'. <strong>A secure website protects both the owner and visitors from potential risks</strong>, such as data breaches, malware, phishing attacks and other forms of cybercrime.<br/><br/>When designing and developing our websites, <strong>we place a strong emphasis on security</strong>. We implement security measures such as SSL certificates, firewalls and regular updates to software and technology.<br/>This helps protect sensitive data, prevent unauthorized access and ensure website integrity.<br/><br/><strong>A secure website creates trust with visitors</strong> and encourages them to interact with content, fill out forms, make purchases and share information.<br/>It not only protects the visitors, but also the <strong>reputation of the website owner</strong>.<br/><br/>We will always ensure that <strong>security is a top priority</strong>. Your peace of mind and the protection of your data are of utmost importance to us."
+         },
+         "accessible": {
+            "title": "Accessibility",
+            "title_alt": "Accessible for Everyone",
+            "text": "<strong><em>We make sure your website is accessible for everyone, regardless of their disability.</em></strong><br/><br/><h3>So what do we mean by accessibility?</h3><br/><br/>Web accessibility means that websites and web apps are designed and coded so that people with disabilities can use them correctly. Currently, there are still far too many websites with accessibility barriers, making it extremely difficult or even impossible for some people to use them.<br/><br/>For Mist Media, accessibility means a website that is <strong>accessible from all browsers and on all devices, and above all, accessible to everyone</strong>, regardless of age, web knowledge, social challenges or <strong>limitations</strong> (temporary and permanent).<br/><br/>We make sure your website is accessible to everyone, and that you don't lose visitors because they can't use your website."
+         },
+         "seo": {
+            "title": "SEO Optimized",
+            "title_alt": "Search Engine Optimization",
+            "text": "<h3>What is SEO?</h3><br/><br/>SEO stands for Search Engine Optimization, and is a collection of techniques that make your website rank higher in search engines such as Google, Bing and Yahoo.<br/><br/>You can compare it to a busy shopping street. The stores that stand out the most, and that are visited the most, are the stores that sell the most.This is also true on the internet. The higher you rank in search engines, and therefore the more visible you are, the more visitors you get, and the more customers you get.Now, a store obviously owes its customers not only to its visibility, but also to the quality of its products, its brand awareness, and so on. With SEO, there are also a lot of other factors that can have an impact on the ranking of your website.<br/><br/>SEO is one of the most important factors that determine whether your business is successful online or not. We make sure that your website scores well in these SEO factors so that your signboard also stands out in this busy shopping street."
+         },
+         "multilingual": {
+            "title": "Multilingual",
+            "title_alt": "Serve your Customers in their Own Language",
+            "text": "Text here."
+         },
+         "scalable": {
+            "title": "Scalable",
+            "title_alt": "Scalable to your Needs",
+            "text": "Text here."
+         },
+         "support": {
+            "title": "Consultation",
+            "title_alt": "Support & Consultation",
+            "text": "Creating a successful online presence is not only about building a great website, but also about providing the <strong>adequate technical support</strong>. Therefore, we offer a wide range of services to ensure that your website runs smoothly and you have <strong>full support</strong> in all areas.<br/><br/>Whether it's technical issues, questions about the functionality of your website or advice on improving your online presence, our <strong>knowledge and expertise</strong> are at your disposal."
+         }
+      },
+      "services": {
+         "design": {
+            "title": "Design",
+            "text": "By synthesizing our creativity and expertise with your imagination and desired corporate identity, together we come up with a stunning website design."
+         },
+         "development": {
+            "title": "Development",
+            "text": "We convert the website design we created, or that you provided us with, into handwritten code to then be launched on the web."
+         },
+         "optimization": {
+            "title": "Optimization",
+            "text": "We analyze your business and goals, and incorporate them into the website. We make sure the website is easy to find, and optimized for all social purposes."
+         },
+         "hosting": {
+            "title": "Hosting",
+            "text": "We register one or more domain names, and host your website on fast servers, close to your target audience, maximizing performance."
+         },
+         "accessibility": {
+            "title": "Accessibility",
+            "text": "The web should be available to everyone. We make your website is accessible to all people, regardless of disability."
+         },
+         "email_hosting": {
+            "title": "E-mail Hosting",
+            "text": "We provide a personalized email address linked to the platform you prefer to work with (Gmail, Outlook, ...). For email marketing services, check out our Online Marketing Solution."
+         }
+      }
+   },
+   "graphic": {
+      "title": "Graphic Design & Branding",
+      "title_short": "Graphic Design",
+      "slug": "graphic-design",
+      "intro": "We design graphics that set your brand apart from the rest. From logos to flyers, from business cards to advertisements. Through a professional, universal corporate identity, we ensure that your company has a recognizable personality.",
+      "intro_card": {
+         "title": "Graphic Design",
+         "text": "We create innovative and attractive graphics that perfectly match your corporate identity, which we can also provide, by the way!"
+      },
+      "features": {
+         "all_in_one": {
+            "title": "All-in-One",
+            "title_alt": "All-in-One",
+            "text": "<strong><em>With us you get the full package, and are totally unburdened of your graphics needs.</em></strong><br/><br/>We make sure everything fits together perfectly, that you have a professional look, and that, if necessary, your printing is delivered right to your front door."
+         },
+         "concepts": {
+            "title": "Multiple Concepts",
+            "title_alt": "Multiple Concepts",
+            "text": "We provide you with various designs in multiple styles and colors, so you can choose which one best suits your business."
+         },
+         "tailored": {
+            "title": "Tailored to your Needs",
+            "title_alt": "Tailored to your Needs",
+            "text": "<strong><em>Your business is unique, and so should be your corporate identity.</em></strong><br/><br/>Mist Media provides custom graphics that perfectly match your desired style."
+         }
+      },
+      "services_intro": "We create graphics in all shapes and sizes. We handle printed media, online media and corporate identities. Contact us for more info or a specific design!",
+      "services": {
+         "branding": {
+            "title": "Designing your corporate identity",
+            "text": "We make sure your business has a recognizable identity, and that you have a professional image."
+         },
+         "printed": {
+            "title": "Graphics for Printed Matter",
+            "text": "From business cards, posters and flyers, to ads and banners, delivered to your door. At Mist Media, anything is possible."
+         },
+         "editorial": {
+            "title": "Editorial Design",
+            "text": "Whether it's magazines, books, or newspapers, we make sure your publications look professional, and that they match your corporate identity perfectly."
+         }
+      }
+   },
+   "marketing": {
+      "title": "Online Marketing & SEO",
+      "title_short": "Online Marketing",
+      "slug": "online-marketing",
+      "intro": "A strong online presence creates a strong brand. Branding is of huge importance not only graphically, but also online. Mist Media can give your online presence the boost it needs. Through social media marketing and search engine marketing, we make sure your company is easily exposed on the internet.",
+      "intro_card": {
+         "title": "Online Marketing",
+         "text": "The online distribution of your organization is vital in this day and age. The Internet is our portal to the rest of the world, and we need to take advantage of this!"
+      },
+      "features": {
+         "analysis": {
+            "title": "Thorough Analysis",
+            "title_alt": "Thorough Analysis",
+            "text": "<em><strong>To measure is to know.</strong></em><br/><br/>We provide you with a detailed analysis of your online presence so that you know what you need to improve."
+         },
+         "brand": {
+            "title": "A Strong Brand",
+            "title_alt": "A Strong Brand",
+            "text": "<strong><em>Your corporate identity and style is reflected everywhere, literally.</em></strong><br/><br/>Branding and a corporate identity are not only reflected on the graphic level, but also online. Mist Media makes sure your brand is strong online, and connected to your website."
+         },
+         "results": {
+            "title": "Measurable Results",
+            "title_alt": "Measurable Results",
+            "text": "To measure is to know, and that's also true with online marketing. Through measurable results, we make sure you know what's happening with your online presence."
+         }
+      },
+      "services_intro": "We offer any online marketing service you need. We can optimize your website or social media profiles, or we could launch an advertising campaign tailored to your needs.",
+      "services": {
+         "analytics": {
+            "title": "Analytics",
+            "text": "By integrating certain tools into your website, we can thoroughly analyze your online presence, and improve it where needed."
+         },
+         "seo": {
+            "title": "Search Engine Optimization",
+            "text": "Using advanced SEO techniques, we ensure that your website and online profiles are easily findable on Google and other search engines."
+         },
+         "ads": {
+            "title": "Ads & Campaigns",
+            "text": "We make sure your business gets noticed on the Internet, through ads and campaigns across search engines and social media."
+         },
+         "smm": {
+            "title": "Social Media Marketing",
+            "text": "We make sure your business has a strong and engaging presence on social media, and that you build a close relationship with your customers."
+         }
+      }
+   },
+   "three_d": {
+      "title": "3D Visualisation & Printing",
+      "title_short": "3D",
+      "slug": "3d-visualisation",
+      "intro": "From small, didactic animations to printable 3D models. We make sure that your products, prototypes and animations are displayed in a professional and natural way.",
+      "intro_card": {
+         "title": "3D Visualisation",
+         "text": "Clean, detailed 3D models and animations, perfectly how you envisioned it."
+      },
+      "features": {
+         "detail": {
+            "title": "Attention to Detail",
+            "title_alt": "Attention to Detail",
+            "text": "With our perfectionist approach, we ensure that your products and animations are finished to perfection."
+         },
+         "natural": {
+            "title": "Spot On",
+            "title_alt": "Spot On",
+            "text": "Our animations do not contain strange movements, but are realistic and natural.<br/>That's how you get a result that not only looks great, but also feels right."
+         },
+         "finish": {
+            "title": "Completion",
+            "title_alt": "Finished with Care",
+            "text": "We integrate your brand and corporate identity into the animations, and deliver our products in a variety of formats so you can use them right away."
+         }
+      },
+      "services_intro": "We offer the full package, from 3D models to 3D printing, from simple animations to more elaborate projects. We also offer these services separately.",
+      "services": {
+         "models": {
+            "title": "3D Models",
+            "text": "We create 3D models of your products, prototypes, or even your corporate identity."
+         },
+         "animations": {
+            "title": "3D Animations",
+            "text": "From short, simple animations to more elaborate projects, Mist Media enjoys getting involved."
+         },
+         "printing": {
+            "title": "3D Printing",
+            "text": "We print your 3D models so you can admire them in real life, as well."
+         }
+      }
+   },
+   "av": {
+      "title": "Audio-Visual Production & Editing",
+      "title_short": "Audio-Visual",
+      "slug": "audio-visual",
+      "intro": "Mist Media ensures that your business is captured in a professional manner. This can be both photos and videos, which can also be edited, optimized and integrated into your website or graphics.",
+      "intro_card": {
+         "title": "Audio-Visual",
+         "text": "We capture your business and moments, and can also edit, subtitle and even add VFX!"
+      },
+      "features": {
+         "personal": {
+            "title": "Personal Approach",
+            "title_alt": "Personal Approach",
+            "text": "Mist Media captures your business in a personal way, giving you a unique and professional result."
+         },
+         "multipurpose": {
+            "title": "Multipurpose Productions",
+            "title_alt": "Multipurpose Productions",
+            "text": "Whether it's events, products, or your corporate identity, Mist Media makes sure you don't have to worry about the audiovisual aspects of your business or event."
+         },
+         "finish": {
+            "title": "Detailed Finalization",
+            "title_alt": "Detailed Finalization",
+            "text": "Your project will be finished and optimized to perfection so that you get a result that is - quite literally - to be seen."
+         }
+      },
+      "services_intro": "These services are also available as part of a web design/branding project, but can also be requested separately. We can also edit existing photos and videos, or create a completely new production.",
+      "services": {
+         "photo": {
+            "title": "Photography",
+            "text": "We come and take pictures of the atmosphere and people at your event, or we put your company in the spotlight for a campaign. Whatever you want, we'll capture it."
+         },
+         "video": {
+            "title": "Video",
+            "text": "We capture your business or event on video. We provide unique shots with creative insight."
+         },
+         "edit": {
+            "title": "Montage & Editing",
+            "text": "We edit and edit your photos and videos. This can range from color corrections and filters, to full editing with music and effects."
+         },
+         "vfx": {
+            "title": "Visual Effects",
+            "text": "We create effects to make your videos stand out even more!"
+         },
+         "subtitle": {
+            "title": "Subtitling & Translation",
+            "text": "We subtitle your videos to make them accessible to deaf, hard of hearing and/or non-native speakers."
+         },
+         "animation": {
+            "title": "Animation",
+            "text": "We create animations, both 2D and 3D. This can range from a simple intro to a short animated film."
+         }
+      }
+   },
+   "ai": {
+      "title": "Artificial Intelligence",
+      "title_short": "AI",
+      "slug": "artificial-intelligence",
+      "intro": "",
+      "intro_card": {
+         "title": "AI Implementation",
+         "text": "The future is now, and we help you be ready for it. Take advantage of our content generation services, and save time and money!"
+      },
+      "features": {},
+      "services_intro": "",
+      "services": {}
+   }
+}

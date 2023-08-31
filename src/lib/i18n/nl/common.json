@@ -1,0 +1,89 @@
+{
+	"word": {
+		"about": "over"
+	},
+	"btn": {
+		"more_info": "Meer info",
+		"back_to_home": "Terug naar homepagina",
+		"close": "Sluiten",
+		"visit_website": "Bezoek website",
+		"visit_website_of": "Bezoek website van",
+		"read_more": "Meer lezen",
+		"read_more_about": "Meer lezen over"
+	},
+	"actions": {
+		"change_to_dark": "Verander naar donkere modus",
+		"change_to_light": "Verander naar lichte modus",
+		"change_language": "Verander taal",
+		"change_language_to": "Verander taal naar"
+	},
+	"messages": {
+		"no_items_yet": "Er zijn nog geen items.",
+		"check_back_soon": "Kom later nog eens terug!"
+	},
+
+	"geo": {
+		"lang": {
+			"nl": "Nederlands",
+			"en": "Engels",
+			"fr": "Frans"
+		}
+	},
+
+	"contact": {
+		"us": "Contacteer ons",
+		"leads": {
+			"cta": "Aarzel zeker niet om ons een berichtje te sturen als je vragen hebt of als je een gratis offerte op maat wil aanvragen. We horen graag van je!",
+			"answer_within": "We antwoorden binnen de 48 uur."
+		},
+		"via": {
+			"form": "via het formulier"
+		}
+	},
+
+	"footer": {
+		"socials": {
+			"follow_us_on": "Volg ons op",
+			"check_out_our": "Bekijk onze",
+			"social_media": "sociale media",
+			"page": "pagina"
+		},
+		"rights_reserved": "Alle rechten voorbehouden."
+	},
+
+	"cookies_prefs": {
+      "title": "Kennisgeving",
+      "text": "Mist Media maakt gebruik van cookies om uw ervaring te verbeteren. Klik op \"Doorgaan\" om akkoord te gaan en verder te gaan naar de website.",
+      "text_more": "Mistmedia.be maakt gebruik van cookies voor een optimale gebruikerservaring. We gebruiken cookies om de website te analyseren, te verbeteren, te personaliseren en te beveiligen. <br/>Hieronder vind u een meer gedetailleerde uitleg omtrent de soorten cookies die we aanbieden, en kunt u aangeven welke cookies u wilt toestaan. <br/>",
+      "types": {
+         "necessary": {
+            "label": "Noodzakelijke cookies",
+            "text": "Noodzakelijke cookies zijn essentieel voor het functioneren van de website en kunnen niet worden uitgeschakeld."
+         },
+         "tracking": {
+            "label": "Tracking cookies",
+            "text": "Deze cookies worden gebruikt om informatie te verzamelen over hoe u met onze website omgaat en stellen ons in staat u te onthouden voor toekomstige bezoeken."
+         },
+         "analytics": {
+            "label": "Analytische cookies",
+            "text": "Analytische cookies helpen ons om onze website te verbeteren door anoniem gegevens te verzamelen en te rapporteren."
+         },
+         "marketing": {
+            "label": "Marketing cookies",
+            "text": "Marketing cookies worden gebruikt om bezoekers op websites bij te houden. De bedoeling is om advertenties weer te geven die relevant en aantrekkelijk zijn voor de individuele gebruiker en daardoor waardevoller voor uitgevers en externe adverteerders."
+         }
+      },
+      "btns": {
+         "accept": "Doorgaan",
+         "accept_tip": "Alle cookies accepteren en doorgaan",
+         "decline": "Weigeren",
+         "decline_tip": "Alle optionele cookies weigeren en doorgaan",
+         "save": "Doorgaan",
+         "save_tip": "Keuze opslaan en doorgaan",
+         "save_close": "Opslaan & Sluiten",
+         "settings": "Voorkeuren aanpassen",
+         "preferences": "Voorkeuren",
+         "view_policy": "Bekijk ons privacybeleid voor meer info omtrent cookies en privacy op mistmedia.be"
+      }
+   }
+}

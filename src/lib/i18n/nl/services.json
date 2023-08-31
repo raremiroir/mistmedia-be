@@ -1,0 +1,284 @@
+{
+   "common": {
+      "our_services": "Onze diensten",
+      "leads": {
+         "cta": "Ontdek hoe we je kunnen helpen om je doelen te bereiken. We bieden een breed scala aan diensten aan."
+      }
+   },
+   "web": {
+      "title": "Web Design & Ontwikkeling",
+      "title_short": "Web",
+      "slug": "web",
+      "intro": "Jouw online aanwezigheid is énorm belangrijk, anno 2023. Wij ontwerpen websites die er niet alleen mooi uitzien, maar ook goed werken. Van eenvoudige websites tot complexe webshops.",
+      "intro_card": {
+         "title": "Website / Webshop",
+         "text": "We ontwerpen en ontwikkelen websites en webshops van top tot teen. Handgeschreven code, specifiek geoptimaliseerd voor jouw use-case!"
+      },
+      "services_intro": "Wij bieden het volledige pakket aan, van webdesign tot webhosting, van websecurity tot seo. We bieden deze diensten ook apart aan, zodat je zelf kan kiezen wat je nodig hebt.",
+      "features": {
+         "fast": {
+            "title": "Bliksemsnel",
+            "title_alt": "Bliksemsnelle Laadtijden",
+            "text": "<strong><em>Een snelle laadtijd kan van grote invloed zijn op het succes van je website. Mist Media houdt hier sterk rekening mee.</em></strong><br/><br/><strong>Een website moet snel zijn. Daar bestaat geen twijfel over.</strong><br/>Volgens studies verlaat <strong>25% van de mobiele bezoekers</strong> de website als het langer duurt dan 4 seconden om te laden.<br/>Een vertraging van 2 seconden leidt tot een waardering van 13%, wat beter is, maar verre van optimaal. Niet alleen is een goede paginalaadtijd belangrijk voor de <strong>gebruikerservaring</strong>, maar het is ook zeer belangrijk voor de <strong>ranking in zoekmachines</strong>. Google gebruikt paginasnelheid als een rankingfactor sinds 2010, en het wordt steeds belangrijker. Het wordt aanbevolen om te streven naar een <strong>laadtijd van minder dan een halve seconde</strong> (op een gemiddeld netwerk), en dat is precies wat wij doen.<br/><br/>We maken gebruik van <strong>innovatieve, indrukwekkende technologieën</strong> om jouw website zo te schrijven dat deze zo snel mogelijk laadt, en we zorgen ervoor dat het ook zo blijft."
+         },
+         "responsive": {
+            "title": "Responsive",
+            "title_alt": "Mobile-First Responsiveness",
+            "text": ""
+         },
+         "secure": {
+            "title": "Veilig",
+            "title_alt": "Veiligheid Eerst",
+            "text": "<strong><em>Wij zorgen ervoor dat jouw website veilig is voor jouw bezoekers, zodat ze zonder zorgen kunnen surfen.</em></strong><br/><br/><strong>Het is van fundamenteel belang dat een website veilig is.</strong><br/><br/>In het digitale tijdperk van vandaag, waar cyberdreigingen wijdverspreid zijn, is het essentieel om de veiligheid van een website 'aux sérieux' te nemen. <strong>Een veilige website beschermt zowel de eigenaar als de bezoekers tegen potentiële risico's</strong>, zoals gegevensinbreuken, malware, phishing-aanvallen en andere vormen van cybercriminaliteit.<br/><br/>Bij het ontwerpen en ontwikkelen van websites <strong>leggen wij een sterke nadruk op veiligheid.</strong> We implementeren beveiligingsmaatregelen zoals SSL-certificaten, firewalls en regelmatige updates van software en plug-ins.Dit helpt bij het beschermen van gevoelige gegevens, het voorkomen van ongeoorloofde toegang en het waarborgen van de integriteit van de website.<br/><br/><strong>Een veilige website creëert vertrouwen bij bezoekers</strong> en moedigt hen aan om interactie te hebben met de inhoud, formulieren in te vullen, aankopen te doen en gegevens te delen.<br/>Het beschermt niet alleen de bezoekers, maar ook de <strong>reputatie van de website-eigenaar</strong>.<br/><br/>Wij zullen er altijd voor zorgen dat <strong>veiligheid een topprioriteit</strong> is. Jouw gemoedsrust en de bescherming van jouw gegevens zijn van het grootste belang voor ons."
+         },
+         "accessible": {
+            "title": "Toegankelijk",
+            "title_alt": "Toegankelijkheid",
+            "text": "<strong><em>Wij zorgen ervoor dat jouw website toegankelijk is voor iedereen, ongeacht hun beperking.</em></strong><br/><br/><h3>Wat bedoelen we met toegankelijkheid?</h3><br/><br/>Webtoegankelijkheid houdt in dat websites en webapps zodanig ontworpen en gecodeerd zijn dat mensen met een beperking deze ook correct kunnen gebruiken. Op dit moment zijn er nog steeds veel te veel websites met toegankelijkheidsbelemmeringen, waardoor het voor sommige mensen extreem moeilijk of zelfs onmogelijk is om ze te gebruiken.<br/><br/>Voor Mist Media betekent toegankelijkheid een website <strong>die toegankelijk is vanuit alle browsers en op alle apparaten, en vooral toegankelijk is voor iedereen</strong>, ongeacht leeftijd, kennis van het web, sociale uitdagingen of <strong>beperkingen</strong> (tijdelijk en permanent).<br/><br/>wij zorgen ervoor dat jouw website toegankelijk is voor iedereen, en dat je geen bezoekers verliest omdat ze jouw website niet kunnen gebruiken."
+         },
+         "seo": {
+            "title": "SEO",
+            "title_alt": "Zoekmachine Optimalisatie",
+            "text": "<h3>Wat is SEO?</h3><br/><br/>SEO staat voor Search Engine Optimization, en is een verzameling van technieken die ervoor zorgen dat jouw website hoger scoort in zoekmachines zoals Google, Bing en Yahoo.<br/><br/>Je kan het vergelijken met een drukke winkelstraat. De winkels die het meest opvallen, en die het meest bezocht worden, zijn de winkels die het meest verkopen.Dit is ook zo op het internet. Hoe hoger je scoort in zoekmachines, en dus ook hoe zichtbaarder je bent, hoe meer bezoekers je krijgt, en hoe meer klanten je krijgt.Nu heeft een winkel zijn klanten uiteraard niet enkel te danken aan zijn zichtbaarheid, maar ook aan de kwaliteit van zijn producten, de bekendheid van zijn merk, enzovoort. Bij SEO zijn er ook heel wat factoren die een impact kunnen hebben op de ranking van jouw website.<br/><br/>SEO is een van de belangrijkste factoren die bepalen of je bedrijf online succesvol is of niet. Wij zorgen ervoor dat jouw website goed scoort in deze SEO-factoren, zodat ook jouw uithangbord in deze drukke winkelstraat goed opvalt."
+         },
+         "multilingual": {
+            "title": "Meertalig",
+            "title_alt": "Ieder Zijn Taal",
+            "text": "Text hier."
+         },
+         "scalable": {
+            "title": "Schaalbaar",
+            "title_alt": "Schaalbaarheid",
+            "text": "Tekst hier."
+         },
+         "support": {
+            "title": "Bijstand",
+            "title_alt": "Ondersteuning & Advies",
+            "text": "Bij het creëren van een succesvolle online aanwezigheid gaat het niet alleen om het bouwen van een geweldige website, maar ook om het bieden van de <strong>juiste technische ondersteuning</strong>. Daarom bieden wij een breed scala aan diensten om ervoor te zorgen dat jouw website soepel functioneert en je <strong>volledige ondersteuning</strong> hebt op alle vlakken.<br/><br/>Of het nu gaat om technische problemen, vragen over de functionaliteit van jouw website of advies over het verbeteren van jouw online aanwezigheid, onze <strong>kennis en expertise</strong> staan tot jouw beschikking."
+         }
+      },
+      "services": {
+         "design": {
+            "title": "Ontwerp",
+            "text": "Door een synthese tussen onze creativiteit en expertise met jouw verbeelding en gewenste bedrijfsidentiteit, komen we samen tot een prachtig website-ontwerp."
+         },
+         "development": {
+            "title": "Ontwikkeling",
+            "text": "We zetten het website-ontwerp dat we gecreëerd hebben, of dat jij ons hebt aangeleverd, om in handgeschreven code om vervolgens op het web te lanceren."
+         },
+         "optimization": {
+            "title": "Optimalisatie",
+            "text": "We analyseren je bedrijf en doelen, en verwerken dit mee in de website. We zorgen ervoor dat de website gemakkelijk vindbaar is, en zo goed mogelijk geoptimaliseerd is voor alle sociale doeleinden."
+         },
+         "hosting": {
+            "title": "Hosting",
+            "text": "We registreren een of meerdere domeinnamen, en hosten je website op snelle servers, dichtbij je doelgroep, zodat de performance gemaximaliseerd wordt."
+         },
+         "accessibility": {
+            "title": "Accessibility",
+            "text": "Het web zou voor iedereen beschikbaar moeten zijn. We maken je website toegankelijk voor alle mensen, ongeacht hun beperking."
+         },
+         "email_hosting": {
+            "title": "E-mail Hosting",
+            "text": "We zorgen voor een gepersonaliseerd e-mailadres, gelinkt aan het platform waar jij het liefst mee werkt (Gmail, Outlook, ...). Voor e-mail marketing services, kijk je best bij onze Online Marketing Solution."
+         }
+      }
+   },
+   "graphic": {
+      "title": "Grafisch Ontwerp & Branding",
+      "title_short": "Grafisch Ontwerp",
+      "slug": "grafisch-ontwerp",
+      "intro": "Wij ontwerpen grafische elementen die jouw merk onderscheiden van de rest. Van logo's tot flyers, van visitekaartjes tot advertenties. Door middel van een professionenele, universele huisstijl zorgen wij ervoor dat jouw bedrijf een herkenbare identiteit krijgt.",
+      "intro_card": {
+         "title": "Grafisch Ontwerp",
+         "text": "We creëren innovatieve en aantrekkelijke graphics, die perfect passen bij jouw huisstijl, waar we trouwens ook voor kunnen zorgen!"
+      },
+      "features": {
+         "all_in_one": {
+            "title": "Alles-In-Één",
+            "title_alt": "Alles-In-Één",
+            "text": "<strong><em>Bij ons krijg je het volledige pakket, en wordt je totaal ontzorgt van je grafische benodigdheden.</em></strong><br/><br/>We zorgen ervoor dat alles perfect op elkaar aansluit, dat je een professionele uitstraling hebt, en dat, indien nodig, je drukwerk tot bij je voordeur wordt geleverd."
+         },
+         "concepts": {
+            "title": "Meerdere Concepten",
+            "title_alt": "Meerdere Concepten",
+            "text": "Wij zorgen ervoor dat je meerdere concepten in meerdere stijlen en kleuren krijgt, zodat je kan kiezen welke het beste bij jouw bedrijf past."
+         },
+         "tailored": {
+            "title": "Op Maat Gemaakt",
+            "title_alt": "Op Maat Gemaakt",
+            "text": "<strong><em>Jouw bedrijf is uniek, en dat moet je huisstijl ook zijn.</em></strong><br/><br/>Mist Media zorgt voor op maat gemaakte grafische elementen die perfect bij jouw gewenste stijl aansluiten."
+         }
+      },
+      "services_intro": "We maken graphics in alle vormen en maten. We verzorgen geprinte media, online media en huisstijlen. Contacteer ons voor meer info of een specifiek ontwerp!",
+      "services": {
+         "branding": {
+            "title": "Huisstijl Vormgeven",
+            "text": "Wij zorgen ervoor dat jouw bedrijf een herkenbare identiteit krijgt, en dat je een professionele uitstraling hebt."
+         },
+         "printed": {
+            "title": "Graphics voor Drukwerk",
+            "text": "Van visitekaarjtes, posters en flyers, tot advertenties en banners, geleverd aan de deur. Bij Mist Media is alles mogelijk."
+         },
+         "editorial": {
+            "title": "Redactionele Vormgeving",
+            "text": "Of het nu magazines, boeken, of kranten zijn, wij zorgen ervoor dat jouw publicaties er professioneel uitzien, en dat ze perfect aansluiten bij jouw huisstijl."
+         }
+      }
+   },
+   "marketing": {
+      "title": "Online Marketing & SEO",
+      "title_short": "Online Marketing",
+      "slug": "online-marketing",
+      "intro": "Een sterke online aanwezigheid zorgt voor een sterk merk. Branding is niet enkel grafisch, maar ook online van immens belang. Mist Media kan jouw online aanwezigheid de boost geven die het nodig heeft. Door middel van social media marketing en marketing op zoekmachines zorgen wij ervoor dat jouw bedrijf goed zichtbaar wordt op het internet.",
+      "intro_card": {
+         "title": "Online Marketing",
+         "text": "De online verspreiding van je organisatie is van vitaal belang in deze tijd. Het internet is ons portaal tot de rest van de wereld, en hier moeten we gebruik van maken!"
+      },
+      "features": {
+         "analysis": {
+            "title": "Grondige Analyse",
+            "title_alt": "Grondige Analyse",
+            "text": "<strong><em>Meten is weten.</em></strong><br/><br/>Wij zorgen ervoor dat je een gedetailleerde analyse krijgt van jouw online aanwezigheid, zodat je weet wat je moet verbeteren."
+         },
+         "brand": {
+            "title": "Een Sterk Merk",
+            "title_alt": "Een Sterk Merk",
+            "text": "<strong><em>Je bedrijfsidentiteit en -stijl komt overal terug, letterlijk.</em></strong><br/><br/>Branding en een huisstijl komen niet enkel terug op grafisch vlak, maar ook online. Mist Media zorgt ervoor dat jouw merk online sterk staat, en verbonden is met jouw website."
+         },
+         "results": {
+            "title": "Meetbare Resultaten",
+            "title_alt": "Meetbare Resultaten",
+            "text": "Meten is weten, en dat is ook zo bij online marketing. Door middel van meetbare resultaten zorgen wij ervoor dat je weet wat er gebeurt met jouw online aanwezigheid."
+         }
+      },
+      "services_intro": "We bieden elke online marketingservice die je nodig hebt. We kunnen je website of social media-profielen optimaliseren, of we kunnen een advertentiecampagne lanceren die is afgestemd op jouw behoeften.",
+      "services": {
+         "analytics": {
+            "title": "Analytics",
+            "text": "Door bepaalde tools te integreren in je website, kunnen wij je online aanwezigheid grondig analyseren, en verbeteren waar nodig."
+         },
+         "seo": {
+            "title": "Zoekmachine Optimalisatie",
+            "text": "Door middel van geavanceerde SEO-technieken zorgen wij ervoor dat jouw website en online profielen makkelijk vindbaar zijn op het internet."
+         },
+         "ads": {
+            "title": "Ads & Campagnes",
+            "text": "Wij zorgen ervoor dat jouw bedrijf opvalt op het internet, door middel van advertenties en campagnes via Google en sociale media."
+         },
+         "smm": {
+            "title": "Social Media Marketing",
+            "text": "Wij zorgen ervoor dat jouw bedrijf een sterke en aantrekkelijke aanwezigheid heeft op sociale media, en dat je een hechte band opbouwt met je klanten."
+         }
+      }
+   },
+   "three_d": {
+      "title": "3D Visualisatie & Printing",
+      "title_short": "3D",
+      "slug": "3d-visualisatie",
+      "intro": "Van kleine, didactische animaties tot printbare 3D modellen. Wij zorgen ervoor dat jouw producten, prototypes en animaties op een professionele en natuurlijke manier worden weergegeven.",
+      "intro_card": {
+         "title": "3D Visualisatie",
+         "text": "Natuurlijke, gedetailleerde 3D modellen en animaties, perfect hoe jij het in gedachten had."
+      },
+      "features": {
+         "detail": {
+            "title": "Oog voor Detail",
+            "title_alt": "Oog voor Detail",
+            "text": "Met onze perfectionistische aanpak zorgen wij ervoor dat jouw producten en animaties tot in de puntjes worden afgewerkt."
+         },
+         "natural": {
+            "title": "Net Echt",
+            "title_alt": "Net Echt",
+            "text": "Onze animaties bevatten geen vreemde bewegingen, maar zijn realistisch en natuurlijk.<br/>Zo krijg je een resultaat dat er niet enkel goed uitziet, maar ook goed aanvoelt."
+         },
+         "finish": {
+            "title": "Afwerking",
+            "title_alt": "Afgewerkt met Zorg",
+            "text": "We integreren je merk en huisstijl in de animaties, en leveren onze producten af in verschillende formaten, zodat je ze meteen kan gebruiken."
+         }
+      },
+      "services_intro": "Wij bieden het volledige pakket aan, van 3D modellen tot 3D printing, van eenvoudige animaties tot uitgebreidere projecten. We bieden deze diensten ook apart aan.",
+      "services": {
+         "models": {
+            "title": "3D Modellen",
+            "text": "We creëren 3D modellen van jouw producten, prototypes, of zelfs van jouw huisstijl."
+         },
+         "animations": {
+            "title": "3D Animaties",
+            "text": "Van korte, simpele animaties tot uitgebreidere projecten, Mist Media houdt zich er graag mee bezig."
+         },
+         "printing": {
+            "title": "3D Printing",
+            "text": "We printen jouw 3D modellen, zodat je ze ook in het echt kan bewonderen."
+         }
+      }
+   },
+   "av": {
+      "title": "Audiovisuele Productie & Editing",
+      "title_short": "Audiovisueel",
+      "slug": "audiovisueel",
+      "intro": "Mist Media zorgt ervoor dat jouw bedrijf op een professionele manier wordt vastgelegd. Dit kunnen zowel foto's als video's zijn, die ook geïntegreerd kunnen worden in jouw website of graphics.",
+      "intro_card": {
+         "title": "Audiovisueel",
+         "text": "We leggen jouw bedrijf en momenten vast, en kunnen ze ook bewerken, ondertitelen en zelfs VFX toevoegen!"
+      },
+      "features": {
+         "personal": {
+            "title": "Persoonlijke Aanpak",
+            "title_alt": "Persoonlijke Aanpak",
+            "text": "Mist Media legt jouw bedrijf vast op een persoonlijke manier, zodat je een uniek en professioneel resultaat krijgt."
+         },
+         "multipurpose": {
+            "title": "Polyvalente Producties",
+            "title_alt": "Polyvalente Producties",
+            "text": "Of het nu gaat om evenementen, producten, of je huisstijl, Mist Media zorgt ervoor dat jij je geen zorgen hoeft te maken over de audiovisuele aspecten van jouw bedrijf of evenement."
+         },
+         "finish": {
+            "title": "Gedetailleerde Afwerking",
+            "title_alt": "Gedetailleerde Afwerking",
+            "text": "Je project wordt tot in de puntjes afgewerkt en geoptimaliseerd, zodat je een resultaat krijgt dat - letterlijk - gezien mag worden."
+         }
+      },
+      "services_intro": "Ook deze diensten zijn beschikbaar als onderdeel van een webdesign/branding project, maar kunnen ook apart worden aangevraagd. We kunnen ook bestaande foto's en video's aanpassen, of een volledig nieuwe productie maken.",
+      "services": {
+         "photo": {
+            "title": "Fotografie",
+            "text": "We komen foto's trekken van de sfeer en de mensen op jouw evenement, of we zetten je bedrijf in de kijker voor een campagne. Wat je maar wilt, wij leggen het vast."
+         },
+         "video": {
+            "title": "Video",
+            "text": "We leggen je bedrijf of evenement vast op video. We zorgen voor unieke shots met een creatieve inkijk."
+         },
+         "edit": {
+            "title": "Montage & Editing",
+            "text": "We bewerken en monteren jouw foto's en video's. Dit kan gaan van kleurcorrecties en filters, tot volledige montage met muziek en effecten."
+         },
+         "vfx": {
+            "title": "Visual Effects",
+            "text": "We creëren effecten om je video's nog beter tot hun recht te laten komen!"
+         },
+         "subtitle": {
+            "title": "Ondertiteling",
+            "text": "We voorzien jouw video's van ondertiteling, zodat ze ook toegankelijk zijn voor doven, slechthorenden en/of anderstaligen."
+         },
+         "animation": {
+            "title": "Animatie",
+            "text": "We creëren animaties, zowel 2D als 3D. Dit kan gaan van een eenvoudige intro tot een korte animatiefilm."
+         }
+      }
+   },
+   "ai": {
+      "title": "Artificiële Intelligentie",
+      "title_short": "AI",
+      "slug": "artificiele-intelligentie",
+      "intro": "",
+      "intro_card": {
+         "title": "AI Implementatie",
+         "text": "De toekomst is nu, en wij helpen je om er klaar voor te zijn. Maak gebruik van onze content generation services, en bespaar tijd en geld!"
+      },
+      "features": {},
+      "services_intro": "",
+      "services": {}
+   }
+}
