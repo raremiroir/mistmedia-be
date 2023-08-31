@@ -1,27 +1,31 @@
-<script lang="ts">
-   export let width:number|'full' = 50;
-   
+---
+	export interface Props {
+		width?: number | 'full';
+		color?: string;
+		klass?: string;
+	}
+	const {
+		width = 50,
+		color = "fill-surface-900 dark:fill-white",
+		klass = '',
+	} = Astro.props
+
    const ratio = 477 / 1155;
    const height = width !== 'full' ? width * ratio : 0;
 	// Calculate bottom margin to compensate for the height of the logo
 	const marginBottom = -height * 0.65;
-
-	let klass = '';
-	export { klass as class };
-
-	export let color = "fill-surface-900 dark:fill-white";
-</script>
+---
 
 <svg 
-   style="
-		width: {width === 'full' ? '100%' : `${width}px`};
-		height: {width === 'full' ? '100%' : `${height}px`};
-		"
-   class="{klass}"
+   style={`
+		width: ${width === 'full' ? '100%' : `${width}px`};
+		height: ${width === 'full' ? '100%' : `${height}px`};
+		`}
+   class={klass}
 	viewBox="0 0 951 173" fill="none" 
 	xmlns="http://www.w3.org/2000/svg"
 >
-	<g class="{color}">
+	<g class={color}>
 		<path d="M162.391 40.0163C162.391 29.1764 148.419 24.6919 142.041 33.4851L81.1955 117.38L20.3498 33.4851C13.9724 24.6919 0 29.1764 0 40.0163V169.117H31.066V100.428L70.4693 154.593C71.2501 155.666 72.1744 156.553 73.1922 157.252C78.918 161.621 88.0589 159.903 91.9217 154.593L131.325 100.428V169.117H162.391V40.0163Z"/>
 		<path d="M177.765 77.9283L208.514 92.9595V169.117H177.765V77.9283Z"/>
 		<path d="M177.765 77.9283H193.14L208.514 169.117H177.765V77.9283Z"/>

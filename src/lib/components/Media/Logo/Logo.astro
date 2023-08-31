@@ -1,0 +1,41 @@
+---
+   import AnimIcon from "../AnimIcon/AnimIcon.svelte";
+import LogoIcon from "./LogoIcon.astro";
+   import LogoLettering from "./LogoLettering.astro";
+
+   
+   export interface Props {
+      logoType?: 'icon'|'lettering'|'both'|'animIcon'
+      size?: number|'full'
+      color?: string
+      color2?: string
+      klass?: string
+   }
+   const {
+      logoType = 'both',
+      size = 'full',
+      color = 'fill-surface-800 dark:fill-white',
+      color2 = 'fill-surface-600 dark:fill-surface-200',
+      klass = ''
+   } = Astro.props
+---
+
+{ logoType === 'both' ? (
+   <div class={`flex flex-row items-center justify-start ${klass}`}>
+      <div class="w-1/6 pb-0.5">
+         <LogoIcon width={size === 'full' ? 'full' : size / 2} dark={color} light={color2}/>
+      </div>
+      <div class="w-5/6">
+         <LogoLettering width={size === 'full' ? 'full' : size} color={color} />
+      </div>
+   </div>
+) : logoType === 'icon' ? (
+   <LogoIcon klass={klass} width={size} dark={color} light={color2}/>
+) : logoType === 'lettering' ? (
+   <LogoLettering klass={klass} width={size} color={color} />
+) : (
+   <AnimIcon logo size={size} client:load animProps={{
+      dark: color,
+      light: color2
+   }} />
+)}
