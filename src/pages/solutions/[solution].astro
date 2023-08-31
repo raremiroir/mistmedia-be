@@ -1,0 +1,112 @@
+---
+import { t, astroI18n } from 'astro-i18n';
+import navigation from '@/lib/i18n/navigation';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Hero from '@/lib/components/Common/Hero/Hero.astro';
+import Breadcrumbs from '@/lib/components/Core/Breadcrumbs.astro';
+import { pagesIcons, servicesIcons } from '@/lib/config/icons';
+import Section from '@/lib/components/Core/Section.astro';
+import CallToAction from '@/lib/components/Content/CallToAction.astro';
+import services from '@/lib/config/services';
+import Card from '@/lib/components/Common/Card/Card.astro';
+import FeatureButton from "@comp/Common/Button/FeatureButton.svelte"
+
+const currentLocale = astroI18n.langCode;
+
+export const getStaticPaths = () => {
+   return [
+      { params: { solution: navigation.solutions.items.web.slug[astroI18n.langCode] }},
+      { params: { solution: navigation.solutions.items.graphic.slug[astroI18n.langCode] }},
+      { params: { solution: navigation.solutions.items.marketing.slug[astroI18n.langCode] }},
+      { params: { solution: navigation.solutions.items.three_d.slug[astroI18n.langCode] }},
+      { params: { solution: navigation.solutions.items.av.slug[astroI18n.langCode] }},
+      { params: { solution: navigation.solutions.items.ai.slug[astroI18n.langCode] }},
+   ]
+}
+const { solution } = Astro.params as { solution: string };
+
+export const prerender = true;
+
+// === Data ===
+// FEATURE CARDS
+const featureCards = Object.entries(services[solution].content.features).map(([key, icon]: [string, string]) => {
+      return {
+         title: t(`services.${solution}.features.${key}.title`), title_alt: t(`services.${solution}.features.${key}.title_alt`),
+         text: t(`services.${solution}.features.${key}.text`), icon
+      }
+   })
+const featureGrid = featureCards.length % 3 === 0 ? 'grid-1-2-3' : 'grid-1-2-4';
+// SERVICES CARDS
+const servicesCards = Object.entries(services[solution].content.services).map(([key, icon]: [string, string]) => {
+   return { title: t(`services.${solution}.services.${key}.title`), text: t(`services.${solution}.services.${key}.text`), icon }
+})
+const servicesGrid = servicesCards.length % 3 === 0 ? 'grid-1-2-3' : 'grid-1-2-4';
+// CONTENT
+const content = {
+   title: t(`services.${solution}.title`),
+   intro: t(`services.${solution}.intro`),
+   services_intro: t(`services.${solution}.services_intro`),
+}
+---
+
+
+<PageLayout title={navigation.solutions.items[solution].slug[currentLocale]}>
+   
+   <Hero slot="hero" subtitle={content.intro}>
+      {content.title}
+   </Hero>
+
+   <Breadcrumbs slot="breadcrumbs" crumbs={[
+      {label: navigation.solutions.title[currentLocale], slug: `/${navigation.solutions.slug[solution]}`, icon: pagesIcons.solutions},
+      {label: navigation.solutions.items[solution].title[solution], slug: `/${navigation.solutions.slug[solution]}/${navigation.solutions.items[solution].slug[solution]}`, icon: servicesIcons[solution]},
+   ]}/>
+   
+   <!-- FEATURES SECTION -->
+   <Section id={t('pages.solutions.sections.features.id')}>
+      <div class={featureGrid}>
+         { featureCards.map(feature => <FeatureButton client:idle animated {...feature}/> )}
+      </div>
+   </Section>
+   <!-- END FEATURES SECTION -->
+
+   <!-- SERVICES SECTION -->
+   <Section 
+      alt id={t('pages.solutions.sections.services.id')}
+      title={t('pages.solutions.sections.services.title')}
+      subtitle={content.services_intro}>
+      <div class={servicesGrid}>
+         { servicesCards.map(card => <Card type="static" element="li" {...card}>{card.text}</Card> )}
+      </div>
+   </Section>
+   <!-- END SERVICES SECTION -->
+
+   <!-- PORTFOLIO SECTION -->
+   <Section 
+      id={t('pages.solutions.sections.portfolio.id')}
+      title={t('pages.solutions.sections.portfolio.title')}
+      subtitle={t('pages.solutions.sections.portfolio.default_intro')}
+   >
+      <div class="grid-1-2">
+         <!-- {#each portfolio as portfolioItem}
+            {#await getPortfolioItem(portfolioItem)}
+               <Loading />
+            {:then { client, solution, tags, title, description, cover_img, gallery, href }}
+                  <CardPortfolio 
+                     img={cover_img} alt={title} itemImg={gallery[0]}
+                     {href} title={title} description={description[solution]}
+                     ariaLabel={title} {client} {solution} {tags}>
+                     {@html description[solution]}
+                  </CardPortfolio>
+            {/await}
+         {:else}
+            <p>{$LL.messages.no_items_yet()} {$LL.messages.check_back_soon()}</p>
+         {/each} -->
+      </div>
+   </Section>
+   <!-- END PORTFOLIO SECTION -->
+
+   <!-- CTA -->
+   <CallToAction />
+   <!-- END CTA -->
+
+</PageLayout>
