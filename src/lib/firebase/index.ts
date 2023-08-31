@@ -23,32 +23,30 @@ import {
 import { deleteObject, getMetadata, getStorage, list, listAll, ref, updateMetadata, uploadBytes } from 'firebase/storage';
 import type { FirebaseStorage, FullMetadata, SettableMetadata, StorageReference } from 'firebase/storage';
 
-/*@ts-ignore*/
-import { 
-   PUBLIC_FIREBASE_API_KEY, 
-   PUBLIC_FIREBASE_AUTH_DOMAIN, 
-   PUBLIC_FIREBASE_PROJECT_ID, 
-   PUBLIC_FIREBASE_STORAGE_BUCKET, 
-   PUBLIC_FIREBASE_MESSAGING_SENDER_ID, 
-   PUBLIC_FIREBASE_APP_ID, 
-   PUBLIC_FIREBASE_MEASUREMENT_ID 
-   // @ts-ignore
-} from '$env/static/public'
+const FB_REGION = import.meta.env.FB_REGION;
+const FB_API_KEY = import.meta.env.FB_API_KEY;
+const FB_AUTH_DOMAIN = import.meta.env.FB_AUTH_DOMAIN;
+const FB_PROJECT_ID = import.meta.env.FB_PROJECT_ID;
+const FB_STORAGE_BUCKET = import.meta.env.FB_STORAGE_BUCKET;
+const FB_MESSAGING_SENDER_ID = import.meta.env.FB_MESSAGING_SENDER_ID;
+const FB_APP_ID = import.meta.env.FB_APP_ID;
+const FB_MEASUREMENT_ID = import.meta.env.FB_MEASUREMENT_ID;
+
 import type { DbCollection, DocId, DocProps, DocPropsInsert, FileProps, FilePropsFetch, FilePropsOrder } from './db';
 import blog from './dbBlog';
 
 // Firebase config
 const config = {
 	useEmulators: false,
-	region: "europe-west3",
+	region: FB_REGION,
 	firebase: {
-		apiKey: PUBLIC_FIREBASE_API_KEY,
-		authDomain: PUBLIC_FIREBASE_AUTH_DOMAIN,
-		projectId: PUBLIC_FIREBASE_PROJECT_ID,
-		storageBucket: PUBLIC_FIREBASE_STORAGE_BUCKET,
-		messagingSenderId: PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-		appId: PUBLIC_FIREBASE_APP_ID,
-      measurementId: PUBLIC_FIREBASE_MEASUREMENT_ID
+		apiKey: FB_API_KEY,
+		authDomain: FB_AUTH_DOMAIN,
+		projectId: FB_PROJECT_ID,
+		storageBucket: FB_STORAGE_BUCKET,
+		messagingSenderId: FB_MESSAGING_SENDER_ID,
+		appId: FB_APP_ID,
+      measurementId: FB_MEASUREMENT_ID
 	}
 };
 

@@ -1,5 +1,5 @@
 import db from '.';
-import { formatDT } from '$lib/utils/formatters/formatDate';
+import { formatDT } from '@utils/formatters/formatDate';
 
 export const blog = {
    img: {

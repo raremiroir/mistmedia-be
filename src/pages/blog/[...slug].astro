@@ -1,8 +1,8 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
-import db from "@/firebase";
-import type { BlogPostType } from "@/types/blog";
-import Section from "@/components/Core/Section/Section.astro";
+import BlogPost from "@/layouts/BlogPostLayout.astro";
+import db from "@/lib/firebase";
+import type { BlogPostType } from "@/lib/types/blog";
+import Section from "@comp/Core/Section.astro";
 
 // console.log(Astro.params);
 // 1. Get the slug from the incoming server request
