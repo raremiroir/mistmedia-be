@@ -1,7 +1,7 @@
 // Email types
 interface SendEmail {
-   from: string = 'Mist Media Admin',
-   to: string[] = ['mirostorm@gmail.com'],
+   from: string;
+   to: string[];
    cc?: string,
    subject: string,
    message: string,
