@@ -1,0 +1,76 @@
+---
+// @ts-expect-error
+import { t } from 'astro-i18n'
+
+export interface Props {
+   href: string;
+   title: string;
+   description: string;
+}
+const {
+   href, title, description,
+} = Astro.props
+
+---
+
+<a {href} aria-label={`${t('common.btn.read_more_about')} ${title}`} class="group h-fit trans-def">
+   <article class="
+      card relative p-0 trans-def
+      !h-96
+      overflow-hidden isolate !rounded-tile-xl
+      !shadow-lg group-hover:!shadow-xl group-hover:!shadow-black/15
+      !bg-surface-200 group-hover:!bg-white
+   ">
+      <!-- Image -->
+      <div class="
+         trans-def z-2 
+         absolute top-0 left-0 right-0 
+         w-full !h-56 group-hover:!h-48
+      ">
+         <!-- <Image 
+            src={img.src} width={400} quality={50}
+            alt={title}
+            class="w-full !h-56 group-hover:!h-48 group-hover:blur-sm"
+            fit={img.contain ? 'contain' : 'cover'}
+         /> -->
+      </div>
+      <!-- End Image -->
+
+      <!-- Content -->
+      <div class="
+         trans-def z-3 
+         absolute bottom-0 left-0 right-0 
+         w-full h-40 group-hover:h-48
+         bg-surface-200 group-hover:bg-white
+         px-2 xl:px-4 py-4
+      ">
+         <header class={`flex h-8`}>
+            <h3 class={`smaller !whitespace-nowrap`}>
+               {title}
+            </h3>
+         </header>
+         <section>
+            <p class="!line-clamp-5 group-hover:!line-clamp-6">
+               {description}
+            </p>
+         </section>
+      </div>
+      <!-- End Content -->
+      <!-- Footer -->
+      <footer class="
+         z-10 absolute bottom-0 right-0 left-0 trans-def
+         bg-surface-200 group-hover:bg-white
+         px-2 xl:px-4 pb-4 flex self-end justify-end
+      ">
+         <button class="
+               btn font-semibold h-fit self-end
+               border-2 border-transparent hover:border-primary-500
+               variant-soft-primary hover:variant-ghost-primary
+         ">
+            {t('btn.read_more')}
+         </button>
+      </footer>
+      <!-- End Footer -->
+   
+   </article>
+</a>

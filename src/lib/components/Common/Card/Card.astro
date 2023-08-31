@@ -2,13 +2,16 @@
 import CardMinimal from './CardMinimal.astro'
 import CardStatic from './CardStatic.svelte'
 import CardDefault from './CardDefault.svelte'
+import CardBlog from './CardBlog.astro';
 
 export interface Props {
-   type?: 'minimal' | 'static' | 'default';
+   type?: 'minimal' | 'static' | 'default' | 'blog';
    icon?: string
    title?: string
    href?: string
+   description?: string
    element?: string
+   img?: string
 }
 
 const {
@@ -16,7 +19,9 @@ const {
    icon = '', 
    title = '', 
    href = '',
-   element = 'div'
+   element = 'div',
+   description = '',
+   img = ''
 } = Astro.props
 
 ---
@@ -24,3 +29,4 @@ const {
 {type === 'default' && <CardDefault client:load {...{icon, title, href}}><slot/></CardDefault>}
 {type === 'minimal' && <CardMinimal {...{icon, title, href}}><slot/></CardMinimal>}
 {type === 'static' && <CardStatic client:load {...{icon, title, element}}><slot/></CardStatic>}
+{type === 'blog' && <CardBlog {...{href, title, description}}><slot/></CardBlog>}
