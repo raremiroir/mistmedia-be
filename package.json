@@ -1,7 +1,15 @@
 {
 	"name": "mistmedia-be",
-	"type": "module",
+	"description": "Mistmedia.be - Official Website",
 	"version": "0.0.1",
+	"author": "Mist Media",
+	"license": "ISC",
+	"main": "svelte.config.js",
+	"repository": {
+		"type": "git",
+		"url": "mistmedia-be"
+	},
+	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -9,17 +17,17 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"i18n:install": "astro-i18n install",
-		"i18n:sync": "tsx ./scripts/delete-existing-translation-pages.ts && astro-i18n sync",
+		"i18n:sync": "astro-i18n sync",
 		"i18n:extract:keys": "astro-i18n extract:keys"
 	},
 	"dependencies": {
-		"@astrojs/image": "^0.17.3",
-		"@astrojs/partytown": "^1.2.3",
-		"@astrojs/prefetch": "^0.3.0",
-		"@astrojs/sitemap": "^2.0.2",
-		"@astrojs/svelte": "^3.1.1",
-		"@astrojs/tailwind": "^4.0.0",
-		"@astrojs/vercel": "^3.8.2",
+		"@astrojs/image": "^0.18.0",
+		"@astrojs/partytown": "^2.0.0",
+		"@astrojs/prefetch": "^0.4.0",
+		"@astrojs/sitemap": "^3.0.0",
+		"@astrojs/svelte": "^4.0.0",
+		"@astrojs/tailwind": "^5.0.0",
+		"@astrojs/vercel": "^4.0.0",
 		"@floating-ui/dom": "^1.5.1",
 		"@tailwindcss/forms": "^0.5.5",
 		"@tailwindcss/typography": "^0.5.9",
@@ -27,6 +35,7 @@
 		"astro-i18n": "^1.8.1",
 		"astro-icon": "^0.8.1",
 		"astro-imagetools": "^0.9.0",
+		"firebase": "^10.3.0",
 		"nanostores": "^0.9.3",
 		"svelte": "^4.2.0",
 		"svelte-forms-lib": "^2.0.1",
@@ -34,10 +43,12 @@
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^3.1.4",
-		"@skeletonlabs/skeleton": "^1.12.0",
+		"@skeletonlabs/skeleton": "^2.0.0",
+		"@skeletonlabs/tw-plugin": "^0.1.0",
 		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
 		"@types/form-data": "^2.5.0",
 		"@types/mailgun-js": "^0.22.13",
+		"@types/node": "^20.5.7",
 		"form-data": "^4.0.0",
 		"mailgun.js": "^9.2.1",
 		"postcss": "^8.4.28",
@@ -46,14 +57,7 @@
 		"svelte-turnstile": "^0.5.0",
 		"svelte-typewriter": "^3.1.6",
 		"tsx": "^3.12.7",
+		"vite-plugin-tailwind-purgecss": "^0.1.3",
 		"yup": "^1.2.0"
-	},
-	"description": "``` npm create astro@latest -- --template minimal ```",
-	"main": "svelte.config.js",
-	"repository": {
-		"type": "git",
-		"url": "mistmedia-be"
-	},
-	"author": "Mist Media",
-	"license": "ISC"
+	}
 }

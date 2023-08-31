@@ -1,8 +1,12 @@
 <script lang="ts">
    // INIT SKELETON COMPONENTS
-   import { AppShell, Modal, storePopup } from "@skeletonlabs/skeleton";
+   import { AppShell, Modal, storePopup, initializeStores } from "@skeletonlabs/skeleton";
    import { currentModalRegistry } from "@/stores";
    import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+
+   initializeStores();
+
+
    storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
 

@@ -7,6 +7,7 @@ import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import { astroImageTools } from "astro-imagetools";
+import { purgeCss } from 'vite-plugin-tailwind-purgecss'
 
 
 import prefetch from "@astrojs/prefetch";
@@ -26,7 +27,6 @@ export default defineConfig({
       }
     }), 
     astroImageTools,
-    image(),
     partytown(), 
     sitemap(), 
     prefetch()
@@ -36,6 +36,14 @@ export default defineConfig({
   vite: {
     define: {
       'process.env.VITE_BUILD_TIME':JSON.stringify(new Date().toISOString()),
-    }
+    },
+    plugins: [
+      purgeCss({
+        safelist: {
+          // any selectors that begin with "hljs-" will not be purged
+          greedy: [/^hljs-/],
+        },
+      })
+    ]
   }
 });

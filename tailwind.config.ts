@@ -1,12 +1,21 @@
+import { join } from 'path';
+import type { Config } from 'tailwindcss';
 
-const defaultTheme = require('tailwindcss/defaultTheme');
+// 1. Import the Skeleton plugin
+import { skeleton } from '@skeletonlabs/tw-plugin';
+import { mistTheme } from './src/lib/styles/mist-theme';
+// Import other tailwind stuff and plugins
+import defaultTheme from 'tailwindcss/defaultTheme'
+import twTypography from '@tailwindcss/typography'
+import twForms from '@tailwindcss/forms'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
+	// 2. Opt for dark mode to be handled via the class method
 	darkMode: 'class',
 	content: [
 		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-		require('path').join(require.resolve(
+		// 3. Append the path to the Skeleton package
+		join(require.resolve(
 			'@skeletonlabs/skeleton'),
 			'../**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
 		)
@@ -16,6 +25,7 @@ module.exports = {
       center: true,
       padding: "2rem",
     },
+	// Define theme styles
 	theme: {
 		// Define breakpoints (min-width)
 		screens: {
@@ -127,7 +137,7 @@ module.exports = {
 				80: '.8', 85: '.85', 96: '.96', 97: '.97', 98: '.98', 99: '.99',
 			},
 			// Extend Z-index
-			zIndex: { 2: 2, 3: 3, 99: 99, 999: 999 },
+			zIndex: { '2': '2', '3': '3', '99': '99', '999': '999' },
 			// Extend Spacing
 			spacing: {
 				13: '3.25rem', 15: '3.75rem', 17: '4.25rem', 18: '4.5rem', 19: '4.75rem',
@@ -220,8 +230,15 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require("@tailwindcss/typography"),
-		require("@tailwindcss/forms"),
-		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
-	],
-}
+		twTypography(),
+		twForms(),
+		// 4. Append the Skeleton plugin (after other plugins)
+		skeleton({
+			themes: {
+				custom: [ mistTheme ]
+			}
+		})
+	]
+} satisfies Config;
+
+export default config;
