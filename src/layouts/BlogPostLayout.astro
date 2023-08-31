@@ -1,0 +1,40 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import FormattedDate from '@comp/Utils/FormattedDate.astro';
+import Hero from '@comp/Common/Hero/Hero.astro';
+import type { BlogPostType } from '@/lib/types/blog';
+// import type { CollectionEntry } from 'astro:content';
+
+// type Props = CollectionEntry<'blog'>['data'];
+
+export interface Props {
+	post: BlogPostType;
+}
+
+const { post } = Astro.props;
+
+// const { content } = post;
+const { 
+	// slug, 
+	title, description, pubDate, 
+	// heroImage, language, author 
+} = post.data;
+const { 
+	// id, createdAt, 
+	updatedAt 
+} = post.meta;
+
+const datePublished = new Date(pubDate);
+---
+
+<PageLayout title={title} description={description}>
+		<Hero slot="hero">{title}</Hero>
+			<div class={`flex flex-col py-2`}>
+				<FormattedDate date={datePublished} type="published" />
+				<FormattedDate date={new Date(updatedAt)?? datePublished} type="updated" />
+			</div>
+		</Hero>
+		<article>
+			<slot />
+		</article>
+</PageLayout>
