@@ -10,7 +10,7 @@
    import NavItem      from './NavItem.svelte';
    import Hamburger from './Hamburger.svelte';
 
-   import Logo from '@/lib/components/Media/Logo/Logo.svelte';
+   import Logo from '@/lib/components/Media/Logo/Logo.astro';
    import services from "@/lib/config/services";
 
    const { pathname } = Astro.url;
@@ -88,10 +88,10 @@
    <div class="w-def grid grid-cols-2 lg:grid-cols-6 gap-4">
       <!-- LOGO -->
       <div class="logo col-span-1 flex items-center">
-         <a href="/{astroI18n.langCode}#" 
+         <a href={l('')} 
             class="btn btn-sm p-0 h-10 flex items-center hover:bg-surface-500/20"
             aria-label={t('btn.back_to_home')} title={t('btn.back_to_home')}>
-            <Logo type="both" size={120} class="gap-4 mb-1" client:load />
+            <Logo logoType="both" size={120} klass="gap-4 mb-1" />
          </a>
       </div>
       <!-- END LOGO -->

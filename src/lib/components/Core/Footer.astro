@@ -7,11 +7,11 @@
    import { contactIcons, servicesIcons, commonIcons, otherIcons } from "@/lib/config/icons";
 
    import Icon from "astro-icon";
-   import AnimIcon from "../Media/AnimIcon/AnimIcon.svelte";
-   import Logo from "../Media/Logo/Logo.svelte";
+   import AnimIcon from "@/lib/components/Media/AnimIcon/AnimIcon.svelte";
+   import Logo from "@/lib/components/Media/Logo/Logo.astro";
    
    const footerSocials = Object.entries(socials).map(([key, value]: [string, string]) => ({ name: key, href: value, icon: contactIcons[key] }));
-   const footerCols = [
+   let footerCols = [
       {  title: t('common.contact.us'),
          items: [
             { text: firstLetterCase(t('contact.via.form')), href: `${l('contact')}`, icon: contactIcons.form },
@@ -36,8 +36,7 @@
             { text: t('others.privacy_policy.title'), href: '/privacy-policy', icon: otherIcons.privacy_policy },
             { text: t('others.terms_conditions.title'), href: '/terms-conditions', icon: otherIcons.terms_conditions },
       ]}
-   ]
-   
+   ]   
 
    const today = new Date();
 ---
@@ -51,15 +50,15 @@
             py-8"
       >
          <h3 class="text-surface-200 text-center md:text-start">
-            <!-- {t('common.footer.socials.follow_us_on')} {t('common.footer.socials.social_media')}! -->
+            {t('common.footer.socials.follow_us_on')} {t('common.footer.socials.social_media')}!
          </h3>
          <ul class="
                w-full sm:w-5/6 md:w-full mx-auto 
                flex items-center justify-between md:justify-end gap-4">
             { footerSocials.map((socialItem) => (
                <li><a href={socialItem.href} target="_blank" rel="noopener noreferrer"
-                      aria-label="{$LL.footer.socials.check_out_our()} {socialItem.name} {$LL.footer.socials.page()}"
-                      title="{$LL.footer.socials.check_out_our()} {socialItem.name} {$LL.footer.socials.page()}"
+                      aria-label={`${t('footer.socials.check_out_our')} ${socialItem.name} ${t('footer.socials.page')}`}
+                      title={`${t('footer.socials.check_out_our')} ${socialItem.name} ${t('footer.socials.page')}`}
                       class="btn btn-icon">
                   <AnimIcon icon={socialItem.icon} size='full'
                   />
@@ -74,21 +73,21 @@
             w-full mx-auto 
             grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
          <!-- INFO COLS -->
-         <!-- { footerCols.map((col, i) => (
-            <div class="
+         { footerCols.map((col, i) => (
+            <div class={`
                   flex flex-col gap-2 py-8 
                   items-center justify-start md:items-start
-                  { i === 0 ? 'order-3 md:order-2' 
+                  ${ i === 0 ? 'order-3 md:order-2' 
                   : i === 1 ? 'order-1 md:order-3'
-                  : i === 2 ? 'order-2 md:order-4' : '' }">
+                  : i === 2 ? 'order-2 md:order-4' : '' }`}>
                <h4 class="h3 !text-surface-400 !text-center md:!text-start">{col.title}</h4>
-               <ul class="{flex.col.start} gap-2">
+               <ul class="flex flex-col items-start justify-start gap-2">
 
-                  { col.items.map((item) => {
-                     item !== null && (
+                  { col.items.map((item) => (
+                     !!item && (
                         <li>
                            <a href={item.href} class="
-                              {transition.fast} {flex.row.startCenter} gap-2 
+                              trans-fast flex flex-row items-start justify-center gap-2 
                               text-primary hover:text-primary-100
                            ">
                               <Icon name={item.icon} class="w-6" />
@@ -96,10 +95,10 @@
                            </a>
                         </li>
                      )
-                  })}
+                  ))}
                </ul>
             </div>
-         ))} -->
+         ))}
          <!-- END INFO COLS -->
          <!-- LOGO -->
          <div class="
@@ -107,10 +106,10 @@
                md:flex-row
                -space-y-3 order-4 md:order-1">
                <div class="h-16 w-16 flex items-center justify-center">
-                  <Logo type="icon" size='full' class="" />
+                  <Logo logoType="icon" size='full' />
                </div>
                <div class="h-16 w-40 flex items-center">
-                  <Logo type="lettering" size='full' class="" />
+                  <Logo logoType="lettering" size='full' />
                </div>
          </div>
          <!-- END LOGO -->
@@ -119,7 +118,7 @@
       <hr/>
       <!-- COPYRIGHT STATEMENT -->
       <div class="py-4 w-full flex items-center justify-center">
-         <!-- <p class="text-sm text-surface">&copy; {today.getFullYear()} Mist Media. {t('common.footer.rights_reserved')}</p> -->
+         <p class="text-sm text-surface">&copy; {today.getFullYear()} Mist Media. {t('common.footer.rights_reserved')}</p>
       </div>
       <!-- END COPYRIGHT STATEMENT -->
    </div>

@@ -4,7 +4,7 @@ import services from "@/lib/config/services";
 
 import PageLayout from "@/layouts/PageLayout.astro";
 import Section from "@/lib/components/Core/Section.astro";
-import HeroHome from "@/lib/components/Common/Hero/HeroHome.svelte";
+import HeroHome from "@/lib/components/Common/Hero/HeroHome.astro";
 import CallToAction from "@/lib/components/Content/CallToAction.astro";
 import Faq from "@/lib/components/Content/Faq.astro";
 import Card from "@/lib/components/Common/Card/Card.astro";
@@ -22,7 +22,7 @@ const servicesCards: {icon: string, title: string, slug: string, key: string, te
 
 <PageLayout title="Home">
 
-	<HeroHome slot="hero" client:load />
+	<HeroHome slot="hero" />
 
 	<!-- SERVICES -->
    <Section 
