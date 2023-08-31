@@ -45,26 +45,26 @@
    class="
       w-def mt-8 md:mt-4 2xl:mt-0
       flex flex-col gap-8 items-center justify-start">
-   <div class="grid grid-cols-5 gap-8">
+   <div class="w-full grid grid-cols-5 gap-8">
       <!-- LOGO ANIM -->
       <div class="col-span-1">
-         <Logo logoType="animIcon" />
+         <Logo logoType="animIcon" size="full" />
       </div>
       <!-- END LOGO ANIM -->
       <div class="col-span-4 flex flex-col gap-1 items-start justify-start">
          <!-- LOGO -->
-         <Logo logoType="lettering" />
+         <Logo logoType="lettering" size="full" />
          <!-- END LOGO -->
          <!-- TYPEWRITER SLOGAN -->
          <span class="flex flex-row items-end !leading-none font-titlemono font-bold">
-            <span class="{subtitleClass}">We&nbsp;</span>
+            <span class={`${subtitleClass}`}>We&nbsp;</span>
             <Typewriter 
-               client:load
+               client:only
                mode="loopRandom" cursor keepCursorOnFinish delay={0}
                interval={80} wordInterval={1500} unwriteInterval={50} 
                element="span">
                   { subtitleItems.map(item => (
-                     <span class="whitespace-nowrap {subtitleClass}">{item}</span>
+                     <span class={`whitespace-nowrap ${subtitleClass}`}>{item}</span>
                   ))}
             </Typewriter>
          </span>
@@ -73,11 +73,11 @@
    </div>
    <!-- ACTIONS -->
    <div class="w-full lg:w-3/5 mx-auto grid grid-cols-2 gap-8">
-      <a href="#{t('pages.home.sections.what_we_do.id')}" 
+      <a href={`#${t('pages.home.sections.what_we_do.id')}`}
          class="col-span-1 w-full mist-btn mist-btn-xl mist-variant-filled-primary">
          {t('pages.home.hero.buttons.what_do_we_do')}
       </a>
-      <a href="{l('solutions')}" 
+      <a href={l('solutions')} 
          class="col-span-1 w-full mist-btn mist-btn-xl mist-variant-alt-primary">
          {t('pages.home.hero.buttons.discover_our_services')}
       </a>
