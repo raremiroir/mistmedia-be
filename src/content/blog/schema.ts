@@ -5,8 +5,7 @@ export const blogSchema = defineCollection({
   schema: z.object({
     isDraft: z.boolean(),
     sortOrder: z.number().optional(),
-  
-    id: z.string(),
+
     title: z.string(),
     description: z.string(),
     image: z.string().optional(),
@@ -16,9 +15,33 @@ export const blogSchema = defineCollection({
     language: z.enum(['en','nl']).default('nl'),
      
     footnote: z.string().optional(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional(),
     relatedPosts: z.array(reference('blog')).optional(),
 
     canonicalUrl: z.string().url().optional(),
   }),
 });
+
+export interface BlogPost {
+  isDraft: boolean;
+  sortOrder?: number;
+  title: string;
+  description: string;
+  image?: string;
+  publishDate: Date;
+  author: string;
+  language: 'en' | 'nl';
+  footnote?: string;
+  tags?: string[];
+  relatedPosts?: string[];
+  canonicalUrl?: string;
+}
+
+export interface BlogPostFrontmatter {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: BlogPost;
+  render: any;
+}

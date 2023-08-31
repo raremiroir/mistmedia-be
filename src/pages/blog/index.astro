@@ -8,10 +8,11 @@ import { pagesIcons } from "@/lib/config/icons";
 import Section from "@/lib/components/Core/Section.astro";
 import CallToAction from "@/lib/components/Content/CallToAction.astro";
 
+import type { BlogPostFrontmatter } from '@/content/blog/schema'
 import { getCollection, getEntry } from "astro:content";
 import Card from "@/lib/components/Common/Card/Card.astro";
 
-let allBlogPosts: any[] = [];
+let allBlogPosts: BlogPostFrontmatter[] = [];
 await getCollection("blog").then((collection) => {
    allBlogPosts = collection.filter((post) => !post.data.isDraft).filter((post) => post.data.language === astroI18n.langCode);
 });
@@ -40,18 +41,13 @@ console.log(allBlogPosts);
          {allBlogPosts.map((post, index) => (
             <Card 
                title={post.data.title}
-               href={`/${post.slug}`}
+               href={l('blog' + '/' + post.slug)}
                description={post.data.description}
                img={post.data.image}
             />
          ))}
-         <!-- {#each posts as post}
-         {:else}
-            <p>{$LL.pages.blog.no_posts()}</p>
-         {/each} -->
       </div>
    </Section>
-
 
    <!-- CTA -->
    <CallToAction />

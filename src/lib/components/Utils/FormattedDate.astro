@@ -11,7 +11,7 @@ const { date, type } = Astro.props;
 <time 
 	datetime={date.toISOString()}
 	class={`font-body font-semibold`}>
-	{ type === 'updated' && t('common.blog.info.dates.updated') || t('common.blog.info.dates.created') }
+	{ type === 'updated' && t('pages.blog.info.dates.updated') || t('pages.blog.info.dates.created') }
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',

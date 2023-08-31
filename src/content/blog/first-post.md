@@ -1,6 +1,5 @@
 ---
 isDraft: true
-id: first-post
 title: First post
 description: First post.
 image: blog/img/learning_agility.webp
