@@ -4,25 +4,15 @@ import Section from "@/lib/components/Core/Section.astro"
 import Accordion from "../Common/Accordion/Accordion.svelte";
 import AccordionItem from "../Common/Accordion/AccordionItem.svelte";
 
-const faqItems = [
-   {
-      question: t('pages.home.sections.faq.items.1.question'),
-      answer: t('pages.home.sections.faq.items.1.answer'),
-   },
-   {
-      question: t('pages.home.sections.faq.items.2.question'),
-      answer: t('pages.home.sections.faq.items.2.answer'),
-   },
-   {
-      question: t('pages.home.sections.faq.items.3.question'),
-      answer: t('pages.home.sections.faq.items.3.answer'),
-   },
-   {
-      question: t('pages.home.sections.faq.items.4.question'),
-      answer: t('pages.home.sections.faq.items.4.answer'),
-   },
-]
 
+const faqAmount = 4;
+let faqItems = [];
+for (let i = 1; i <= faqAmount; i++) {
+   faqItems.push({
+      question: t(`pages.home.sections.faq.items.${i}.question`),
+      answer: t(`pages.home.sections.faq.items.${i}.answer`),
+   })
+}
 ---
 
 <Section 
