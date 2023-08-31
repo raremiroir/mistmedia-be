@@ -1,6 +1,5 @@
 import type { ModalComponent } from "@skeletonlabs/skeleton";
 import { derived, writable, type Readable, type Writable } from "svelte/store";
-import { locale } from "./i18n";
 import { atom, type WritableAtom } from "nanostores";
 
 
