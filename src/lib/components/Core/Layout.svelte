@@ -1,11 +1,20 @@
 <script lang="ts">
    // INIT SKELETON COMPONENTS
-   import { AppShell, Modal, storePopup, initializeStores } from "@skeletonlabs/skeleton";
-   import { currentModalRegistry } from "@/stores";
+   import { AppShell, Modal, storePopup, initializeStores, getModalStore, type ModalStore } from "@skeletonlabs/skeleton";
+   import { currentModalRegistry } from "@/lib/stores/components";
    import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+   import { modalStore } from "@/lib/stores/components";
+   import ModalDefault from "../Content/Modals/ModalDefault.svelte";
+   import ModalPortfolioItem from "../Content/Modals/ModalPortfolioItem.svelte";
+   import ModalAboutMe from "../Content/Modals/ModalAboutMe.svelte";
 
    initializeStores();
-
+   $modalStore = getModalStore();
+   $currentModalRegistry = {
+      defaultModal: { ref: ModalDefault },
+      modalPortfolioItem: { ref: ModalPortfolioItem },
+      modalAboutMe: { ref: ModalAboutMe }
+   }
 
    storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
