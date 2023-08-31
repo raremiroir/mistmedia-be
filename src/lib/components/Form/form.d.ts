@@ -18,11 +18,11 @@ type TurnstileVersion = 'v0' | 'v1';
 
 // Form / Input types
 export type InputItem = {
-   enabled: boolean = false,
+   enabled: boolean;
    disabled?: boolean,
    placeholder?: string,
-   required?: boolean = true,
-   automatic?: boolean = false,
+   required?: boolean,
+   automatic?: boolean;
 }
 
 export type TextAreaItem = InputItem & {
