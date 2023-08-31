@@ -1,0 +1,49 @@
+---
+import Typewriter from 'svelte-typewriter/Typewriter.svelte';
+import AnimIcon from '../../Media/AnimIcon/AnimIcon.svelte';
+
+export interface Props {
+   hasLogo?: boolean;
+   subtitle?: string;
+   klass?: string;
+}
+const {
+   hasLogo = false,
+   subtitle = '',
+   klass = '',
+} = Astro.props
+
+---
+
+<div class={`w-def ${hasLogo ? 'grid grid-cols-4 gap-8' : ''}`}>
+
+   { hasLogo && (
+      <div class="col-span-1">
+         <AnimIcon 
+            client:only 
+            logo size={80} 
+            animProps={{
+               light: 'fill-[#575d61] dark:fill-surface-100',
+               dark: 'fill-[#373c3e] dark:fill-surface-300' 
+            }} 
+         />
+      </div>
+   )}
+
+   
+   <div class={`
+         ${hasLogo ? 'col-span-3' : ''}
+         flex flex-col gap-0 items-start justify-start
+         ${klass}`}>
+      <h1><slot>Title</slot></h1>
+      {subtitle !== '' && (
+         <Typewriter client:load
+            mode="concurrent" cursor delay={300} keepCursorOnFinish
+            interval={10} element="span">
+            <p class="text-2xl font-titlemono italic text-surface-700-200-token">
+                  {subtitle}
+            </p>
+         </Typewriter>
+      )}
+   </div>
+</div>
