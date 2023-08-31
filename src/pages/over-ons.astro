@@ -19,14 +19,14 @@
 
    // Images
    import { Image } from 'astro:assets'
-   import ImgMiroStorm from '@/lib/assets/img/miro_storm-color.png'
+   import ImgMiroStorm from '@/lib/assets/img/miro_storm-color-square.png'
 
 
    // Data
    const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
    const valuesCards = values.map((value: string) => ({
-      title: t(`pages.about.sections.difference.items[${value}].title`),
-      text: t(`pages.about.sections.difference.items[${value}].text`), 
+      title: t(`pages.about.sections.difference.items.${value}.title`),
+      text: t(`pages.about.sections.difference.items.${value}.text`), 
       icon: valuesIcons[value]
    }));
 
@@ -63,11 +63,13 @@
       title={t('pages.about.sections.about_me.title')}
    >
       <div class="grid grid-cols-4 gap-8">
-         <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden">
-            <Image  
-               src={ImgMiroStorm}
+         <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden bottom">
+            <Image 
+               src={ImgMiroStorm} class=""
                alt="Miro Storm - Mist Media"
-               width={400} height={400}
+               width="600" height="600" quality="high"
+               decoding="async"
+               loading="lazy"
             />
             <!-- <img src={ImgMiroStorm.src} width={ImgMiroStorm.width} height={ImgMiroStorm.height} alt="Miro Storm - Mist Media Founder" /> -->
          </div>
