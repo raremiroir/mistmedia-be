@@ -1,5 +1,5 @@
 import i18n from "astro-i18n"
-import { defineConfig } from 'astro/config';
+import { defineConfig, squooshImageService } from 'astro/config';
 import svelte, { vitePreprocess } from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
@@ -27,6 +27,11 @@ export default defineConfig({
     prefetch()
   ],
   output: "server",
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop'
+    }
+  },
   adapter: vercel(),
   vite: {
     define: {
