@@ -1,6 +1,6 @@
 <script lang="ts">
 
-   import { openMobile } from "@/stores";
+   import { openMobile } from "@/lib/stores";
 
    export let scrolled: boolean = false;
    $: scrolled;

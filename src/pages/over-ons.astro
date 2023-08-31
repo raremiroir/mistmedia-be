@@ -1,9 +1,10 @@
 ---
    import { t, l } from 'astro-i18n';
-   import { modalStore, type ModalSettings } from '@skeletonlabs/skeleton';
+   import { type ModalSettings } from '@skeletonlabs/skeleton';
    import { langs, socials } from '@/lib/config';
    import { pagesIcons, valuesIcons } from '@/lib/config/icons';
-   import { currentModalRegistry } from '@/stores';
+   import { currentModalRegistry } from '@/lib/stores/components';
+   import { modalStore } from '@/lib/stores/components';
    
    // Components
    import PageLayout from '@/layouts/PageLayout.astro';
@@ -12,10 +13,7 @@
    import Section from '@/lib/components/Core/Section.astro';
    import CallToAction from '@/lib/components/Content/CallToAction.astro';
    import AnimIcon from '@/lib/components/Media/AnimIcon/AnimIcon.svelte';
-   import ModalAboutMe from "@/lib/components/Content/Modals/ModalAboutMe.svelte"
    import Card from '@/lib/components/Common/Card/Card.astro';
-   
-   currentModalRegistry.set({ modalAboutMe: { ref: ModalAboutMe } });
 
    // Images
    import { Image } from 'astro:assets'
