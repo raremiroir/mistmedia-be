@@ -21,6 +21,6 @@ const {
 
 ---
 
-{type === 'default' && <CardDefault {...{icon, title, href}}><slot/></CardDefault>}
+{type === 'default' && <CardDefault client:load {...{icon, title, href}}><slot/></CardDefault>}
 {type === 'minimal' && <CardMinimal {...{icon, title, href}}><slot/></CardMinimal>}
-{type === 'static' && <CardStatic {...{icon, title, element}}><slot/></CardStatic>}
+{type === 'static' && <CardStatic client:load {...{icon, title, element}}><slot/></CardStatic>}
