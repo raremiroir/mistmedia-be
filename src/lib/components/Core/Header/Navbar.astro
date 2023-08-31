@@ -3,9 +3,8 @@
    import { baseLang } from '@/lib/config'
    
    import type { NavItemType } from './navbar';
-   // Astro components
-	import LanguageSelector from './LanguageSelector.astro'
    // Specific components
+	import LangSwitch from './LangSwitch.astro'
    import LightSwitch      from './LightSwitch.svelte';
    import NavItem      from './NavItem.svelte';
    import Hamburger from './Hamburger.svelte';
@@ -107,9 +106,14 @@
       <!-- ACTIONS -->
       <div class="col-span-1 items-center justify-end gap-4 flex">
          <div class="hidden lg:flex items-center justify-end gap-4">
-            <!-- <LangSwitch client:load /> -->
-            <LanguageSelector />
-            <LightSwitch client:load />
+            <LangSwitch />
+            <LightSwitch 
+               client:load 
+               text={{
+                  to_dark: t('common.actions.change_to_dark'),
+                  to_light: t('common.actions.change_to_light')
+               }}
+            />
          </div>
          <Hamburger client:load />
       </div>
