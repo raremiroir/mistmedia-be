@@ -46,7 +46,7 @@ const config = {
 			'lg': "clamp(0.875rem, 0.7985rem + 0.4082vw, 1.125rem)",
 			'xl': "clamp(1rem, 0.9235rem + 0.4082vw, 1.25rem)",
 			'2xl': "clamp(0.875rem, 0.6837rem + 1.0204vw, 1.5rem)",
-			'3xl': "clamp(1.25rem, 1.0587rem + 1.0204vw, 1.875rem);",
+			'3xl': "clamp(1.25rem, 1.0587rem + 1.0204vw, 1.875rem)",
 			'4xl': "clamp(1.5rem, 1.2704rem + 1.2245vw, 2.25rem)",
 			'5xl': "clamp(1.25rem, 0.7143rem + 2.8571vw, 3rem)",
 			'6xl': "clamp(2rem, 1.2347rem + 4.0816vw, 4.5rem)",
