@@ -1,15 +1,16 @@
-import i18n from "astro-i18n"
-import { defineConfig, squooshImageService } from 'astro/config';
+import type { AstroUserConfig } from 'astro'; 
+import { defineConfig } from 'astro/config';
+import i18n from "astro-i18n";
 import svelte, { vitePreprocess } from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
-import { purgeCss } from 'vite-plugin-tailwind-purgecss'
+import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
-export default defineConfig({
+const config: AstroUserConfig = {
   integrations: [
     i18n(),
     svelte({
@@ -18,9 +19,7 @@ export default defineConfig({
       ]
     }), 
     tailwind({
-      config: {
         applyBaseStyles: false,
-      }
     }), 
     partytown(), 
     sitemap(), 
@@ -46,4 +45,6 @@ export default defineConfig({
       })
     ]
   }
-});
+};
+
+export default defineConfig(config);
