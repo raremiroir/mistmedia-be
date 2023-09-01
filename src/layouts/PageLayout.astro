@@ -4,9 +4,10 @@
    astroI18n.init(Astro)
 
    import { website } from '@/lib/config';
-
-   import Layout from '@/lib/components/Core/Layout.svelte';
+   
+   import Shell from './Shell.astro'
    import Head from '@/lib/components/Core/Head.astro';
+   import SvelteHead from '@/lib/components/Core/Head.svelte';
    import Navbar from "@/lib/components/Core/Header/Navbar.astro";
    import Footer from '@/lib/components/Core/Footer.astro';
    
@@ -27,7 +28,7 @@
       <Head 
         title={`${website.title} | ${title}`} 
         description={description?? website.description} />
-      <!-- <BaseHeadSvelte client:load /> -->
+      <SvelteHead client:load />
   
       <slot name="head"/>
     </head>
@@ -35,14 +36,24 @@
     <body data-theme="mist-theme" class="min-h-screen !w-screen !max-w-full !overflow-x-hidden">
       <!-- <Header width={widths} /> -->
       <div class='mx-auto flex flex-col w-full h-full'>
-         <Layout client:load>
+         <Shell 
+            klass="min-h-screen"
+            slots={{
+               header: true,
+               pageHeader: true,
+               pageFooter: true,
+            }}
+         >
             <Navbar slot="header" />
-            <slot slot="breadcrumbs" name="breadcrumbs"></slot>
-            <slot slot="hero" name="hero"></slot>
-            
-            <slot />
-            <Footer slot="footer" />
-         </Layout>
+            <div slot="pageHeader" class="w-full relative mt-24 flex flex-col">
+               <slot slot="breadcrumbs" name="breadcrumbs"></slot>
+               <slot slot="hero" name="hero"></slot>
+            </div>
+            <main class="w-full mx-auto p-0 m-0">
+               <slot></slot>
+            </main>
+            <Footer slot="pageFooter" />
+         </Shell>
       </div>
   
       <!-- <BaseScripts/> -->
