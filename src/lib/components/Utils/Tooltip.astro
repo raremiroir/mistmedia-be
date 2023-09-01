@@ -1,0 +1,36 @@
+---
+   import type { TooltipProps } from "./tooltip"
+
+   const {
+      placement = 'bottom',
+   } = Astro.props;
+---
+<script>
+   import {computePosition} from '@floating-ui/dom';
+ 
+   const button = document.querySelector('#tooltip-trigger');
+   const tooltip = document.querySelector('#tooltip');
+   
+   computePosition(button, tooltip, {
+      placement: 'top',
+   }).then(({x, y}) => {
+      Object.assign(tooltip.style, {
+         left: `${x}px`,
+         top: `${y}px`,
+      });
+   });
+</script>
+
+<span id="tooltip-trigger">
+   <slot>Tooltip trigger</slot>
+</span>
+
+<div 
+   id="tooltip" 
+   role="tooltip"
+   class="
+      bg-surface-200 text-surface-900 border border-primary-600 rounded-md p-2
+      w-max absolute top-0 left-0 z-999
+">
+   Tooltip
+</div>
