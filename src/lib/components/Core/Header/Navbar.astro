@@ -1,6 +1,6 @@
 ---
-   import i18n, { astroI18n, t, l } from "astro-i18n"
-   import { baseLang } from '@/lib/config'
+   //@ts-ignore
+   import { t, l } from "astro-i18n"
    
    import type { NavItemType } from './navbar';
    // Specific components
@@ -11,10 +11,6 @@
 
    import Logo from '@/lib/components/Media/Logo/Logo.astro';
    import services from "@/lib/config/services";
-
-   const { pathname } = Astro.url;
-   let currentLocaleSlug = astroI18n.langCode === baseLang ? '' : astroI18n.langCode + '/';
-   // const { width } = Astro.props;
 
    let navItems: NavItemType[] = [
       { title: t('nav.home.title'),      href: `${l('')}` },
@@ -42,8 +38,6 @@
       backdrop-blur-md bg-white dark:bg-slate-900/30 
 		py-4 lg:py-6`;
 
-
-   const currentPath = Astro.url.pathname;
 ---
 <script>
    import { openMobile } from '@/lib/stores'

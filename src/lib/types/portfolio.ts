@@ -1,6 +1,5 @@
-import type { CollectionReference, DocumentReference, Timestamp } from "firebase/firestore"
+import type { DocumentReference, Timestamp } from "firebase/firestore"
 import type { LocaleString } from "@/lib/i18n/navigation"
-import type { StorageReference } from "firebase/storage"
 
 // TAG
 export interface TagItem {

@@ -1,4 +1,4 @@
-import { derived, writable, type Writable } from "svelte/store";
+import { writable, type Writable } from "svelte/store";
 import type { PortfolioItemModal } from "../types/portfolio";
 import type { ModalComponent, ModalStore } from "@skeletonlabs/skeleton";
 

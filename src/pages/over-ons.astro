@@ -1,9 +1,9 @@
 ---
+   // @ts-ignore
    import { t, l } from 'astro-i18n';
    import { type ModalSettings } from '@skeletonlabs/skeleton';
-   import { langs, socials } from '@/lib/config';
+   import { socials } from '@/lib/config';
    import { pagesIcons, valuesIcons } from '@/lib/config/icons';
-   import { currentModalRegistry } from '@/lib/stores/components';
    import { modalStore } from '@/lib/stores/components';
    
    // Components
@@ -18,7 +18,6 @@
    // Images
    import { Image } from 'astro:assets'
    import ImgMiroStorm from '@/lib/assets/img/miro_storm-color-square.png'
-
 
    // Data
    const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
@@ -42,7 +41,6 @@
 ---
 
 <script lang="ts">
-
    const aboutMeTriggerBtn = document.getElementById('triggerAboutModal');
    aboutMeTriggerBtn.addEventListener('click', () => modalStore.trigger(modalAboutMe));
 </script>
@@ -64,12 +62,11 @@
          <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden bottom">
             <Image 
                src={ImgMiroStorm} class=""
-               alt="Miro Storm - Mist Media"
+               alt="Miro Storm - Mist Media Founder"
                width="600" height="600" quality="high"
                decoding="async"
                loading="lazy"
             />
-            <!-- <img src={ImgMiroStorm.src} width={ImgMiroStorm.width} height={ImgMiroStorm.height} alt="Miro Storm - Mist Media Founder" /> -->
          </div>
          <div class="col-span-3 flex flex-col gap-4">
             <div class="card card-variant-alt-primary !h-fit">

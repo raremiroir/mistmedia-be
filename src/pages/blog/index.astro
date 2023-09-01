@@ -7,19 +7,16 @@ import Breadcrumbs from "@/lib/components/Core/Breadcrumbs.astro";
 import { pagesIcons } from "@/lib/config/icons";
 import Section from "@/lib/components/Core/Section.astro";
 import CallToAction from "@/lib/components/Content/CallToAction.astro";
-
-import type { BlogPostFrontmatter } from '@/content/blog/schema'
-import { getCollection, getEntry } from "astro:content";
 import Card from "@/lib/components/Common/Card/Card.astro";
 
+import type { BlogPostFrontmatter } from '@/content/blog/schema'
+import { getCollection } from "astro:content";
+
 let allBlogPosts: BlogPostFrontmatter[] = [];
-await getCollection("blog").then((collection) => {
+await getCollection("blog").then((collection) => { 
    allBlogPosts = collection.filter((post) => !post.data.isDraft).filter((post) => post.data.language === astroI18n.langCode);
 });
-const authorMiro = await getEntry("authors", "miro");
-// Filter blog posts on isDraft and language
-
-console.log(allBlogPosts);
+// const authorMiro = await getEntry("authors", "miro");
 ---
 
 <PageLayout title={t('nav.blog.title')}>

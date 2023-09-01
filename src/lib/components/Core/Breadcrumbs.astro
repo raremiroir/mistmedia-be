@@ -1,5 +1,6 @@
 ---
-   import { astroI18n, t, l } from "astro-i18n";
+   //@ts-ignore
+   import { t, l } from "astro-i18n";
    import Icon from "astro-icon";
    import { pagesIcons } from "@/lib/config/icons";
 
@@ -28,7 +29,7 @@
          </a>
       </li>
 
-      { crumbs.map((crumb, i) => (
+      { crumbs.map((crumb) => (
          <li class="crumb-separator" aria-hidden>
             <Icon name="mdi:chevron-right" class="text-primary-800 w-4 h-auto" />
          </li>

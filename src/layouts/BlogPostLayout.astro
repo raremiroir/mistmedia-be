@@ -2,11 +2,7 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import FormattedDate from '@comp/Utils/FormattedDate.astro';
 import Hero from '@comp/Common/Hero/Hero.astro';
-import type { BlogPost, BlogPostFrontmatter } from '@/content/blog/schema';
-// import type { CollectionEntry } from 'astro:content';
-
-// type Props = CollectionEntry<'blog'>['data'];
-
+import type { BlogPostFrontmatter } from '@/content/blog/schema';
 export interface Props {
 	post: BlogPostFrontmatter;
 }
