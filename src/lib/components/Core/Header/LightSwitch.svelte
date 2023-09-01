@@ -5,7 +5,7 @@
 	export let bgDark = "bg-surface-900";
 	export let fillLight = "fill-surface-50";
 	export let fillDark = "fill-surface-900";
-	export let width = "w-12";
+	export let width = "w-20"; // or 12
 	export let height = "h-6";
 	export let ring = "ring-[1px] ring-surface-500/30";
 	export let rounded = "rounded-full";
