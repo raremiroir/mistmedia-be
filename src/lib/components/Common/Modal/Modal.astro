@@ -33,34 +33,27 @@
    const modalContent = document.querySelector("#modal-content");
 
    let modalOpen = false;
+   modalTrigger?.addEventListener('click', () => openModal());
    // @ts-ignore
-   modalTrigger.addEventListener('click', () => openModal());
+   modalTrigger?.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModal(); })
+   modalCloser?.addEventListener('click', () => closeModal());
    // @ts-ignore
-   modalTrigger?.addEventListener('keydown', (e) => { if (e.key === 'Enter') openModal(); })
-   // @ts-ignore
-   modalCloser.addEventListener('click', () => closeModal());
-   // @ts-ignore
-   modalCloser?.addEventListener('keydown', (e) => { if (e.key === 'Enter') closeModal(); })
+   modalCloser?.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') closeModal(); })
    window.addEventListener('click', e => { if (e.target == modal) closeModal(); })
    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); })
    
    function openModal() {
       modalOpen = true;
-      // @ts-ignore
-      modal.classList.remove('fade-out'); modalContent.classList.remove('modal-close-anim');
-      // @ts-ignore
-      modal.classList.add('fade-in'); modalContent.classList.add('modal-open-anim');
-      // @ts-ignore
-      modal.classList.remove('hidden');
+      modal?.classList.remove('fade-out'); modalContent?.classList.remove('modal-close-anim');
+      modal?.classList.add('fade-in'); modalContent?.classList.add('modal-open-anim');
+      modal?.classList.remove('hidden');
    }
    function closeModal() {
       modalOpen = false;
-      // @ts-ignore
-      modal.classList.remove('fade-in'); modalContent.classList.remove('modal-open-anim');
-      // @ts-ignore
-      modal.classList.add('fade-out'); modalContent.classList.add('modal-close-anim');
-      setTimeout(() => { // @ts-ignore
-         modal.classList.add('hidden');
+      modal?.classList.remove('fade-in'); modalContent?.classList.remove('modal-open-anim');
+      modal?.classList.add('fade-out'); modalContent?.classList.add('modal-close-anim');
+      setTimeout(() => {
+         modal?.classList.add('hidden');
       }, 300);
    }
 </script>
