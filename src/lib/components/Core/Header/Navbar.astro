@@ -6,7 +6,7 @@
    // Specific components
 	import LangSwitch from './LangSwitch.astro'
    import LightSwitch      from './LightSwitch.svelte';
-   import NavItem      from './NavItem.svelte';
+   import NavItem      from './NavItem.astro';
    import Hamburger from './Hamburger.svelte';
 
    import Logo from '@/lib/components/Media/Logo/Logo.astro';
@@ -21,7 +21,7 @@
          { title: t('nav.solutions.items.web.title'),       href: `${l(`solutions/${services.web.slug}`)}` },
          { title: t('nav.solutions.items.graphic.title'),   href: `${l(`solutions/${services.graphic.slug}`)}` },
          { title: t('nav.solutions.items.marketing.title'), href: `${l(`solutions/${services.marketing.slug}`)}` },
-         { title: t('nav.solutions.items.3d.title'),        href: `${l(`solutions/${services.three_d.slug}`)}` },
+         { title: t('nav.solutions.items.three_d.title'),        href: `${l(`solutions/${services.three_d.slug}`)}` },
          { title: t('nav.solutions.items.av.title'),        href: `${l(`solutions/${services.av.slug}`)}` },
          { title: t('nav.solutions.items.ai.title'),        href: `${l(`solutions/${services.ai.slug}`)}` },
         ]
@@ -92,7 +92,7 @@
       <nav class="col-span-4 hidden lg:block">
          <ul class="flex flex-row items-center justify-between py-4">
             {navItems.map(({title, href, items}) => (
-               <NavItem client:load title={t(`${title}`)} href={`${href}`} items={items || []} />
+               <NavItem label={title} href={href} items={items || []} />
             ))}
          </ul>
       </nav>

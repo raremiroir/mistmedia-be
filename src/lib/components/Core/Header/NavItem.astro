@@ -1,0 +1,62 @@
+---
+import Menu from '@comp/Common/Menu/Menu.svelte'
+import type { NavItemType } from './navbar';
+import Icon from 'astro-icon';
+export interface Props {
+   klass?: string;
+   label: string;
+   href: string;
+   items?: NavItemType[];
+   mobile?: boolean;
+}
+const {
+   klass = '',
+   label, href,
+   items = [],
+   mobile = false
+} = Astro.props
+
+const pathname = Astro.url.pathname;
+
+const hasDropdown = items.length > 0 && items !== undefined && items !== null;
+
+const linkStyle = `
+   btn group trans-def
+   flex items-center justify-center gap-1
+   ring-2 capitalize tracking-wider
+   ${pathname === href 
+      ? 'variant-ghost-primary ring-primary-800 text-primary-800 dark:text-primary-300' 
+      : 'ring-transparent !text-primary-800-100-token hover:variant-soft-primary'
+   }
+   hover:bg-primary-400/40 hover:text-primary-900`
+const navLinkStyle = `${linkStyle} ${ mobile ? `text-lg w-36 h-12` : `text-sm w-28 h-10` }`;
+const dropdownLinkStyle = `${linkStyle} w-36 h-8 text-sm`
+---
+
+<li class={klass}>
+
+   { hasDropdown ? (
+      <><Menu
+         client:load
+         triggerClass={navLinkStyle}
+         width='w-116'
+      >
+         <span class="flex items-center justify-center gap-1">
+            {label}
+            <Icon class="w-3" name="ph:caret-down-duotone" />
+         </span>
+         <div slot="content" class="w-fit grid grid-cols-3 gap-2">
+            {items.map(({href, title}) => (
+               <a href={href} class={dropdownLinkStyle}>
+                  {title}
+               </a>
+            ))}
+         </div>
+      </Menu></>
+   ) : (
+      <a href={href} class={navLinkStyle}>
+         {label}
+      </a>
+   )}
+
+</li>
