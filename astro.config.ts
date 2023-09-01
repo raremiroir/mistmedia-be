@@ -6,7 +6,6 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
@@ -18,9 +17,7 @@ const config: AstroUserConfig = {
         vitePreprocess()
       ]
     }), 
-    tailwind({
-        applyBaseStyles: false,
-    }), 
+    tailwind(), 
     partytown(), 
     sitemap(), 
     prefetch()
@@ -36,14 +33,6 @@ const config: AstroUserConfig = {
     define: {
       'process.env.VITE_BUILD_TIME':JSON.stringify(new Date().toISOString()),
     },
-    plugins: [
-      purgeCss({
-        safelist: {
-          // any selectors that begin with "hljs-" will not be purged
-          greedy: [/^hljs-/],
-        },
-      })
-    ]
   }
 };
 
