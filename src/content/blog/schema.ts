@@ -10,7 +10,7 @@ export const blogSchema = defineCollection({
     description: z.string(),
     image: z.string().optional(),
     
-    publishDate: z.string().transform((str) => new Date(str)),
+    publishDate: z.date(),
     author: reference('authors').default('miro-storm'),
     language: z.enum(['en','nl']).default('nl'),
      
