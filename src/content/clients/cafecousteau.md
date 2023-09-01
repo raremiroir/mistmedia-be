@@ -1,6 +1,5 @@
 ---
    slug: clients/cafecousteau
-   id: cafecousteau
    name: Café Cousteau
    description: {
       en: "A nice café.",
@@ -11,5 +10,5 @@
    coverImage: portfolio/23051700531-cousteau_kut-met-peren.jpg
    site: https://cousteaucafe.be
    portfolio:
-      - cousteaucafe-be
+      - portfolio/cousteaucafe-be
 ---

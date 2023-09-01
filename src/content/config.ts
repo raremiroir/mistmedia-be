@@ -2,7 +2,7 @@
 import { blogSchema } from './blog/schema';
 import { newsletterSchema } from './newsletter/schema';
 import { authorsSchema } from './authors/schema';
-import { portfolioSchema } from '../layouts/schema';
+import { portfolioSchema } from './portfolio/schema';
 import { clientsSchema } from './clients/schema';
 
 // Export  single `collections` object to register collection(s)

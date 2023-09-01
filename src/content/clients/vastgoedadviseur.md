@@ -1,6 +1,5 @@
 ---
    slug: clients/devastgoedadviseur
-   id: vastgoedadviseur
    name: De Vastgoedadviseur
    description: {
       en: "",
@@ -11,5 +10,5 @@
    coverImage: portfolio/230516235726-ghent-skyline-towers.webp
    site: https://devastgoedadviseur.com
    portfolio:
-      - devastgoedadviseur-com
+      - portfolio/devastgoedadviseur-com
 ---

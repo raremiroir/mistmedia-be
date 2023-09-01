@@ -3,7 +3,6 @@ import { defineCollection, reference, z } from "astro:content";
 export const clientsSchema = defineCollection({
    type: 'content',
    schema: z.object({
-      id: z.string(),
       name: z.string(),
       description: z.object({
          nl: z.string(),
