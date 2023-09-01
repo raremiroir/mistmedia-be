@@ -27,7 +27,7 @@ import Modal from '@/lib/components/Common/Modal/Modal.astro';
    }));
 
    const style = {
-      social_button: `mist-btn !p-0 mist-btn-lg h-14 w-14 group`
+      social_button: `mist-btn !p-0 mist-btn-lg h-15 w-15 group`
    }
 ---
 
@@ -50,9 +50,9 @@ import Modal from '@/lib/components/Common/Modal/Modal.astro';
       title={t('pages.about.sections.about_me.title')}
    >
       <div class="grid grid-cols-4 gap-8">
-         <div class="col-span-1 w-full aspect-square rounded-tile-xl overflow-hidden bottom">
+         <div class="col-span-1 w-full aspect-square rounded-tile-xl shadow-md-noblur-grow shadow-primary-600/40 overflow-hidden bottom">
             <Image 
-               src={ImgMiroStorm} class=""
+               src={ImgMiroStorm}
                alt="Miro Storm - Mist Media Founder"
                width="600" height="600" quality="high"
                decoding="async"
