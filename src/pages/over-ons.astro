@@ -1,10 +1,8 @@
 ---
    // @ts-ignore
    import { t, l } from 'astro-i18n';
-   import { type ModalSettings } from '@skeletonlabs/skeleton';
    import { socials } from '@/lib/config';
    import { pagesIcons, valuesIcons } from '@/lib/config/icons';
-   import { modalStore } from '@/lib/stores/components';
    
    // Components
    import PageLayout from '@/layouts/PageLayout.astro';
@@ -18,6 +16,7 @@
    // Images
    import { Image } from 'astro:assets'
    import ImgMiroStorm from '@/lib/assets/img/miro_storm-color-square.png'
+import Modal from '@/lib/components/Common/Modal/Modal.astro';
 
    // Data
    const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
@@ -26,14 +25,6 @@
       text: t(`pages.about.sections.difference.items.${value}.text`), 
       icon: valuesIcons[value]
    }));
-
-
-   // Modal: About Me
-   const modalAboutMe: ModalSettings = {
-      type: 'component',
-      title: t('pages.about.sections.about_me.title'),
-      component: 'modalAboutMe',
-   };
 
    const style = {
       social_button: `mist-btn !p-0 mist-btn-lg h-14 w-14 group`
@@ -74,11 +65,16 @@
                <p>{t('pages.about.sections.about_me.lead.text')}</p>
             </div>
             <div class="flex justify-start gap-4">
-               <button 
-                  id="triggerAboutModal"
-                  class="mist-btn mist-btn-lg mist-variant-alt-primary">
-                  {t('pages.about.more_about_myself')}
-               </button>
+               
+               <Modal title={t('pages.about.sections.about_me.content.title')}>
+                  <button 
+                     slot="trigger"
+                     class="mist-btn mist-btn-lg !py-5 group mist-variant-alt-primary">
+                     {t('pages.about.more_about_myself')}
+                  </button>
+                  <p set:html={t('pages.about.sections.about_me.content.text')} />
+               </Modal>
+
                <div class="flex justify-start gap-4">
                   <a href={socials.linkedin} target="_blank" rel="noopener noreferrer"
                      class={`${style.social_button} mist-variant-linkedin`}>
