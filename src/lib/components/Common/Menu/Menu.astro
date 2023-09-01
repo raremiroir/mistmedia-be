@@ -1,0 +1,89 @@
+---
+
+export interface Props {
+   type?: 'click' | 'hover';
+   bg?: string;
+   triggerClass?: string;
+}
+const {
+   type = 'hover',
+   bg = '',
+   triggerClass = 'mist-btn mist-btn-lg mist-variant-primary',
+} = Astro.props
+
+
+---
+
+<script>
+   const dropdown = document.querySelector('#dropdown');
+   const trigger = document.querySelector('#dropdown-trigger');
+   const content = document.querySelector('#dropdown-content');
+
+   let dropdownOpen = false;
+   dropdown?.addEventListener('click', () => {
+      dropdownOpen ? closeDropdown() : openDropdown();
+   })
+   trigger?.addEventListener('keydown', (e) => { //@ts-ignore
+      if (e.key === 'Enter' || e.key === ' ') {
+         e.preventDefault();
+         dropdownOpen ? closeDropdown() : openDropdown();
+      }
+   })
+   trigger?.addEventListener('keyup', (e) => { e.preventDefault() })
+   window.addEventListener('click', e => { if (e.target !== trigger && e.target !== content) closeDropdown(); })
+   window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDropdown(); })
+
+   function openDropdown() {
+      dropdownOpen = true;
+      content?.classList.remove('dropdown-close-anim');
+      content?.classList.remove('hidden');
+      content?.classList.add('dropdown-open-anim');
+      content?.classList.add('flex');
+   }
+   function closeDropdown() {
+      dropdownOpen = false;
+      content?.classList.remove('dropdown-open-anim');
+      content?.classList.add('dropdown-close-anim');
+      setTimeout(() => {
+         content?.classList.remove('flex');
+         content?.classList.add('hidden');
+      }, 300);
+   }
+</script>
+
+
+<div role="button" tabindex="0" id="dropdown" class="relative inline-block group">
+   <button id="dropdown-trigger" class={`${triggerClass}`}><slot>Trigger</slot></button>
+
+   <div role="menu" id="dropdown-content" 
+      class="
+         hidden mt-1 flex-col gap-2 absolute 
+         bg-white min-w-[160px] z-99
+         shadow-md-noblur px-4 py-2 rounded-tile-lg
+      ">
+      <a href="">Link 1</a>
+      <a href="">Link 2</a>
+      <a href="">Link 3</a>
+   </div>
+</div>
+
+<style>
+   .dropdown-open-anim {
+      animation-name: dropdownopen;
+      animation-duration: 0.3s;
+   }
+   .dropdown-close-anim {
+      animation-name: dropdownclose;
+      animation-duration: 0.3s;
+   }
+
+   /* Animation */
+   @keyframes dropdownopen {
+      from {top: 44px; opacity: 0}
+      to {top: 52px; opacity: 1}
+   }
+   @keyframes dropdownclose {
+      from {top: 52px; opacity: 1}
+      to {top: 44px; opacity: 0}
+   }
+</style>
