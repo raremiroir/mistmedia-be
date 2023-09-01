@@ -1,0 +1,99 @@
+---
+
+export interface Props {
+   regionPage?: string;
+   slotHeader?: string;
+   slotSidebarLeft?: string;
+   slotSidebarRight?: string;
+   slotPageHeader?: string;
+   slotPageContent?: string;
+   slotPageFooter?: string;
+   slotFooter?: string;
+   klass?: string;
+   slots: {
+      header?: boolean;
+      sidebarLeft?: boolean;
+      sidebarRight?: boolean;
+      pageHeader?: boolean;
+      pageContent?: boolean;
+      pageFooter?: boolean;
+      footer?: boolean;
+   }
+}
+const {
+   regionPage = "",
+   slotHeader = "z-10",
+   slotSidebarLeft = "w-auto",
+   slotSidebarRight = "w-auto",
+   slotPageHeader = "",
+   slotPageContent = "",
+   slotPageFooter = "",
+   slotFooter = "",
+   klass = "",
+   slots = {
+      header: false,
+      sidebarLeft: false,
+      sidebarRight: false,
+      pageHeader: false,
+      pageContent: false,
+      pageFooter: false,
+      footer: false
+   }
+} = Astro.props
+
+const cBaseAppShell = "w-full h-full flex flex-col overflow-hidden";
+const cContentArea = "w-full h-full flex overflow-hidden";
+const cPage = "flex-1 overflow-x-hidden flex flex-col";
+const cSidebarLeft = "flex-none overflow-x-hidden overflow-y-auto";
+const cSidebarRight = "flex-none overflow-x-hidden overflow-y-auto";
+
+const classesBase = `${cBaseAppShell} ${klass}`;
+const classesHeader = `${slotHeader}`;
+const classesSidebarLeft = `${cSidebarLeft} ${slotSidebarLeft}`;
+const classesSidebarRight = `${cSidebarRight} ${slotSidebarRight}`;
+const classesPageHeader = `${slotPageHeader}`;
+const classesPageContent = `${slotPageContent}`;
+const classesPageFooter = `${slotPageFooter}`;
+const classesFooter = `${slotFooter}`;
+---
+
+<div id="appShell" class={classesBase} data-testid="app-shell">
+	<!-- Slot: Header -->
+   { slots.header && (
+		<header id="shell-header" class={`flex-none ${classesHeader}`}><slot name="header" /></header>
+   )}
+
+	<!-- Content Area -->
+	<div class={`flex-auto ${cContentArea}`}>
+		<!-- Slot: Sidebar (left) -->
+      { slots.sidebarLeft && (
+			<aside id="sidebar-left" class={classesSidebarLeft}><slot name="sidebarLeft" /></aside>
+      )}
+
+		<!-- Page -->
+		<div id="page" class={`${regionPage} ${cPage}`}>
+			<!-- Slot: Page Header -->
+         { slots.pageHeader && (
+				<header id="page-header" class={`flex-none ${classesPageHeader}`}><slot name="pageHeader">(slot:header)</slot></header>
+         )}
+
+			<!-- Slot: Page Content (default) -->
+			<main id="page-content" class={`flex-auto ${classesPageContent}`}><slot /></main>
+
+			<!-- Slot: Page Footer -->
+         { slots.pageFooter && (
+				<footer id="page-footer" class={`flex-none ${classesPageFooter}`}><slot name="pageFooter">(slot:footer)</slot></footer>
+         )}
+		</div>
+
+		<!-- Slot: Sidebar (right) -->
+      { slots.sidebarRight && (
+			<aside id="sidebar-right" class={classesSidebarRight}><slot name="sidebarRight" /></aside>
+      )}
+	</div>
+
+	<!-- Slot: footer -->
+   { slots.footer && (
+		<footer id="shell-footer" class={`flex-none ${classesFooter}`}><slot name="footer" /></footer>
+   )}
+</div>
