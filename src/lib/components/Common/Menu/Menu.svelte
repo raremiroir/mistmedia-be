@@ -1,9 +1,14 @@
 <script lang="ts">
-   import { fade, fly, slide } from "svelte/transition";
+   import { fade, fly } from "svelte/transition";
+   import { clickOutside } from "@comp/svelte-actions";
 
    export let width: string = 'w-52';
+   export let trigger: string = '';
    export let triggerClass: string = 'mist-btn mist-btn-lg mist-variant-primary';
    export let activeClass: string = 'bg-primary-600/40';
+
+   export let ariaLabel: string;
+   ariaLabel = ariaLabel !== '' ? ariaLabel : trigger;
 
    let menuOpen = false;
 </script>
@@ -17,6 +22,7 @@
 />
 
 <div 
+   use:clickOutside on:click_outside={() => { menuOpen = false; }}
    role="button" tabindex="0" 
    class="relative group w-full flex flex-col items-center justify-start"
    on:click={() => { menuOpen = true;}}
@@ -29,14 +35,15 @@
 >
    
    <button 
+      type="button" tabindex="0" aria-haspopup="true" aria-expanded={menuOpen} aria-label={ariaLabel}
       on:click|stopPropagation={(e) => { menuOpen = !menuOpen;}} 
       on:keydown|preventDefault={(e) => { 
-      if ( (!e.shiftKey && e.key === 'Tab') 
-         || e.key === 'Enter'
-         || e.key === ' '
-      ) menuOpen = !menuOpen;
-   }}
-      class="{triggerClass} { menuOpen ? activeClass : '' }"><slot>Trigger</slot></button>
+         if ( (!e.shiftKey && e.key === 'Tab') 
+            || e.key === 'Enter'
+            || e.key === ' '
+         ) menuOpen = !menuOpen;
+      }}
+      class="{triggerClass} { menuOpen ? activeClass : '' }"><slot>{trigger}</slot></button>
 
    {#if menuOpen}
       <div 
