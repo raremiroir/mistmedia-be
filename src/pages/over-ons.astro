@@ -12,11 +12,11 @@
    import CallToAction from '@/lib/components/Content/CallToAction.astro';
    import AnimIcon from '@/lib/components/Media/AnimIcon/AnimIcon.svelte';
    import Card from '@/lib/components/Common/Card/Card.astro';
+   import Modal from '@/lib/components/Common/Modal/Modal.svelte';
 
    // Images
    import { Image } from 'astro:assets'
    import ImgMiroStorm from '@/lib/assets/img/miro_storm-color-square.png'
-import Modal from '@/lib/components/Common/Modal/Modal.astro';
 
    // Data
    const values = ['polyvalence', 'transparence', 'efficiency', 'creativity'];
@@ -66,7 +66,7 @@ import Modal from '@/lib/components/Common/Modal/Modal.astro';
             </div>
             <div class="flex justify-start gap-4">
                
-               <Modal title={t('pages.about.sections.about_me.content.title')}>
+               <Modal client:load title={t('pages.about.sections.about_me.content.title')}>
                   <button 
                      slot="trigger"
                      class="mist-btn mist-btn-lg !py-5 group mist-variant-alt-primary">
