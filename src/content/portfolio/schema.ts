@@ -2,14 +2,16 @@ import { defineCollection, reference, z } from "astro:content";
 
 export const portfolioSchema = defineCollection({
    type: 'content',
-   schema: z.object({
+   schema: ({ image }) => z.object({
       title: z.string(),
       text: z.object({
           nl: z.string(),
           en: z.string(),
       }),
       published_on: z.date(),
-      cover_image: z.url(),
+      cover_image: image().refine((img) => img.width >= 1000, {
+            message: 'cover image must be at least 1000px wide'
+      }),
       client: reference('clients'),
       href: z.string().url(),
       solution: z.string(),
