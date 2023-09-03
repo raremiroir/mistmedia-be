@@ -1,0 +1,40 @@
+---
+   import { Image } from "astro:assets";
+import Modal from "../Modal/Modal.svelte";
+ 
+   export interface Props {
+      title?: string;
+      img?: any;
+   }
+   const {
+      title = "",
+      img = '',
+   } = Astro.props;
+---
+
+<Modal title={title} client:load>
+   <div slot="trigger"
+      class={`col-span-1 relative isolate trans-def
+         rounded-tile-xl overflow-hidden 
+         shadow-md hover:shadow-lg hover:shadow-black/40
+         hover:-translate-y-1 active:translate-y-1
+         group h-96`}>
+      <div class="-z-2 w-full h-120">
+         <div class="w-full h-full blur-0 group-hover:blur-[3px]">
+            <!-- <Image  
+               src={img} alt={title} width={640} height={400} 
+               class="object-cover h-full w-full opacity-80 dark:opacity-60 group-hover:opacity-100"
+            /> -->
+         </div>
+      </div>
+   </div>
+   <div>
+      <!-- <Image 
+         src={img}
+         alt="Miro Storm - Mist Media Founder"
+         width="600" height="600" quality="high"
+         decoding="async"
+         loading="lazy"
+      /> -->
+   </div>
+</Modal>
