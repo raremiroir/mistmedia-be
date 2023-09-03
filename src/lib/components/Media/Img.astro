@@ -1,0 +1,72 @@
+---
+   import type { ImageQuality } from 'astro';
+   import { Image } from 'astro:assets';
+
+   // https://www.w3.org/WAI/tutorials/images/
+   export interface Props {
+      src: any;
+      alt?: string;
+      
+      type?: 'url' | 'file';
+      purpose?: 'informative' | 'decorative' | 'functional' | 'text' | 'complex' | 'group' | 'map';
+      caption?: string;
+      
+      width?: number | `${number}`;
+      height?: number | `${number}`;
+      
+      format?: 'webp' | 'jpeg' | 'png' | 'avif';
+      quality?: ImageQuality;
+      loading?: 'lazy' | 'eager';
+      
+      wrapClass?: string;
+      klass?: string;
+      fit?: 'contain' | 'cover' | 'fill';
+   }
+   const {
+      src = '', alt = '', type = 'file',
+      purpose = 'informative', caption = '',
+      width = '1000', height = '600',
+      format = 'webp', quality = 'high',
+      loading = 'lazy', wrapClass = '', klass = '',
+      fit = 'cover'
+   } = Astro.props
+
+   const WrapComponent =
+      caption !== '' ? 'figure'
+      : 'div';
+
+   const imgAlt = 
+      purpose === 'informative' ? alt
+      : purpose === 'decorative' ? ''
+      : purpose === 'functional' ? ''
+      : purpose === 'text' ? ''
+      : purpose === 'complex' ? ''
+      : purpose === 'group' ? ''
+      : purpose === 'map' ? ''
+      : alt;
+   const imgClass = `${fit === 'contain' ? 'object-contain' : fit === 'fill' ? 'object-fill' : 'object-cover'} ${klass}`
+   const imgProps = type === 'url' ? {
+      src: src.src, alt: imgAlt,
+      width: src.width, height: src.height,
+      format: src.format, loading, class: klass
+   } : {
+      src, alt: imgAlt,
+      width, height, format,
+      quality, loading, class: klass
+   }
+
+---
+
+<WrapComponent class={`overflow-hidden shadow-md-noblur shadow-primary-600/40 ${wrapClass}`}>
+{ type === 'url' ? (
+   <div>
+      <picture>
+         <img {...imgProps} />
+      </picture>
+   
+      {caption !== '' && (<figcaption>{caption}</figcaption>)}
+   </div>
+) : (
+   <Image {...imgProps} decoding="async" />
+   )}
+</WrapComponent>
