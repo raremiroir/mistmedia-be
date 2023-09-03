@@ -11,6 +11,8 @@ import CallToAction from '@/lib/components/Content/CallToAction.astro';
 import services from '@/lib/config/services';
 import Card from '@/lib/components/Common/Card/Card.astro';
 import FeatureButton from "@comp/Common/Button/FeatureButton.svelte"
+import { getCollection } from 'astro:content';
+import CardPortfolio from '@/lib/components/Common/Card/CardPortfolio.astro';
 
 const currentLocale = astroI18n.langCode;
 
@@ -64,6 +66,11 @@ const content = {
    intro: t(`services.${itemKey}.intro`),
    services_intro: t(`services.${itemKey}.services_intro`),
 }
+
+// PORTFOLIO
+const allPortfolio: any[] = await getCollection('portfolio');
+const portfolio = allPortfolio.filter((item) => item.data.solution === itemKey).filter((item) => item.data.enabled);
+console.log(portfolio);
 ---
 
 <PageLayout title={navigation.solutions.items[itemKey].slug[currentLocale]}>
@@ -103,16 +110,27 @@ const content = {
       subtitle={t('pages.solutions.sections.portfolio.default_intro')}
    >
       <div class="grid-1-2">
+         { (portfolio.length === 0) && ( <p>{t('common.messages.no_items_yet')} {t('common.messages.check_back_soon')}</p> ) }
+
+         { portfolio.map(({id, slug, body, collection, data}) => (
+            <CardPortfolio title={data.title} img={data.cover_image} />
+         ))}
+
+         <CardPortfolio title="second" />
+
+         <!-- {portfolio.map(item => (
+            <CardPortfolio 
+               img={cover_img} alt={title} itemImg={gallery[0]}
+               {href} title={title} description={description[itemKey]}
+               ariaLabel={title} {client} {solution} {tags}>
+               {@html description[itemKey]}
+            </CardPortfolio>
+         ))} -->
+
          <!-- {#each portfolio as portfolioItem}
             {#await getPortfolioItem(portfolioItem)}
                <Loading />
             {:then { client, solution, tags, title, description, cover_img, gallery, href }}
-                  <CardPortfolio 
-                     img={cover_img} alt={title} itemImg={gallery[0]}
-                     {href} title={title} description={description[itemKey]}
-                     ariaLabel={title} {client} {solution} {tags}>
-                     {@html description[itemKey]}
-                  </CardPortfolio>
             {/await}
          {:else}
             <p>{$LL.messages.no_items_yet()} {$LL.messages.check_back_soon()}</p>
