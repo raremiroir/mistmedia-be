@@ -9,7 +9,7 @@ export const portfolioSchema = defineCollection({
           en: z.string(),
       }),
       published_on: z.date(),
-      cover_image: z.string(),
+      cover_image: z.url(),
       client: reference('clients'),
       href: z.string().url(),
       solution: z.string(),

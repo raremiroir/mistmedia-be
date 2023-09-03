@@ -6,12 +6,12 @@
       en: "<i>De Vastgoedadviseur</i> is a trusted assistance in all real estate-related matters. With the launch of their business, they naturally needed an inviting, unambiguous website optimized to rank high in search results. Working closely with the entrepreneur himself, we created a website perfectly tailored to De Vastgoedadviseur's style and needs."
    }
    published_on: 2023-05-30
-   cover_image: portfolio/230516235726-ghent-skyline-towers.webp
+   cover_image: ./devastgoedadviseur/ghent-skyline-towers.webp
    client: clients/devastgoedadviseur
    href: https://devastgoedadviseur.com
    solution: web
    gallery: 
-      - portfolio/devastgoedadviseurcom_website-mockup.png
+      - ./devastgoedadviseur/devastgoedadviseurcom_website-mockup.webp
    tags: 
       - webdesign
       - webdev

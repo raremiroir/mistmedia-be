@@ -6,7 +6,7 @@
       nl: ""
    }
    client_since: 2023-04-03
-   logo: portfolio/23051513565-vastgoedadviseur-icon-transp.png
+   logo: ./vastgoedadviseur-logo.webp
    coverImage: portfolio/230516235726-ghent-skyline-towers.webp
    site: https://devastgoedadviseur.com
    portfolio:

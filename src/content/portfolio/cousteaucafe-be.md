@@ -6,12 +6,12 @@
       en: "Café Cousteau is a cozy café in the heart of Antwerp. In order to reach more customers, and to present the events and menu card in an easy way, cousteaucafe.be was created. A rather simple, but effective website.",
    }
    published_on: 2023-04-20
-   cover_image: portfolio/cousteau_view_corner.webp
+   cover_image: ./cafecousteau/cousteau_view_corner.webp
    client: clients/cafecousteau
    href: https://cousteaucafe.be
    solution: web
    gallery: 
-      - portfolio/cousteaucafebe_website_mockup.png
+      - ./cafecousteau/cousteaucafebe_website_mockup.webp
    tags: 
       - webdesign
       - webdev

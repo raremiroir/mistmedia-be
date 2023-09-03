@@ -6,7 +6,7 @@
       en: "B"
    }
    published_on: 2023-08-30
-   cover_image: C
+   cover_image: ./trixolutions/trixolutions-teamwork-cover.webp
    client: clients/trixolutions
    href: https://trixolutions.com
    solution: web
