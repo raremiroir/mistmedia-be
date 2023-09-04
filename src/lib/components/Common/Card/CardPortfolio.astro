@@ -1,18 +1,34 @@
 ---
-   import { Image } from "astro:assets";
-import Modal from "../Modal/Modal.svelte";
- 
+   // @ts-ignore
+   import { t, astroI18n } from 'astro-i18n'
+   import Img from '@comp/Media/Img.astro'
+   import Modal from "../Modal/Modal.svelte";
+   import { getEntry } from 'astro:content';
+   
+// https://docs.astro.build/en/guides/images/#images-in-content-collections
    export interface Props {
-      title?: string;
-      img?: any;
+      title: string;
+      text: string;
+      cover_image?: any;
+      href?: string;
+      client?: any;
+      gallery?: any[];
    }
-   const {
+   let { 
       title = "",
-      img = '',
+      text = '',
+      cover_image = '',
+      href = '',
+      client = "",
+      gallery = []
    } = Astro.props;
+
+   const description = text[astroI18n.langCode];
+   client = await getEntry(client.collection, client.slug);
 ---
 
 <Modal title={title} client:load>
+   <!-- TRIGGER CARD -->
    <div slot="trigger"
       class={`col-span-1 relative isolate trans-def
          rounded-tile-xl overflow-hidden 
@@ -20,21 +36,65 @@ import Modal from "../Modal/Modal.svelte";
          hover:-translate-y-1 active:translate-y-1
          group h-96`}>
       <div class="-z-2 w-full h-120">
-         <div class="w-full h-full blur-0 group-hover:blur-[3px]">
-            <!-- <Image  
-               src={img} alt={title} width={640} height={400} 
-               class="object-cover h-full w-full opacity-80 dark:opacity-60 group-hover:opacity-100"
-            /> -->
+         <Img wrapClass='w-full h-full blur-0 group-hover:blur-[3px]' 
+              klass='opacity-80 dark:opacity-60 group-hover:opacity-100' 
+              src={cover_image} type="url" alt={title} 
+         />
+      </div>
+      <div class="w-full h-full flex flex-col items-center justify-between">
+         <!-- Tags -->
+         <div class="flex flex-wrap gap-1">
+   
          </div>
+         <!-- End Tags -->
+         <!-- Content -->
+         <div class="
+               absolute inset-0 w-full h-full 
+               pt-4 pr-4 pb-6 pl-6 trans-def
+               flex flex-col justify-end items-center gap-2
+               bg-gradient-to-t from-black/80 via-black/60 to-black/5
+               shadow-inner-xl-noblur shadow-primary-500/40
+               hover:shadow-inner-xxl-noblur hover:shadow-primary-500
+               active:shadow-inner-xl-noblur active:shadow-primary-500/80"
+         >
+            <h3 class="
+                  large uppercase trans-def
+                  text-surface-100 group-hover:text-primary-600 tracking-wide">
+               {title}
+            </h3>
+            <p class="text-surface-100 line-clamp-3" set:html={description} />
+            <button class="btn capitalize rounded-tile-lg variant-soft-primary self-end">
+               {t('common.btn.more_info')}
+            </button>
+         </div>
+         <!-- End Content -->
       </div>
    </div>
-   <div>
-      <!-- <Image 
-         src={img}
-         alt="Miro Storm - Mist Media Founder"
-         width="600" height="600" quality="high"
-         decoding="async"
-         loading="lazy"
-      /> -->
+   <!-- END TRIGGER CARD -->
+   <!-- ACTUAL MODAL -->
+   <div class="grid grid-cols-3 gap-4">
+      <Img 
+         klass="w-auto h-full" fit="cover"
+         wrapClass='col-span-1 rounded-tile-lg' 
+         src={cover_image} type="url" alt={title} />
+      <div class="col-span-2 flex flex-col items-start justify-start">
+         <p class="col-span-2 !text-surface-900-50-token" set:html={description} />
+         { (!!gallery && gallery.length > 0) && (
+            <div class="grid grid-cols-2 gap-4">
+               { gallery.map((galleryImg, index) => (
+                  <Img wrapClass='col-span-1 rounded-tile-lg shadow-none' src={galleryImg} type="url" alt={`${title} - ${index + 1}`} />
+               ))}
+            </div>
+         )}
+         { href !== '' && (
+            <a href={href} target="_blank" rel="noreferrer noopener"
+               title={`${t('common.btn.visit_website_of')} ${client.data.name}`}
+               aria-label={`${t('common.btn.visit_website_of')} ${client.data.name}`}
+               class="btn btn-xl capitalize rounded-tile-lg variant-soft-primary self-end">
+               {t('common.btn.visit_website')}
+            </a>
+         )}
+      </div>
    </div>
+   <!-- END MODAL -->
 </Modal>

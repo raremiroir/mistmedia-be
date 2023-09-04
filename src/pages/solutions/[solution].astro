@@ -113,28 +113,8 @@ console.log(portfolio);
          { (portfolio.length === 0) && ( <p>{t('common.messages.no_items_yet')} {t('common.messages.check_back_soon')}</p> ) }
 
          { portfolio.map(({id, slug, body, collection, data}) => (
-            <CardPortfolio title={data.title} img={data.cover_image} />
+            <CardPortfolio {...data} />
          ))}
-
-         <CardPortfolio title="second" />
-
-         <!-- {portfolio.map(item => (
-            <CardPortfolio 
-               img={cover_img} alt={title} itemImg={gallery[0]}
-               {href} title={title} description={description[itemKey]}
-               ariaLabel={title} {client} {solution} {tags}>
-               {@html description[itemKey]}
-            </CardPortfolio>
-         ))} -->
-
-         <!-- {#each portfolio as portfolioItem}
-            {#await getPortfolioItem(portfolioItem)}
-               <Loading />
-            {:then { client, solution, tags, title, description, cover_img, gallery, href }}
-            {/await}
-         {:else}
-            <p>{$LL.messages.no_items_yet()} {$LL.messages.check_back_soon()}</p>
-         {/each} -->
       </div>
    </Section>
    <!-- END PORTFOLIO SECTION -->
