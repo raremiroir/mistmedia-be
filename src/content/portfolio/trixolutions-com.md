@@ -10,8 +10,6 @@
    client: clients/trixolutions
    href: https://trixolutions.com
    solution: web
-   gallery: 
-      - D
    tags: 
       - webdesign
       - webdev

@@ -15,9 +15,12 @@ export const portfolioSchema = defineCollection({
       client: reference('clients'),
       href: z.string().url(),
       solution: z.string(),
-      gallery: z.array(z.string()).optional(),
+      gallery: z.array(
+         image().refine((img) => img.width >= 400, {
+            message: 'cover image must be at least 400px wide'
+      })).optional(),
       tags: z.array(z.string()).optional(),
       enabled: z.boolean().default(true),
       featured: z.boolean().default(false),
    }),
- });
+});
