@@ -2,14 +2,11 @@
    import { fade, fly } from "svelte/transition";
    import { clickOutside } from "@comp/svelte-actions";
 
-
    export let title: string;
    export let icon: string = '';
    export let hasFooter: boolean = false;
 
-
    let modalOpen = false;
-
 
    // Styles
    const styles = {
