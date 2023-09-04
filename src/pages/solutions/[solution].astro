@@ -109,7 +109,7 @@ const portfolio = allPortfolio.filter((item) => item.data.solution === itemKey).
       subtitle={t('pages.solutions.sections.portfolio.default_intro')}
    >
       <div class="grid-1-2">
-         { (portfolio.length === 0) && ( <p>{t('common.messages.no_items_yet')} {t('common.messages.check_back_soon')}</p> ) }
+         { (portfolio.length === 0) && ( <p>{t('common.messages.no_items_yet')}&nbsp;{t('common.messages.check_back_soon')}</p> ) }
 
          { portfolio.map(({id, slug, body, collection, data}) => (
             <CardPortfolio {...data} />
