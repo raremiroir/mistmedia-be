@@ -13,7 +13,7 @@ import type { BlogPostFrontmatter } from '@/content/blog/schema'
 import { getCollection } from "astro:content";
 
 let allBlogPosts: BlogPostFrontmatter[] = [];
-await getCollection("blog").then((collection) => { 
+await getCollection("blog").then((collection) => { //@ts-expect-error
    allBlogPosts = collection.filter((post) => !post.data.isDraft).filter((post) => post.data.language === astroI18n.langCode);
 });
 // const authorMiro = await getEntry("authors", "miro");
@@ -35,7 +35,7 @@ await getCollection("blog").then((collection) => {
          { allBlogPosts.length === 0 && (
             <p>{t('pages.blog.no_posts')}</p>
          )}
-         {allBlogPosts.map((post, index) => (
+         {allBlogPosts.map((post) => (
             <Card 
                title={post.data.title}
                href={l('blog' + '/' + post.slug)}

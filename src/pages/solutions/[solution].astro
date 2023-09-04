@@ -1,5 +1,5 @@
 ---
-// @ts-expect-error
+// @ts-ignore
 import { t, astroI18n } from 'astro-i18n';
 import navigation from '@/lib/i18n/navigation';
 import PageLayout from '@/layouts/PageLayout.astro';
@@ -111,7 +111,7 @@ const portfolio = allPortfolio.filter((item) => item.data.solution === itemKey).
       <div class="grid-1-2">
          { (portfolio.length === 0) && ( <p>{t('common.messages.no_items_yet')}&nbsp;{t('common.messages.check_back_soon')}</p> ) }
 
-         { portfolio.map(({id, slug, body, collection, data}) => (
+         { portfolio.map(({data}) => (
             <CardPortfolio {...data} />
          ))}
       </div>

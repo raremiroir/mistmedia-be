@@ -1,6 +1,4 @@
 ---
-   import type { TooltipProps } from "./tooltip"
-
    const {
       placement = 'bottom',
    } = Astro.props;
@@ -10,10 +8,10 @@
  
    const button = document.querySelector('#tooltip-trigger');
    const tooltip = document.querySelector('#tooltip');
-   
+   //@ts-ignore
    computePosition(button, tooltip, {
       placement: 'top',
-   }).then(({x, y}) => {
+   }).then(({x, y}) => { //@ts-ignore
       Object.assign(tooltip.style, {
          left: `${x}px`,
          top: `${y}px`,
