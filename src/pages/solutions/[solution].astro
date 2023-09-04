@@ -10,7 +10,7 @@ import Section from '@/lib/components/Core/Section.astro';
 import CallToAction from '@/lib/components/Content/CallToAction.astro';
 import services from '@/lib/config/services';
 import Card from '@/lib/components/Common/Card/Card.astro';
-import FeatureButton from "@comp/Common/Button/FeatureButton.svelte"
+import FeatureButton from "@comp/Common/Button/FeatureButton.astro"
 import { getCollection } from 'astro:content';
 import CardPortfolio from '@/lib/components/Common/Card/CardPortfolio.astro';
 
@@ -70,7 +70,6 @@ const content = {
 // PORTFOLIO
 const allPortfolio: any[] = await getCollection('portfolio');
 const portfolio = allPortfolio.filter((item) => item.data.solution === itemKey).filter((item) => item.data.enabled);
-console.log(portfolio);
 ---
 
 <PageLayout title={navigation.solutions.items[itemKey].slug[currentLocale]}>
@@ -87,7 +86,7 @@ console.log(portfolio);
    <!-- FEATURES SECTION -->
    <Section id={t('pages.solutions.sections.features.id')}>
       <div class={featureGrid}>
-         { featureCards.map(feature => <FeatureButton client:idle animated {...feature}/> )}
+         { featureCards.map(feature => <FeatureButton animated {...feature}/> )}
       </div>
    </Section>
    <!-- END FEATURES SECTION -->

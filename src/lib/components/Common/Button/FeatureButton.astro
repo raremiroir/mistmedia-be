@@ -1,0 +1,32 @@
+---
+   import Icon from "@comp/Media/Icon.svelte";
+   import Modal from "../Modal/Modal.svelte";
+
+   export interface Props {
+      title: string
+      title_alt: string
+      text: string
+      icon: string
+      animated: boolean;
+   }
+   const {
+      title = '',
+      title_alt = '',
+      text = '',
+      icon = '',
+      animated = false,
+   } = Astro.props
+---
+
+
+<Modal title={title} icon={icon} client:load>
+   <button 
+      slot="trigger"
+      class="w-full p-4 h-16 col-span-1 group mist-btn mist-btn-lg mist-variant-alt-primary">
+      <Icon {icon} size={70} class="w-10 text-inherit" />
+      <h2 class="smaller">{title}</h2>
+   </button>
+
+   <p set:html={text} />
+
+</Modal>
