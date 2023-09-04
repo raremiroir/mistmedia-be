@@ -12,13 +12,13 @@
    }
 </script>
 
-<script lang='ts'>
+<script lang='ts'> // @ts-ignore
+   import { astroI18n, t } from 'astro-i18n';
    // IMPORT TYPES
    import type { ChosenInputs } from './form';
    // IMPORT UTILS
    import * as yup from 'yup';
    import { createForm } from 'svelte-forms-lib';
-   import { astroI18n, t } from 'astro-i18n';
    import { titleCase } from '@/lib/utils/formatters/formatText';
 	import { fade } from 'svelte/transition';
 

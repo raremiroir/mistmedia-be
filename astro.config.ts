@@ -1,6 +1,7 @@
+// @ts-ignore
+import i18n from "astro-i18n";
 import type { AstroUserConfig } from 'astro'; 
 import { defineConfig } from 'astro/config';
-import i18n from "astro-i18n";
 import svelte, { vitePreprocess } from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
