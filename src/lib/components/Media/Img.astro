@@ -44,23 +44,23 @@
       : purpose === 'group' ? ''
       : purpose === 'map' ? ''
       : alt;
-   const imgClass = `${fit === 'contain' ? 'object-contain' : fit === 'fill' ? 'object-fill' : 'object-cover'} ${klass}`
+   const imgClass = `trans-def ${fit === 'contain' ? 'object-contain' : fit === 'fill' ? 'object-fill' : 'object-cover'} ${klass}`
    const imgProps = type === 'url' ? {
       src: src.src, alt: imgAlt,
       width: src.width, height: src.height,
-      format: src.format, loading, class: klass
+      format: src.format, loading, class: imgClass
    } : {
       src, alt: imgAlt,
       width, height, format,
-      quality, loading, class: klass
+      quality, loading, class: imgClass
    }
 
 ---
 
-<WrapComponent class={`overflow-hidden shadow-md-noblur shadow-primary-600/40 ${wrapClass}`}>
+<WrapComponent class={`trans-def overflow-hidden shadow-md-noblur shadow-primary-600/40 ${wrapClass}`}>
 { type === 'url' ? (
-   <div>
-      <picture>
+   <div class="w-full h-full">
+      <picture class="w-full h-full">
          <img {...imgProps} />
       </picture>
    
